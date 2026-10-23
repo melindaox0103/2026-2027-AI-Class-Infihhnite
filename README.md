@@ -9,6 +9,7 @@
 | 许文龙 | VoltronZX | Content and Video lead |
 | 陆秀丽 | jeeeeeshh | Visual design lead |
 | 李大卫 | CHEEEEEZEBOY | Quality lead |
+
 Selected module: Big Data and Connectionist AI
 
 ## Purpose and intended learners
