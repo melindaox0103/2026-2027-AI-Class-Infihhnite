@@ -22,7 +22,7 @@ https://www.techtarget.com/data-technologies/definition/5Vs-of-big-data
     - Internet of Things (IoT): Devices such as smartwatches and sensors started collecting data automatically.
     - Today: Big Data tools and AI help people analyze large amounts of information.
 2. Benefits of Big Data
-##Table 2 : Benefits of Big Data
+##Table 2: Benefits of Big Data
 | Benefits | Descriptions | Examples |
 |:---|:---|:---:|
 | Better Decisions | Big Data helps people make better choices by looking at information and finding patterns | A delivery company uses traffic data to find faster routes |
