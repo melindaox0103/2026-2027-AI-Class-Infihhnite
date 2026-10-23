@@ -10,8 +10,8 @@
 Selected module: Big Data and Connectionist AI
 
 ## Purpose and intended learners
-We are creating a Study Guide with Quizes and games, PPT slides and video tutorials
-for Primarry school students with no background in this module.
+We are creating a Study Guide with quizzes and games, PPT slides, and video tutorials with pop quizzes
+for primary school students with no background in this module.
 All of them are built from the shared Markdown content in this repository.
 
 ## Folder structure
