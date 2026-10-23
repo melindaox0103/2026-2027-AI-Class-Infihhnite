@@ -1,6 +1,6 @@
 # Table of Contents
 ## Table 1 : Big Data
-| Chapter / Section | Title | Page |
+| Chapter | Title | Page |
 |:---|:---|:---:|
 |***Section 1***| **[Big Data](#section-1-big-data)** ||
 | **Chapter 1** | **[Introduction to BIg Data](#chapter-1-introduction-to-big-data)** |  |
@@ -23,6 +23,8 @@
 |3.5| [Future Trends](#35-future-trends)||
 |3.6| [Distributed Storage Idea](#36-distributed-storage-idea)||
 ## Table 2 : Connectionist AI
+| Chapter | Title | Page |
+|:---|:---|:---:|
 |***Section 2***| **[Connectionist AI](#section-1-big-data)** ||
 | **Chapter 1** | **[Introduction to Connectionist AI](#chapter-1-introduction-to-connectionist-ai)** |  |
 |1.1| [Context and History](#11-context-and-history)||
@@ -42,6 +44,8 @@
 |3.4| [CNNs](#34-CNNs)||
 |3.5| [Feedforward Networks](#35-Feedforward Networks)||
 ## Table 3 : Connection of Big Data and Connectionist AI
+| Chapter | Title | Page |
+|:---|:---|:---:|
 |***Section 3***| **[Where Big Data Meets Connectionist AI](#section-3-where-big-data-meets-connectionist-ai)** ||
 | **Chapter 1** | **[Why Big Data Fuels Neural Networks](#chapter-1-why-big-data-fuels-neural-networks)** |  |
 | **Chapter 2** | **[Preparing Data for a Network](#chapter-2-preparing-data-for-a-network)** |  |
