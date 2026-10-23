@@ -1,12 +1,14 @@
-# [Infihhnite] - Big Data and Connectionist AI
+# Infihhnite - Big Data and Connectionist AI
 
 ## Team
+
+| Name | GitHub username | Role |
+| --- | --- | --- |
 | 林鳳健 | Kemoosh | Coordinator (CEO) |
 | 谢文玲 | melindaox0103 | Repository and submission lead (CIO) |
 | 许文龙 | VoltronZX | Content and Video lead |
 | 陆秀丽 | jeeeeeshh | Visual design lead |
 | 李大卫 | CHEEEEEZEBOY | Quality lead |
-
 Selected module: Big Data and Connectionist AI
 
 ## Purpose and intended learners
