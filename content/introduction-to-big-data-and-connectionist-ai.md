@@ -4,7 +4,7 @@ Big Data is an important part of today's digital world. It helps businesses unde
 To understand how Big Data works, we will start with the 5Vs, which describe its main characteristics. Then, we will connect those ideas to five foundations: the definition of Big Data, data types and sources, data warehousing, Big Data technologies, and data processing and analytics.
 ### 1.2 Definition
 Below is listed the table of 5V's
-##Table 1 : 5V's
+
 | Name of 5V's | Description | Examples |
 |:---|:---|:---:|
 | Volume | The amount of data collected and stored | Thousands of different types of students attending a school|
@@ -23,7 +23,6 @@ https://www.techtarget.com/data-technologies/definition/5Vs-of-big-data
     - Today: Big Data tools and AI help people analyze large amounts of information.
 2. Benefits of Big Data
 
-##Table 2: Benefits of Big Data
 | Benefits | Descriptions | Examples |
 |:---|:---|:---:|
 | Better Decisions | Big Data helps people make better choices by looking at information and finding patterns | A delivery company uses traffic data to find faster routes |
