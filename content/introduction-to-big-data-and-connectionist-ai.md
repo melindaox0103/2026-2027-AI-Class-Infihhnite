@@ -32,8 +32,6 @@ https://www.techtarget.com/data-technologies/definition/5Vs-of-big-data
 
 3. Small Data
 
-What is Small Data?
-
 **Small data** is data with a volume and format that makes it accessible, informative and actionable for people. It is often described as data small enough for human comprehension: even five related pieces of data, or one eyewitness observation, can count.
 
 The term is often explained as a contrast: **big data is about machines, small data is about people.**
@@ -69,7 +67,7 @@ So, what's the difference between these two data types?
 
 ---
 
-###1.3 Types of Data Structure
+### 1.3 Types of Data Structure
 
 Small data can come in any of three structures.
 
@@ -90,7 +88,7 @@ SELECT name, age, city FROM customers WHERE id = 101;
 | 101 | Alexa | 32 | New York |
 | 102 | Sam | 40 | Los Angeles |
 
-2 Semi-Structured Data
+2. Semi-Structured Data
 
 Data that has some organization, such as tags or markers, but no rigid schema. It sits between structured and unstructured data and is often called *self-describing*.
 
@@ -113,7 +111,7 @@ Data that has some organization, such as tags or markers, but no rigid schema. I
 </Person>
 ```
 
-3 Unstructured Data
+3. Unstructured Data
 
 Data with no predefined format or model. It usually needs preprocessing or specialized tools before analysis.
 
