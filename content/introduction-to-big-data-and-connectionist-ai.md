@@ -154,6 +154,115 @@ Data with no predefined format or model. It usually needs preprocessing or speci
 - [Iberdrola: What is small data?](https://iberdrola.com/innovation/what-is-small-data)
 - [Wikipedia: Small data](https://en.wikipedia.org/wiki/Small_data)
 
+### 1.5 Big Data vs Data Warehousing
+
+> **Section:** Big Data  
+> **Chapter:** Introduction to Big Data  
+> **Audience:** Elementary students with no prior knowledge of big data
+
+---
+
+## Explanations
+
+### 📚 What is a data warehouse?
+
+A **data warehouse** is a big storage place for information that has already been cleaned and organized into neat tables. Before data goes in, people decide where each piece belongs.
+
+It is often used for clear reports that help people make decisions, like:
+
+> "How many toys did we sell this month?"
+
+### 📦 What is big data storage?
+
+**Big data storage** can hold huge amounts of data of many kinds: tables, photos, videos, messages and sensor readings. The data goes in **as it is**, even if it is messy. People organize it **later**, when they need to use it.
+
+### 🤝 Why do we need both?
+
+- A warehouse is great when you already know what question you want to answer, and its data is clean and trustworthy.
+- Big data storage is great when you have lots of different data and want to explore it and find patterns.
+- Many organizations use both together.
+
+---
+
+## Terminology
+
+| Term | Simple meaning |
+|---|---|
+| **Data warehouse** | A storage place for cleaned, organized data, used for reports |
+| **Schema** | A plan for how data will be organized, like deciding which columns a table will have |
+| **Raw data** | Data kept exactly as it was collected, before anyone cleans or sorts it |
+| **Report** | A clear summary of data, like a chart showing monthly sales |
+| **Big data storage** | A place that can keep huge amounts of data of any kind. One common type is called a *data lake* |
+| **Data scientist** | A person who studies data to find useful patterns |
+
+---
+
+## Worked Example: Happy Toys Store
+
+Happy Toys collects four kinds of data:
+
+- [x] Sales receipts
+- [x] Customer comments
+- [x] Photos of the shelves
+- [x] Videos from a store camera
+
+### Path 1: The data warehouse
+
+1. Take only the neat data: the **sales receipts**.
+2. Clean it by fixing mistakes, like a toy name spelled two different ways.
+3. Put it into a planned table with columns: `Date`, `Toy`, `Number sold`.
+4. Make a report.
+
+**Result:** "Teddy bears sold 120 in May."
+
+### Path 2: Big data storage
+
+1. Save **everything as it is**: receipts, comments, photos and videos.
+2. Later, a data scientist sorts through the comments.
+3. They notice many kids mention "dinosaurs" and see that dinosaur toys sell out fast.
+
+**Result:** The store decides to order more dinosaur toys *before* they sell out.
+
+### Flow diagram
+
+```mermaid
+flowchart TD
+    A[Happy Toys collects data] --> B[Receipts, comments, photos, videos]
+    B --> C{Which path?}
+    C -->|Path 1| D[Pick only the neat receipts]
+    D --> E[Clean and put in a planned table]
+    E --> F[Data warehouse]
+    F --> G[Report: Teddy bears sold 120 in May]
+    C -->|Path 2| H[Save everything as it is]
+    H --> I[Big data storage]
+    I --> J[Sort later when needed]
+    J --> K[Discovery: kids love dinosaurs]
+```
+
+> **What this shows:** The warehouse answered a question the store already knew to ask. Big data storage helped the store **discover something new**.
+
+---
+
+## Visual: Side-by-Side Comparison
+
+| | **Data Warehouse** 📚 | **Big Data Storage** 📦 |
+|---|---|---|
+| **Data structure** | Neat, planned tables | Any kind: tables, photos, videos, messages |
+| **How data is stored** | Cleaned and organized *before* storing, like books on labeled library shelves | Stored raw first, organized *later*, like boxes in a giant storage room |
+| **Typical use** | Clear reports for business decisions | Exploring huge, varied data to find patterns |
+| **Example question** | "How many toys did we sell in May?" | "What do kids seem to like that we haven't noticed yet?" |
+
+---
+
+## References
+
+1. Splunk. *Data Lake vs. Data Warehouse: Definitions, Key Differences, and How to Integrate Data Storage Solutions.* https://splunk.com/en_us/blog/learn/data-warehouse-vs-data-lake.html
+2. BMC Software. *Data Lake vs. Data Warehouse vs. Database: Key Differences Explained.* https://www.bmc.com/blogs/data-lake-vs-data-warehouse-vs-database-whats-the-difference/
+3. TechTarget. *Data lake vs. data warehouse: Key differences explained.* https://www.techtarget.com/data-technologies/feature/Data-lake-vs-data-warehouse-Key-differences-explained
+4. RudderStack. *Difference Between Big Data and Data Warehouses.* https://www.rudderstack.com/learn/data-warehouse/Difference-Between-Big-Data-And-Data-Warehouses/
+
+> The Happy Toys example and the library and storage room comparisons are original illustrations, not taken from the references.
+
 # Chapter 1: Introduction to Connectionist AI
 
 ## 1.1 Context and History
