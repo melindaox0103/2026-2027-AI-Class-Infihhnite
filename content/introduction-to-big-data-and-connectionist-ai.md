@@ -1,6 +1,6 @@
 ### Big Data
 <html>
-<img src="assets/.../bigdata.jpg" alt="Big Data Definition">
+<img src="assets/../bigdata.jpg" alt="Big Data Definition">
 </html>
 
 ### 1.1 Definition
