@@ -53,7 +53,4 @@
 | **Chapter 4** | **[Ethics, Privacy, and Limits](#chapter-4-ethics-privacy-and-limits)** |  |
 | **Chapter 5** | **[Synergy and Future](#chapter-5-synergy-and-future)** |  |
 
-<html>
-  <img src: "Team-Project-Plan.png">
-</html>
 
