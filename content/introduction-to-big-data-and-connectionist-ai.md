@@ -1,5 +1,7 @@
 ### Big Data
-<img src="assets/bigdata.png" alt="Big Data Definition" width="400">
+<html>
+<img src="assets/bigdata.png" alt="Big Data Definition">
+</html>
 
 ### 1.1 Definition
 Big Data is an important part of today's digital world. It helps businesses understand customers, schools improve learning, scientists study animals, sports teams analyze performance, and social media platforms recommend content.
