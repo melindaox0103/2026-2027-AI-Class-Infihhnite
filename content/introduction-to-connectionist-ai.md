@@ -1211,5 +1211,3 @@ Use the same network and the same weights.
 4. Cornell University, CS 4780. *The Backpropagation Algorithm* (lecture notes). https://www.cs.cornell.edu/courses/cs4780/2023fa/lectures/note_backprop.pdf
 
 
-# 2.5
-
