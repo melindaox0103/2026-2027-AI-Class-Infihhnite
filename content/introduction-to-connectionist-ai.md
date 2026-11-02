@@ -1072,3 +1072,144 @@ A simple fix is **early stopping**: stop training when the validation loss stops
 3. Rensselaer Polytechnic Institute, Tetherless World Constellation. *Generalization, Overfitting, Model Validation* (lecture slides, citing *An Introduction to Statistical Learning*). https://tw.rpi.edu/sites/default/files/2024-10/Data_Analytics2024Fall_Group2_Generalization_Overfitting_Validation.pdf
 4. arXiv:1905.05241. *Deep Neural Networks for Marine Debris Detection in Sonar Images.* https://arxiv.org/pdf/1905.05241
 
+
+# 2.4 # Layers and the Forward Pass
+
+---
+
+## Explanations
+
+A neural network arranges neurons into **layers**. Data enters at one end, flows through the layers, and a result comes out the other end. This one-way trip is called the **forward pass**.
+
+### The three kinds of layers
+
+| Layer | Job | Does it calculate? |
+|---|---|---|
+| **Input layer** | Holds the data going in (one slot per feature, such as pixel values or measurements) | No. It only passes the numbers on |
+| **Hidden layer(s)** | Combine and transform the numbers to find useful patterns. There can be one or many | Yes (weighted sum, bias, activation) |
+| **Output layer** | Produces the final answer: a number, a yes/no probability, or class scores | Yes |
+
+Hidden layers are "hidden" because we never see their values directly: they sit between the input and the output. A network with many hidden layers is called a **deep** neural network.
+
+### The forward pass, step by step
+In a **feedforward** network, each layer feeds its output to the next layer, one direction only. For every layer, repeat the same two steps from the previous lesson:
+
+1. **Linear step:** `z = W·x + b` (multiply by weights, add the bias)
+2. **Activation step:** `a = f(z)` (apply the activation function)
+
+The activations `a` of one layer become the inputs `x` of the next. After the last layer, the output is the network's prediction.
+
+```mermaid
+flowchart LR
+    subgraph Input
+        x1((x₁))
+        x2((x₂))
+    end
+    subgraph Hidden
+        h1((h₁))
+        h2((h₂))
+    end
+    subgraph Output
+        o((ŷ))
+    end
+    x1 --> h1
+    x1 --> h2
+    x2 --> h1
+    x2 --> h2
+    h1 --> o
+    h2 --> o
+```
+
+> **Good to know:** the forward pass **does not change any weights**. It only uses them to make a prediction. It runs both when training (the first step of each learning loop) and when the finished network is used. Backpropagation needs the forward pass's results first.
+
+---
+
+## Terminology
+
+| Term | Meaning |
+|---|---|
+| **Layer** | A group of neurons that work side by side |
+| **Input / hidden / output layer** | The first layer, the layers in between, and the last layer |
+| **Feedforward network** | A network where data moves only forward, from input to output |
+| **Forward pass (forward propagation)** | One trip of data from input to output, using the current weights |
+| **Activation (a)** | A neuron's output after its activation function |
+| **Prediction (ŷ)** | The network's final output ("y-hat") |
+| **Deep neural network** | A network with many hidden layers |
+
+---
+
+## Worked example: a 2 → 2 → 1 network
+
+The weights below are pretend values that have already been trained. The hidden layer uses **ReLU**, and the output layer uses **sigmoid** to give a value between 0 and 1.
+
+| | Weights | Bias |
+|---|---|---|
+| Hidden neuron h₁ | 0.5 (from x₁), 0.25 (from x₂) | 0.5 |
+| Hidden neuron h₂ | −0.6 (from x₁), 0.1 (from x₂) | 0.2 |
+| Output neuron | 0.8 (from h₁), 0.5 (from h₂) | −0.4 |
+
+**Input:** `x₁ = 1`, `x₂ = 2`
+
+| Step | Calculation | Result |
+|---|---|---|
+| **1. Input layer** | Just hold the data | `x = [1, 2]` |
+| **2. Hidden h₁: weighted sum + bias** | 0.5×1 + 0.25×2 + 0.5 | `z = 1.5` |
+| **3. Hidden h₁: ReLU** | max(0, 1.5) | `a = 1.5` |
+| **4. Hidden h₂: weighted sum + bias** | −0.6×1 + 0.1×2 + 0.2 | `z = −0.2` |
+| **5. Hidden h₂: ReLU** | max(0, −0.2) | `a = 0` (switched off) |
+| **6. Output: weighted sum + bias** | 0.8×1.5 + 0.5×0 − 0.4 | `z = 0.8` |
+| **7. Output: sigmoid** | 1 / (1 + e⁻⁰·⁸) | **ŷ ≈ 0.690** |
+
+**What to notice:**
+- Neuron h₂ was switched off by ReLU (`z` was negative), so it contributed nothing to the output.
+- Each layer used the *previous layer's activations* as its inputs.
+- The final answer, 0.690, is the network's prediction for input `[1, 2]`.
+
+---
+
+## Learner activity
+
+Use the same network and the same weights.
+
+**Task 1.** Run the forward pass for a new input, `x₁ = 0`, `x₂ = 2`. Give `a` for h₁ and h₂, then the output `z` and the final prediction ŷ.
+
+**Task 2.** Count all the learnable parameters (weights plus biases) in this 2 → 2 → 1 network.
+
+---
+
+## Answers and expected outcomes
+
+<details>
+<summary><b>Click to reveal</b></summary>
+
+**Task 1** (input `[0, 2]`)
+
+| Neuron | Calculation | z | Activation |
+|---|---|---|---|
+| h₁ | 0.5×0 + 0.25×2 + 0.5 | 1.0 | ReLU → **1.0** |
+| h₂ | −0.6×0 + 0.1×2 + 0.2 | 0.4 | ReLU → **0.4** |
+| Output | 0.8×1.0 + 0.5×0.4 − 0.4 | **0.6** | Sigmoid → **ŷ ≈ 0.646** |
+
+**Task 2**
+- Hidden layer: 2 neurons × 2 weights = 4 weights, plus 2 biases = **6**
+- Output layer: 1 neuron × 2 weights = 2 weights, plus 1 bias = **3**
+- Total = **9 parameters**. The input layer has none.
+
+**Expected outcome:** the learner can trace data through the layers, applying weighted sum, bias and activation at each neuron and using each layer's outputs as the next layer's inputs.
+
+**Teacher check:** ask, "Does the forward pass change the weights? What comes after it during training?" A good answer: no, it only computes a prediction with the current weights. Then the loss is calculated, backpropagation finds the gradients, and gradient descent updates the weights.
+
+</details>
+
+---
+
+## References
+
+1. apxml.com. *Introduction to Neural Networks: Forward Propagation, Practical Implementation.* https://apxml.com/courses/introduction-to-neural-networks/chapter-3-forward-propagation/forward-propagation-practical
+2. Telnyx. "Forward Propagation in AI" (learning article). https://telnyx.com/learn-ai/forward-propogation-ai.md
+3. University of Tennessee at Chattanooga. *Neural Networks by an Example* (lecture slides). https://www.utc.edu/document/71441
+4. Cornell University, CS 4780. *The Backpropagation Algorithm* (lecture notes). https://www.cs.cornell.edu/courses/cs4780/2023fa/lectures/note_backprop.pdf
+
+
+# 2.5
+
