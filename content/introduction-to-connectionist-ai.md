@@ -672,3 +672,403 @@ Imagine an AI system deciding whether to approve a loan application.
 
 - **Symbolic AI:** Might reject the application because the applicant does not meet a specific written requirement.
 - **Connectionist AI:** Might reject the application based on many learned patterns, without providing a simple explanation of how each factor contributed.
+
+
+# 2.1 How Networks Learn
+
+---
+
+## Explanations
+
+A neural network learns by **adjusting its weights** (the numbers inside it that control its behavior) until its predictions get close to the correct answers. Learning is a loop of three jobs:
+
+| Job | Question it answers | Tool |
+|---|---|---|
+| **Measure the error** | How wrong is the network right now? | Loss function |
+| **Find the blame** | How much did each weight contribute to the error? | Backpropagation |
+| **Fix the weights** | Which way, and how far, should each weight move? | Gradient descent |
+
+### Gradient descent and loss
+The **loss** is a single number saying how wrong the network is. Lower is better. Training means finding weights that make the loss as small as possible.
+
+Picture the loss as a hilly landscape and the weight as a ball. The **gradient** is the slope under the ball. It points uphill, so we step in the **opposite** direction (downhill):
+
+```text
+new weight = old weight − learning rate × gradient
+```
+
+### Backpropagation
+A real network has millions of weights, so we need each weight's gradient quickly. **Backpropagation** does this with the **chain rule** (a calculus rule for combining small effects into one big effect). It starts at the loss, works backward layer by layer, and reuses earlier results.
+
+> ⚠️ **Common mix-up:** backpropagation only *computes* the gradients. Gradient descent *uses* them to update the weights. They are two separate steps.
+
+### The training process
+Each training step repeats four moves, shown here as a loop:
+
+```mermaid
+flowchart LR
+    A[1. Forward pass<br/>make a prediction] --> B[2. Compute loss<br/>compare with the answer]
+    B --> C[3. Backpropagation<br/>compute gradients]
+    C --> D[4. Gradient descent<br/>update the weights]
+    D --> A
+```
+
+The loop runs over the training data many times. Data is usually fed in small groups called **batches**, and one full pass over all the data is an **epoch**.
+
+### Good to know
+
+1. **Different tasks use different loss functions.** *Mean squared error* (MSE) is common when predicting numbers, like a house price. *Cross-entropy* is common when choosing a category, like cat or dog.
+2. **Real networks have many weights.** Each weight gets its **own gradient** and is updated by the same rule. The worked example uses one weight only to keep the numbers readable.
+3. **Backpropagation needs the forward pass.** The values calculated on the way forward are stored, then reused on the way back. That is why the forward pass always comes first.
+4. **Watch the loss to diagnose training.** If loss falls steadily, learning is working. If it bounces up and down or grows, the learning rate is usually too high. If it barely moves, it may be too low. Training stops when the loss stops improving. Falling loss on training data alone does not prove the network is good, which is the topic of *Overfitting and Generalisation*.
+
+---
+
+## Terminology
+
+| Term | Meaning |
+|---|---|
+| **Weight / parameter** | A number inside the network that is adjusted during learning |
+| **Loss function** | A formula that turns the network's error into one number |
+| **Gradient** | The slope of the loss for a weight: which way and how steeply the loss rises |
+| **Learning rate** | The step size of each update. Too small is slow. Too large overshoots |
+| **Chain rule** | Calculus rule that multiplies small effects together to get a total effect |
+| **Batch** | A small group of training examples used for one update |
+| **Epoch** | One full pass through the whole training set |
+
+---
+
+## Worked example: one weight learning
+
+**Setup:** the network is just `prediction = w × x`. The input is `x = 2` and the correct answer is `4`, so the ideal weight is `w = 2`. Loss = `(prediction − 4)²`. Learning rate = `0.05`. Start at `w = 0`.
+
+**Backpropagation on this tiny network** (chain rule):
+
+```text
+dLoss/dw = dLoss/dprediction × dprediction/dw
+         = 2 × (prediction − 4)  ×  x
+```
+
+**Training steps:**
+
+| Step | w | Prediction (w×2) | Loss | Gradient = 2(pred − 4)×2 | New w = w − 0.05 × gradient |
+|---|---|---|---|---|---|
+| 0 | 0 | 0 | 16 | −16 | 0 + 0.8 = **0.8** |
+| 1 | 0.8 | 1.6 | 5.76 | −9.6 | 0.8 + 0.48 = **1.28** |
+| 2 | 1.28 | 2.56 | 2.07 | −5.76 | 1.28 + 0.288 = **1.568** |
+
+**What to notice:** the loss falls each step (16 → 5.76 → 2.07) and `w` moves toward 2. Steps get smaller because the slope gets flatter near the bottom.
+
+---
+
+## Learner activity
+
+**Task 1.** Using the same setup, calculate **Step 3** starting from `w = 1.568`. Fill in the prediction, loss, gradient and new `w`.
+
+**Task 2.** Redo **Step 0** with a larger learning rate of `0.3`. What is the new `w`, the new prediction, and the new loss? Compare the new loss with the starting loss of 16 and explain what happened.
+
+---
+
+## Answers and expected outcomes
+
+<details>
+<summary><b>Click to reveal</b></summary>
+
+**Task 1**
+
+| Prediction | Loss | Gradient | New w |
+|---|---|---|---|
+| 1.568 × 2 = **3.136** | (3.136 − 4)² ≈ **0.7465** | 2 × (−0.864) × 2 = **−3.456** | 1.568 + 0.05 × 3.456 = **1.7408** |
+
+**Task 2**
+- Gradient at Step 0 is still −16, so new `w = 0 − 0.3 × (−16) = 4.8`.
+- New prediction = 4.8 × 2 = **9.6**, new loss = (9.6 − 4)² = **31.36**.
+- The loss went **up** from 16 to 31.36. The step was too big, so `w` jumped past the ideal value of 2 and landed on the other side of the valley. This is **overshooting**.
+
+**Expected outcome:** the learner can apply the update rule by hand and explain that the learning rate controls step size, with too large a value causing overshooting.
+
+**Teacher check:** ask, "What is the difference between backpropagation and gradient descent?" A good answer: backpropagation computes each weight's gradient, and gradient descent uses the gradients to update the weights.
+
+</details>
+
+---
+
+## References
+
+1. Cornell Virtual Workshop. *Gradient Descent.* https://cvw.cac.cornell.edu/SciML/mlp/gradient-descent
+2. Cornell University, CS 4780. *The Backpropagation Algorithm* (lecture notes). https://www.cs.cornell.edu/courses/cs4780/2023fa/lectures/note_backprop.pdf
+3. Wikipedia. *Backpropagation.* https://en.wikipedia.org/wiki/Backpropagation
+4. apxml.com. *Introduction to Deep Learning: Learning Rate.* https://apxml.com/courses/introduction-to-deep-learning/chapter-3-training-loss-optimization/learning-rate
+   
+
+# 2.2 Inside One Neuron
+
+> **Chapter:** Connectionist AI · **Section:** Basics of Neural Networks · **Level:** Beginner  
+> **Covers:** inputs, bias and weights · weighted sum · activation function
+
+---
+
+## Explanations
+
+An **artificial neuron** is the basic building block of a neural network. It takes in several numbers, does a small calculation, and produces **one** output number. That output can become an input for other neurons.
+
+Every neuron does the same three things, in order:
+
+1. **Weigh** each input by multiplying it by its weight.
+2. **Sum** the weighted inputs and add the bias. This gives one number, `z`.
+3. **Activate**: pass `z` through an activation function to get the output.
+
+```text
+output = f( w₁x₁ + w₂x₂ + … + wₙxₙ + b )
+```
+
+### Inputs, weights and bias
+- **Inputs (x):** the numbers going in. They are either the raw data or the outputs of the previous layer.
+- **Weights (w):** one per input. A weight says how **important** its input is. A large positive weight pushes the neuron up, a negative weight pushes it down, and a weight near zero means the input is mostly ignored.
+- **Bias (b):** one extra number per neuron, added to the sum. It shifts how easily the neuron switches on, even when every input is zero.
+
+Weights and biases are the **learnable parameters**. Training (the previous lesson) adjusts them.
+
+### Weighted sum
+Multiply each input by its weight, add the results, then add the bias. The result `z` is called the **pre-activation value**.
+
+### Activation function
+The **activation function** `f` turns `z` into the neuron's final output. It matters because without it, stacking layers would collapse into one simple linear calculation, which cannot learn complex patterns. The activation function adds **non-linearity**.
+
+| Function | Rule | Output range | Behavior |
+|---|---|---|---|
+| **Step** | 1 if `z > 0`, otherwise 0 | 0 or 1 | On/off switch |
+| **Sigmoid** | `1 / (1 + e⁻ᶻ)` | between 0 and 1 | Smooth S-curve, squashes any `z` |
+| **ReLU** | `max(0, z)` | 0 and above | Blocks negatives, passes positives |
+
+### Visual: one neuron
+
+```mermaid
+flowchart LR
+    x1["x₁ (input)"] -->|"× w₁"| S(("Σ + b"))
+    x2["x₂ (input)"] -->|"× w₂"| S
+    x3["x₃ (input)"] -->|"× w₃"| S
+    S -->|"z"| F["activation f(z)"]
+    F --> Y["output"]
+```
+
+> The design is loosely inspired by a biological neuron (inputs ≈ dendrites, weights ≈ connection strength, output ≈ axon), but an artificial neuron is only a simple math formula.
+
+---
+
+## Terminology
+
+| Term | Meaning |
+|---|---|
+| **Neuron (node)** | A unit that takes inputs and produces one output |
+| **Input (x)** | A number fed into the neuron |
+| **Weight (w)** | A learnable number that scales its input's importance |
+| **Bias (b)** | A learnable number added to the sum, shifting when the neuron activates |
+| **Weighted sum (z)** | Σ(w × x) + b, the value before activation |
+| **Activation function (f)** | Turns `z` into the neuron's output and adds non-linearity |
+| **Non-linearity** | Behavior that is not a straight-line relationship, needed to learn complex patterns |
+
+---
+
+## Worked example: "Should I go out to play?"
+
+One neuron decides whether to go outside. Inputs are `1` for yes and `0` for no.
+
+| Input | Meaning | Value (x) | Weight (w) |
+|---|---|---|---|
+| x₁ | It is sunny | 1 | **0.6** |
+| x₂ | Friends are going | 1 | **0.5** |
+| x₃ | Homework is still not done | 1 | **−0.8** |
+
+Bias `b = −0.2` (a small built-in reluctance to go out).
+
+| Step | Calculation | Result |
+|---|---|---|
+| 1. Weigh | 0.6×1, 0.5×1, −0.8×1 | 0.6, 0.5, −0.8 |
+| 2. Sum | 0.6 + 0.5 + (−0.8) | 0.3 |
+| 3. Add bias | 0.3 + (−0.2) | **z = 0.1** |
+| 4a. Activate (ReLU) | max(0, 0.1) | **0.1** |
+| 4b. Activate (Sigmoid) | 1 / (1 + e⁻⁰·¹) | **≈ 0.525** |
+
+**What to notice:** the negative weight on homework pulled the total down from 1.1 to 0.3. Sigmoid shows the neuron is only slightly leaning toward "go" (a little above 0.5). The same `z` gives different outputs under different activation functions.
+
+---
+
+## Learner activity
+
+Use the same weights (`0.6`, `0.5`, `−0.8`) and bias (`−0.2`).
+
+**Task 1.** It is **rainy** (x₁ = 0), **friends are going** (x₂ = 1), and **homework is done** (x₃ = 0). Find `z`, the ReLU output, and the sigmoid output.
+
+**Task 2.** Now **every input is 0**. What is `z`, and what does this show about the role of the bias?
+
+---
+
+## Answers and expected outcomes
+
+<details>
+<summary><b>Click to reveal</b></summary>
+
+**Task 1**
+
+| Weighted terms | Sum | z (after bias) | ReLU | Sigmoid |
+|---|---|---|---|---|
+| 0, 0.5, 0 | 0.5 | 0.5 − 0.2 = **0.3** | **0.3** | 1 / (1 + e⁻⁰·³) ≈ **0.574** |
+
+**Task 2**
+- All weighted terms are 0, so `z = 0 + (−0.2) = −0.2`.
+- ReLU gives max(0, −0.2) = **0**, so the neuron is off.
+- The bias works even when all inputs are zero. It sets the neuron's **starting tendency**, here a slight lean toward "no".
+
+**Expected outcome:** the learner can compute a neuron's output in three steps (weigh, sum plus bias, activate) and explain that weights set the importance of inputs while bias shifts the starting point.
+
+**Teacher check:** ask, "If we removed the activation function from every neuron, why would a many-layer network be no more powerful than one neuron?" A good answer: each layer would only do weighted sums, and stacked weighted sums collapse into a single weighted sum, so no complex patterns could be learned.
+
+</details>
+
+---
+
+## References
+
+1. Runestone Academy, *AI4All*. "Inputs, Weights, and Biases." https://runestone.academy/ns/books/published/ai4all/sec-inputs-weights-and-biases.html
+2. apxml.com. *Introduction to Deep Learning: The Artificial Neuron Model.* https://apxml.com/courses/introduction-to-deep-learning/chapter-1-neural-network-foundations/artificial-neuron-model
+3. Towards AI. "How Does a Neural Network Learn? Neurons, Activation Functions and Loss." https://pub.towardsai.net/how-does-a-neural-network-learn-neurons-activation-functions-and-loss-7c92debbc59e
+4. CASRAI. "Neural Networks and Deep Learning Explained." https://casrai.org/news/neural-networks-and-deep-learning-explained
+
+
+# 2.3 Overfitting and Generalisation
+
+---
+
+## Explanations
+
+The goal of training is **not** to do well on the examples the network has already seen. The goal is to do well on **new** examples it has never seen. This ability is called **generalisation**.
+
+### Overfitting
+**Overfitting** happens when a network learns the training data too closely, including its random noise and quirks, instead of the real underlying pattern. It scores very well on training data but badly on new data. It is like a student who memorises last year's exam answers: perfect on those exact questions, lost on new ones.
+
+The opposite problem is **underfitting**: the network has not learned enough, so it performs poorly on *both* training and new data.
+
+| | Training performance | New-data performance | Diagnosis |
+|---|---|---|---|
+| ✅ Good fit | Good | Good | Generalises well |
+| ⚠️ Overfitting | Very good | Poor | Memorised the training set |
+| ❌ Underfitting | Poor | Poor | Has not learned enough |
+
+### Train, validation and test sets
+To *detect* overfitting we must test on data the network did not train on. So the data is shuffled and split into three separate sets:
+
+| Set | Role | Used |
+|---|---|---|
+| **Training set** | The network learns its weights from it | Over and over during training |
+| **Validation set** | Monitor progress and tune settings (like the learning rate) while building | Repeatedly during development |
+| **Test set** | One final, unbiased score of real-world performance | Once, at the very end |
+
+Common split ratios are 60/20/20, 70/15/15 and 80/10/10, and there is no single best ratio.
+
+```mermaid
+flowchart LR
+    D[All data<br/>shuffled] --> T[Training set<br/>learn weights]
+    D --> V[Validation set<br/>tune and monitor]
+    D --> E[Test set<br/>final score, used once]
+```
+
+> ⚠️ **Common mix-up:** do not keep checking the test set while building. Once you tune the model to it, it is no longer "unseen" and its score becomes over-optimistic.
+
+### How to spot overfitting
+Watch the **training loss** and **validation loss** together:
+
+- Both falling: the network is learning and generalising.
+- Training loss falling but **validation loss rising**: **overfitting**.
+
+A simple fix is **early stopping**: stop training when the validation loss stops improving.
+
+---
+
+## Terminology
+
+| Term | Meaning |
+|---|---|
+| **Generalisation** | Performing well on new data the network has never seen |
+| **Overfitting** | Memorising training data (and its noise) so that new-data performance is poor |
+| **Underfitting** | Not learning enough, so performance is poor on all data |
+| **Noise** | Random quirks or errors in data that carry no real pattern |
+| **Training / validation / test set** | Three separate portions of the data, used for learning, tuning and final scoring |
+| **Early stopping** | Ending training when validation loss stops improving |
+| **Data leakage** | Test information accidentally influencing training or tuning, making scores unrealistically good |
+
+---
+
+## Worked example: spotting the stop point
+
+1,000 photos of cats and dogs are split 70/15/15: **700 training**, **150 validation**, **150 test**. A network trains for six epochs, and both losses are recorded.
+
+| Epoch | Training loss | Validation loss | What is happening |
+|---|---|---|---|
+| 1 | 0.90 | 0.95 | Learning |
+| 2 | 0.60 | 0.68 | Learning |
+| 3 | 0.40 | 0.52 | Learning |
+| **4** | **0.25** | **0.50** | **Validation loss is lowest** ✅ |
+| 5 | 0.12 | 0.55 | Training ↓, validation ↑ ⚠️ |
+| 6 | 0.05 | 0.65 | Overfitting getting worse |
+
+**Reading the table:**
+1. Epochs 1 to 4: both losses fall, so the network is generalising.
+2. Epoch 5: training loss keeps dropping but validation loss turns upward. **Overfitting has started.**
+3. The best moment to stop is **epoch 4**, where the validation loss is lowest.
+4. Only after stopping do we use the 150 test photos, once, to get the final score.
+
+---
+
+## Learner activity
+
+**Task 1.** A different network gives these results. Which epoch should you stop at, and at which epoch does overfitting start?
+
+| Epoch | Training loss | Validation loss |
+|---|---|---|
+| 1 | 0.80 | 0.85 |
+| 2 | 0.50 | 0.55 |
+| 3 | 0.30 | 0.45 |
+| 4 | 0.18 | 0.47 |
+| 5 | 0.08 | 0.60 |
+
+**Task 2.** You have 200 labelled examples and use a 70/15/15 split. How many go in each set?
+
+**Task 3.** A learner tunes the network's settings again and again, each time checking the test-set score, and keeps the best. Why is this a problem, and what should they have used instead?
+
+---
+
+## Answers and expected outcomes
+
+<details>
+<summary><b>Click to reveal</b></summary>
+
+**Task 1**
+- Stop at **epoch 3**, where validation loss is lowest (0.45).
+- Overfitting starts at **epoch 4**: training loss keeps falling (0.30 → 0.18) while validation loss rises (0.45 → 0.47).
+
+**Task 2**
+- Training: 200 × 0.70 = **140**
+- Validation: 200 × 0.15 = **30**
+- Test: 200 × 0.15 = **30**
+- (140 + 30 + 30 = 200 ✔)
+
+**Task 3**
+- Repeatedly tuning against the test set leaks information from it into the model choice. The test set is no longer "unseen", so the final score is **over-optimistic** (data leakage).
+- They should have used the **validation set** for tuning and kept the test set for a single final evaluation.
+
+**Expected outcome:** the learner can recognise overfitting from diverging training and validation losses, choose a stopping point, and state the separate roles of the three data sets.
+
+**Teacher check:** ask, "A network scores 99% on its training data but 60% on new data. What is wrong, and how would you have caught it earlier?" A good answer: it is overfitting (memorised the training data), and watching the validation loss rise during training would have shown it earlier.
+
+</details>
+
+---
+
+## References
+
+1. Educative. "What is train/test/validation set splitting?" https://www.educative.io/answers/what-is-train-test-validation-set-splitting
+2. KodeKloud Notes. *Machine Learning Fundamentals: Overfitting and the Train/Validation/Test Split.* https://notes.kodekloud.com/docs/Machine-Learning-Fundamentals/Generalisation-and-Types-of-Learning/Overfitting-and-the-TrainValidationTest-Split/page
+3. Rensselaer Polytechnic Institute, Tetherless World Constellation. *Generalization, Overfitting, Model Validation* (lecture slides, citing *An Introduction to Statistical Learning*). https://tw.rpi.edu/sites/default/files/2024-10/Data_Analytics2024Fall_Group2_Generalization_Overfitting_Validation.pdf
+4. arXiv:1905.05241. *Deep Neural Networks for Marine Debris Detection in Sonar Images.* https://arxiv.org/pdf/1905.05241
+
