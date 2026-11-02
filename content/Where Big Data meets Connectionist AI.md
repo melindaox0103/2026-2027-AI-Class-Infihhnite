@@ -3,6 +3,7 @@
 Explanations
 Neural networks became powerful when three things arrived together: lots of data, networks with many parameters, and fast hardware (GPUs) to train them.
 flowchart LR
+
     D["📦 Big data<br/>many examples"] --> B["🚀 Deep learning<br/>breakthroughs"]
     P["🧠 Many parameters<br/>big networks"] --> B
     G["⚡ GPUs<br/>fast parallel maths"] --> B
