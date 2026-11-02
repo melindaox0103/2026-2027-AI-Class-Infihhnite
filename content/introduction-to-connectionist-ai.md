@@ -1220,9 +1220,12 @@ Use the same network and the same weights.
 
 # 3.1 Basic structure
 
-**Terms addressed:** Layers, Connections, Parameters.
+**Terms addressed:** Feedforward Networks, One-way flow, Multilayer perceptron, Typical uses, Layers, Connections, Parameters.
 
 The generated visualizer provides an excellent visual of a basic network. While it only shows a single neuron being calculated in detail, it hints at the overall architecture.
+
+A **Feedforward Network**, often called a **Multilayer Perceptron (MLP)**, is the foundational design where information strictly moves in a **one-way flow** from inputs to outputs (as the visualizer arrows show). They are typically used for simple prediction and classification tasks on structured data, such as forecasting a numerical value or sorting data into categories.
+
 
 ```mermaid
 flowchart LR
