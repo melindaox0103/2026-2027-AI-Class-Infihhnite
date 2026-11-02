@@ -1214,6 +1214,10 @@ Use the same network and the same weights.
 
 ---
 
+# Architecture of Neural Networks
+
+---
+
 # 3.1 Basic structure
 
 **Terms addressed:** Layers, Connections, Parameters.
@@ -1222,17 +1226,17 @@ The generated visualizer provides an excellent visual of a basic network. While 
 
 ```mermaid
 flowchart LR
-    R1["Output-Y<br/>0.618"]
-    R2["Error E<br/>0.0731"]
     B["Bias (b)"]
     X1("X1")
     X2("X2")
+    R1["Output-Y<br/>0.618"]
+    R2["Error E<br/>0.0731"]
     S["Weighted Sum<br/>(sigma Z)"]
     A["Activation<br/>Sigmoid"]
     E(("Total<br/>Error<br/>(E)"))
 
-    X1 -->|weight 1| S
     X2 -->|weight 2| S
+    X1 -->|weight 1| S
     B --> S
     S --> A
     A -->|"Final output (y)"| E
@@ -1240,7 +1244,7 @@ flowchart LR
     A ~~~ R2
 
     classDef box fill:#cfe2f3,stroke:#333,color:#000
-    classDef plain fill:none,stroke:none,color:#000
+    classDef plain fill:none,stroke:none
     class X1,X2,S,A box
     class R1,R2,B plain
     style E fill:#fff,stroke:#333,color:#000
@@ -1334,5 +1338,4 @@ A **Feedforward Network**, often called a **Multilayer Perceptron (MLP)**, is th
 - 3Blue1Brown. (2017). *But what is a neural network? | Chapter 1, Deep learning* [Video]. YouTube. https://www.youtube.com/watch?v=I9v8efdO6vs
 - Nielsen, M. A. (2015). *Neural Networks and Deep Learning* (Chapter 1: Using neural nets to recognize handwritten digits). Determination Press. http://neuralnetworksanddeeplearning.com/
 - freeCodeCamp. (2020). *Neural Networks Explained Simply in Python.* freeCodeCamp.org. https://www.freecodecamp.org/news/neural-networks-explained-simply-in-python/
-
 
