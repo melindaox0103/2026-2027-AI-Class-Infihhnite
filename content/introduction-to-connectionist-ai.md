@@ -1,3 +1,254 @@
+# 1.1 Context and History
+
+Connectionist AI developed from the idea that computers could imitate certain aspects of how the human brain processes information. Instead of relying only on programmed rules, researchers explored networks of artificial neurons that could learn patterns from data.
+
+Its development involved several important stages, including early neuron models, the perceptron, periods of setbacks, the revival of backpropagation, and the deep learning boom.
+
+**Early Neuron Models**
+
+The idea of artificial neurons began in the 1940s, when researchers Warren McCulloch and Walter Pitts introduced a mathematical model of a biological neuron in 1943.
+
+Their model showed how simplified artificial neurons could receive inputs and produce outputs based on logical operations. This became one of the earliest foundations of neural networks.
+
+Unlike real biological neurons, these artificial neurons used mathematical calculations to represent how information could be processed.
+
+**Main Idea:**
+- Artificial neurons receive inputs.
+- They process information using mathematical rules.
+- They produce an output depending on the inputs.
+
+**Visual Representation:**
+
+    INPUTS
+      |
+      v
+    +----------------+
+    | Artificial     |
+    | Neuron         |
+    +----------------+
+      |
+      v
+    OUTPUT
+
+This early research introduced the possibility of building computer systems inspired by the human brain.
+
+**The Perceptron**
+
+In 1958, psychologist Frank Rosenblatt introduced the **Perceptron**, an early type of artificial neural network.
+
+The perceptron was designed to learn how to classify information into different categories. It could adjust its weights based on training examples, allowing it to improve its predictions.
+
+For example, a perceptron could be trained to distinguish between two categories by learning from examples of each category.
+
+**How It Works:**
+
+1. Receives input values.
+2. Assigns weights to each input.
+3. Calculates a weighted sum.
+4. Uses an activation function to produce an output.
+5. Adjusts its weights when its prediction is incorrect.
+
+**Visual Representation:**
+
+    INPUTS
+      |
+      v
+    +------------------+
+    | Assign Weights   |
+    +------------------+
+      |
+      v
+    +------------------+
+    | Calculate Sum    |
+    +------------------+
+      |
+      v
+    +------------------+
+    | Activation       |
+    | Function         |
+    +------------------+
+      |
+      v
+    +------------------+
+    | Classification   |
+    +------------------+
+
+The perceptron was an important development because it demonstrated that machines could learn from examples instead of relying entirely on manually written instructions.
+
+However, early perceptrons had limitations. A single-layer perceptron could only solve problems that were linearly separable, meaning the categories could be separated using a straight line or a similar linear boundary.
+
+**Setbacks in Connectionist AI**
+
+Despite the early excitement surrounding perceptrons, researchers soon discovered important limitations.
+
+In 1969, Marvin Minsky and Seymour Papert published a book called *Perceptrons*, which discussed the limitations of single-layer perceptrons.
+
+One famous example was the **XOR problem**.
+
+A single-layer perceptron could not correctly solve XOR because its outputs could not be separated using a single straight line.
+
+**XOR Example:**
+
+| Input A | Input B | Output |
+|---|---|---|
+| 0 | 0 | 0 |
+| 0 | 1 | 1 |
+| 1 | 0 | 1 |
+| 1 | 1 | 0 |
+
+This problem demonstrated that simple perceptrons could not solve every type of classification task.
+
+**Other Challenges:**
+- Limited computing power made larger neural networks difficult to develop.
+- Training more complex networks was challenging.
+- Researchers lacked effective methods for adjusting weights across multiple layers.
+
+As a result, interest and funding for neural network research decreased during periods often associated with the **AI Winter**.
+
+**Visual Timeline:**
+
+    Early Neural Networks
+             |
+             v
+        Perceptron
+             |
+             v
+      Technical Limitations
+             |
+             v
+       Reduced Interest
+             |
+             v
+          AI Winter
+
+Although progress slowed, researchers continued exploring ways to improve neural networks.
+
+**Revival of Backpropagation**
+
+Interest in neural networks increased again during the 1980s, partly due to the development and wider recognition of **backpropagation**.
+
+Backpropagation is a training algorithm that allows neural networks with multiple layers to adjust their weights more effectively.
+
+Unlike a single-layer perceptron, a multi-layer neural network can learn more complicated patterns by processing information through hidden layers.
+
+Backpropagation works by calculating the error between a network's prediction and the correct answer, then sending information about that error backward through the network to determine how its weights should change.
+
+**How Backpropagation Works:**
+
+1. The network receives input data.
+2. It produces a prediction.
+3. The prediction is compared with the correct answer.
+4. The network calculates the error.
+5. The error is propagated backward through the network.
+6. The weights are adjusted to reduce the error.
+
+**Visual Representation:**
+
+          INPUT DATA
+               |
+               v
+        +--------------+
+        | Input Layer  |
+        +--------------+
+               |
+               v
+        +--------------+
+        | Hidden Layer |
+        +--------------+
+               |
+               v
+        +--------------+
+        | Output Layer |
+        +--------------+
+               |
+               v
+           PREDICTION
+               |
+               v
+         Calculate Error
+               |
+               v
+       BACKPROPAGATION
+               |
+               v
+         Adjust Weights
+               |
+               +-------> Repeat Training
+
+Backpropagation made it more practical to train multi-layer neural networks and helped researchers overcome some of the limitations of earlier models.
+
+In 1986, David Rumelhart, Geoffrey Hinton, and Ronald Williams published influential research demonstrating how backpropagation could help neural networks learn internal representations.
+
+This contributed significantly to the renewed interest in connectionist AI.
+
+**The Deep Learning Boom**
+
+During the 2000s and especially the 2010s, connectionist AI experienced major improvements due to advances in computing power, larger datasets, and better training techniques.
+
+This period became known as the **Deep Learning Boom**.
+
+Deep learning uses neural networks with multiple layers to learn increasingly complex patterns from data.
+
+Several developments contributed to its growth:
+
+- **More Data:** The growth of the internet created enormous amounts of digital data for training AI systems.
+- **Greater Computing Power:** GPUs made it possible to train larger neural networks more efficiently.
+- **Improved Algorithms:** New techniques helped neural networks train more effectively.
+- **Better Results:** Deep learning achieved major improvements in tasks such as image recognition, speech recognition, and natural language processing.
+
+**Important Milestone: AlexNet (2012)**
+
+One major breakthrough occurred in 2012 when a deep neural network called **AlexNet** achieved outstanding results in the ImageNet image recognition competition.
+
+AlexNet used multiple layers of artificial neurons and GPUs to recognize objects in images.
+
+Its success demonstrated the potential of deep learning and encouraged further research and investment in neural networks.
+
+**Visual Representation:**
+
+    MORE DIGITAL DATA
+            |
+            v
+    GREATER COMPUTING POWER
+            |
+            v
+      IMPROVED ALGORITHMS
+            |
+            v
+    +----------------------+
+    |   DEEP NEURAL        |
+    |   NETWORKS           |
+    +----------------------+
+            |
+            v
+      BETTER AI RESULTS
+            |
+     +------+------+------+
+     |      |      |      |
+     v      v      v      v
+   Images Speech  Text  Other
+          Recognition Processing Tasks
+
+Today, deep learning is used in many areas, including:
+- Image and facial recognition.
+- Speech recognition and voice assistants.
+- Language translation.
+- Recommendation systems.
+- Generative AI tools.
+
+**Historical Timeline**
+
+| Year / Period | Development | Importance |
+|---|---|---|
+| 1943 | McCulloch and Pitts' artificial neuron model. | Introduced an early mathematical model of artificial neurons. |
+| 1958 | Rosenblatt's Perceptron. | Demonstrated that machines could learn from examples. |
+| 1969 | *Perceptrons* by Minsky and Papert. | Highlighted limitations of single-layer perceptrons. |
+| 1970s | AI Winter. | Interest in neural network research decreased. |
+| 1980s | Revival of backpropagation. | Made training multi-layer neural networks more practical. |
+| 1986 | Research by Rumelhart, Hinton, and Williams. | Helped popularize backpropagation. |
+| 2012 | AlexNet wins the ImageNet competition. | Demonstrated the potential of deep learning. |
+| 2010s–Present | Deep Learning Boom. | Neural networks became widely used in modern AI applications. |
+
 # 1.2 Key Characteristics
 
 Connectionist AI has several important characteristics that explain how it learns and processes information. These characteristics are inspired by the way the human brain works.
