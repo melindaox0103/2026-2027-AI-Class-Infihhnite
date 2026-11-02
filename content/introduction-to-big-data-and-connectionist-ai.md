@@ -250,37 +250,13 @@ The warehouse answered a **known question**. Big data helped the store **discove
 
 ---
 
-## Learner activity
-
-Write **W** (warehouse) or **B** (big data) for each item.
-
-1. A neat table of school lunch sales
-2. Thousands of playground camera videos
-3. A report of test scores for each class
-4. Millions of chat messages from a video game
-
-<details>
-<summary><b>Answers</b></summary>
-
-1. **W**: a neat, organized table
-2. **B**: videos are not neat tables
-3. **W**: reports use clean, organized data
-4. **B**: huge amount and many different forms
-
-**Expected outcome:** 4/4 means the learner can tell organized warehouse data from raw big data.
-**Teacher check:** Ask, "Why did Happy Toys need big data to find the dinosaur trend?" A good answer: the warehouse only answers questions you already know to ask, while big data lets you explore.
-
-</details>
-
----
-
 ## References
 
 1. Splunk. *Data Lake vs. Data Warehouse.* https://splunk.com/en_us/blog/learn/data-warehouse-vs-data-lake.html
 2. TechTarget. *Data lake vs. data warehouse: Key differences explained.* https://www.techtarget.com/data-technologies/feature/Data-lake-vs-data-warehouse-Key-differences-explained
 3. BMC Software. *Data Lake vs. Data Warehouse vs. Database.* https://www.bmc.com/blogs/data-lake-vs-data-warehouse-vs-database-whats-the-difference/
 
-*The Happy Toys example and the library/storage room comparisons are original illustrations.*
+
 ---
 
 ## References
