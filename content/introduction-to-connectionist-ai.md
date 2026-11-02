@@ -1073,7 +1073,7 @@ A simple fix is **early stopping**: stop training when the validation loss stops
 4. arXiv:1905.05241. *Deep Neural Networks for Marine Debris Detection in Sonar Images.* https://arxiv.org/pdf/1905.05241
 
 
-# 2.4 # Layers and the Forward Pass
+# 2.4 Layers and the Forward Pass
 
 ---
 
@@ -1209,5 +1209,130 @@ Use the same network and the same weights.
 2. Telnyx. "Forward Propagation in AI" (learning article). https://telnyx.com/learn-ai/forward-propogation-ai.md
 3. University of Tennessee at Chattanooga. *Neural Networks by an Example* (lecture slides). https://www.utc.edu/document/71441
 4. Cornell University, CS 4780. *The Backpropagation Algorithm* (lecture notes). https://www.cs.cornell.edu/courses/cs4780/2023fa/lectures/note_backprop.pdf
+
+# Architecture of Neural Networks
+
+---
+
+# 3.1 Basic structure
+
+**Terms addressed:** Layers, Connections, Parameters.
+
+The generated visualizer provides an excellent visual of a basic network. While it only shows a single neuron being calculated in detail, it hints at the overall architecture.
+
+```mermaid
+flowchart LR
+    R1["Output-Y<br/>0.618"]
+    R2["Error E<br/>0.0731"]
+    B["Bias (b)"]
+    X1("X1")
+    X2("X2")
+    S["Weighted Sum<br/>(sigma Z)"]
+    A["Activation<br/>Sigmoid"]
+    E(("Total<br/>Error<br/>(E)"))
+
+    X1 -->|weight 1| S
+    X2 -->|weight 2| S
+    B --> S
+    S --> A
+    A -->|"Final output (y)"| E
+    S ~~~ R1
+    A ~~~ R2
+
+    classDef box fill:#cfe2f3,stroke:#333,color:#000
+    classDef plain fill:none,stroke:none,color:#000
+    class X1,X2,S,A box
+    class R1,R2,B plain
+    style E fill:#fff,stroke:#333,color:#000
+```
+
+x<sub>1</sub> 1.00 x<sub>2</sub> 0.40 w1: 0.50 w2: -0.30 b: +0.10 Σ z: 0.48 σ(z) y
+
+1. **Layers:** A full network stacks these units. The visualizer shows:
+   - **An Input Layer** (on the far left, featuring inputs X<sub>1</sub> and X<sub>2</sub>).
+   - **A Hidden Layer / Processing Unit** (the blue rectangles in the middle, labeled "Weighted Sum (Z)" and "Activation Sigmoid"). This is where the core calculation happens.
+   - **An Output / Evaluation Unit** (the circle on the far right labeled "Total Error (E)" alongside the final output value of 0.618). Note: The visualizer illustrates just one single neuron within a layer.
+
+2. **Connections & Parameters:**
+   The arrows connecting inputs to calculations represent the **Connections**.
+
+   Each connection is assigned specific **Parameters** that the network learns during training. The visualizer labels these clearly:
+   - **Weights (w1, w2):** These determine the input's importance. In the example, w1 (0.50) is weighted positively, and w2 (-0.30) is weighted negatively.
+   - **Bias (b):** The extra offset (labeled "Bias (b)" pointing into the Weighted Sum with a value of +0.10), which shifts the neuron's response.
+
+The math shown at the bottom of the visualizer (`z=(x1w1)+(x2w2)+b`) perfectly details how these connections and parameters form the "Weighted Sum" (yielding 0.48), which then passes through the Sigmoid activation to produce an output y=0.618 and an error E=0.0731.
+
+**References:**
+- 3Blue1Brown. (2017). *But what is a neural network? | Chapter 1, Deep learning* [Video]. YouTube. https://www.youtube.com/watch?v=I9v8efdO6vs
+- Nielsen, M. A. (2015). *Neural Networks and Deep Learning* (Chapter 1: Using neural nets to recognize handwritten digits). Determination Press. http://neuralnetworksanddeeplearning.com/
+- freeCodeCamp. (2020). *Neural Networks Explained Simply in Python.* freeCodeCamp.org. https://www.freecodecamp.org/news/neural-networks-explained-simply-in-python/
+
+### Advanced Concept Definitions
+
+While the visualizer is great for the math of a single neuron, we need standard definitions for the other foundational terms listed:
+
+#### Depth vs. Width
+
+This describes the "shape" of the network, beyond the single unit shown.
+
+- **Depth:** The number of hidden layers stacked between input and output. Deep Learning is characterized by high depth (many layers), allowing it to solve complex, layered problems.
+- **Width:** The number of neurons within a single layer.
+
+**References:**
+- Nielsen, M. A. (2015). *Neural Networks and Deep Learning* (Chapter 5: Why are deep neural networks hard to train?). Determination Press. http://neuralnetworksanddeeplearning.com/
+- Goodfellow, I., Bengio, Y., & Courville, A. (2016). *Deep Learning* (Chapter 6: Deep Feedforward Networks). MIT Press.
+
+---
+
+# 3.2 Transformers
+
+**Terms addressed:** Attention, Language Models, Parallel Processing.
+
+This is the state-of-the-art architecture for many complex AI tasks today, especially the large Language Models that power modern chatbots. Transformers replace the recurrent memory of RNNs with a concept called the **Attention mechanism**. This technique lets the network "pay attention" to multiple parts of an entire sentence or sequence simultaneously, understanding full context all at once. Crucially, this allows for **Parallel Processing**, which makes Transformers vastly faster to train than RNNs and CNNs when handling large amounts of data.
+
+**References:**
+- Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł., & Polosukhin, I. (2017). *Attention Is All You Need.* Advances in Neural Information Processing Systems (NeurIPS). https://arxiv.org/abs/1706.03762
+- Alammar, J. (2018). *The Illustrated Transformer.* Jay Alammar's Blog. https://jalammar.github.io/illustrated-transformer/
+
+---
+
+# 3.3 RNNs
+
+**RNNs (Recurrent Neural Networks)**
+
+**Terms addressed:** Sequences, Hidden-State Memory, Text and Time Series.
+
+Unlike the one-way flow of the visualizer, RNNs are specialized for **Sequences**. They "recalculate" outputs multiple times for a sequence of data, feeding information from one step into the next. This creates a built-in **Hidden-State Memory**. This recursive calculation makes RNNs excellent at processing ordered data like **Text** (interpreting sentences) and **Time Series** (forecasting stock trends based on history).
+
+**References:**
+- Olah, C. (2015). *Understanding LSTM Networks.* Colah's Blog. https://colah.github.io/posts/2015-08-Understanding-LSTMs/
+- DeepLearning.AI & Coursera. (n.d.). *Sequence Models* (Course 5 of Deep Learning Specialization by Andrew Ng). Coursera. https://www.coursera.org/specializations/deep-learning
+
+---
+
+# 3.4 CNNs
+
+**CNNs (Convolutional Neural Networks)**
+
+**Terms addressed:** Filters, Images, Pooling.
+
+CNNs are structurally distinct, specialized for **Images** and spatial data. Instead of connections from every input to every neuron (as implied by the visualizer), they use specialized mathematical structures called **Filters**. These filters scan small windows of an image to detect specific features, like edges or corners. This process is usually paired with a step called **Pooling**, which simplifies the input data to focus on key features and reduce computational load.
+
+**References:**
+- Starmer, J. (2022). *Convolutional Neural Networks (CNNs) Explained* [Video]. YouTube. https://www.youtube.com/@statquest
+- DeepLearning.AI & Coursera. (n.d.). *Convolutional Neural Networks* (Course 4 of Deep Learning Specialization by Andrew Ng). Coursera. https://www.coursera.org/specializations/deep-learning
+
+---
+
+# 3.5 Feedforward Networks
+
+**Terms addressed:** Feedforward Networks, One-way flow, Multilayer perceptron, Typical uses.
+
+A **Feedforward Network**, often called a **Multilayer Perceptron (MLP)**, is the foundational design where information strictly moves in a **one-way flow** from inputs to outputs (as the visualizer arrows show). They are typically used for simple prediction and classification tasks on structured data, such as forecasting a numerical value or sorting data into categories.
+
+**References:**
+- 3Blue1Brown. (2017). *But what is a neural network? | Chapter 1, Deep learning* [Video]. YouTube. https://www.youtube.com/watch?v=I9v8efdO6vs
+- Nielsen, M. A. (2015). *Neural Networks and Deep Learning* (Chapter 1: Using neural nets to recognize handwritten digits). Determination Press. http://neuralnetworksanddeeplearning.com/
+- freeCodeCamp. (2020). *Neural Networks Explained Simply in Python.* freeCodeCamp.org. https://www.freecodecamp.org/news/neural-networks-explained-simply-in-python/
 
 
