@@ -15,8 +15,7 @@
 Selected module: Big Data and Connectionist AI
 
 ## Purpose and intended learners
-This project explains **Big Data and Connectionist AI** to primary school
-students with no background in the module. We are creating a Study Guide with
+This project explains **Big Data and Connectionist AI** to beginners with no background in the module. We are creating a Study Guide with
 a Test Bank, quizzes and games, PPT slides, and interactive game-style video
 tutorials with pop quizzes. All of them are built from the shared Markdown
 content in this repository. Example question : Leo's family phone has 5,000 photos. That is a LOT of data.
