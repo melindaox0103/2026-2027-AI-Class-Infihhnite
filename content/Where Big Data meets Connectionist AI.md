@@ -279,7 +279,7 @@ The overall process:
 1. **Features and Labels:** Identify the information the AI needs and the correct answers.
 2. **Cleaning and Scaling:** Fix incorrect data and adjust numerical values.
 3. **Splitting:** Divide the dataset into training, validation, and testing groups.
-4. **Class Imbalance:** Make sure the AI does not become biased toward categories with more examples.
+4. **Class Imbalance:** Make sure the AI does favor categories with more examples.
 5. **Batching:** Divide the training data into smaller groups for processing.
 6. **Training:** Feed the prepared batches into the neural network so it can learn patterns.
 
