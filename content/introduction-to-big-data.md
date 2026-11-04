@@ -25,11 +25,11 @@
 
 Big Data is an important part of today's digital world. It helps businesses understand customers, schools improve learning, scientists study animals, sports teams analyse performance, and social media platforms recommend content.
 
-To understand how Big Data works, we start with the 5 Vs (section 1.2), which describe its main characteristics. After that we look at how data has changed over time (1.3), the types of data and where they come from (1.4), and how big data differs from a data warehouse (1.5). Later chapters cover how data is processed and analysed, and the technologies behind it.
+To understand how Big Data works, we start with the 5 Vs (section 1.2), which describe its main characteristics. After that we look at how data has changed over time (1.3), the types of data and where they come from (1.4), and how Big Data differs from a data warehouse (1.5). Later chapters cover how data is processed and analyzed, and the technologies behind it.
 
 #### What makes data "big"?
 
-Big data is a mix of organised, partly organised and unorganised data that organisations collect and then study to find useful insights [1]. Early descriptions of big data used three Vs: **volume** (how much), **velocity** (how fast) and **variety** (how many kinds) [1][4].
+Big Data is a mix of organized, partly organized and unorganized data that organisations collect and then study to find useful insights [1]. Early descriptions of Big Data used three Vs: **volume** (how much), **velocity** (how fast) and **variety** (how many kinds) [1][4].
 
 What counts as "big" is not a fixed number. It depends on the computing power available at the time [1].
 
@@ -43,7 +43,7 @@ What counts as "big" is not a fixed number. It depends on the computing power av
 
 Small data is data that is small enough for a person to understand. It is organised in a way that makes it easy to access and use [5]. Even five related pieces of data, or one eyewitness observation, can count as small data [5].
 
-A common way to explain the difference is: big data is about machines, small data is about people [5].
+A common way to explain the difference is: Big Data is about machines, small data is about people [5].
 
 | Aspect | Small data | Big data |
 |---|---|---|
@@ -59,7 +59,7 @@ The "why versus what" contrast is the view of Martin Lindstrom, who popularised 
 
 - It can show feelings and context that numbers alone often miss [3].
 - It started in marketing and is now used in many fields and by companies of any size [4].
-- It works best together with big data: big data shows what is happening, and small data helps explain why [3][4].
+- It works best together with Big Data: Big Data shows what is happening, and small data helps explain why [3][4].
 
 <!-- REVIEW 27/10: removed "faster and cheaper to collect" and "useful for teams without big-data infrastructure". Not found in WEF, Iberdrola or Wikipedia. Re-add only with a source. -->
 
@@ -67,7 +67,7 @@ The "why versus what" contrast is the view of Martin Lindstrom, who popularised 
 
 ### 1.2 The 5 Vs
 
-The 5 Vs are five main features of big data: velocity, volume, value, variety and veracity [1].
+The 5 Vs are five main features of Big Data: velocity, volume, value, variety and veracity [1].
 
 | V | What it means [1] | Everyday example |
 |:---|:---|:---|
@@ -88,7 +88,7 @@ Leo's family phone has 5,000 photos. Which V is this?
 3. **Choose.** The clue is about *how much*, so it is **Volume** (answer B).
 4. **Check the others.** Nothing says the photos arrive quickly (not Velocity), that anything is wrong with them (not Veracity), or that they are used for something (not Value).
 
-Note: one phone is not "big data" by itself. The example only shows what the word *volume* means.
+Note: one phone is not "Big Data" by itself. The example only shows what the word *volume* means.
 
 #### Try it: which V is it?
 
@@ -112,19 +112,19 @@ Match each situation to a V.
 
 ### 1.3 Evolution and Benefits
 
-#### Evolution of big data
+#### Evolution of Big Data
 
 - **Traditional databases:** people stored organised information, such as customer names and sales records.
 - **Web and social media:** websites and social media created more data, such as comments, photos, videos and searches.
 - **Cloud computing:** people could store data and use computer power over the internet.
 - **Internet of Things (IoT):** devices such as smartwatches and sensors began collecting data automatically.
-- **Today:** big data tools and AI help people analyse very large amounts of information.
+- **Today:** Big Data tools and AI help people analyse very large amounts of information.
 
 <!-- REVIEW 27/10: timeline has no source yet. Add a reference before marking this section "checked". -->
 
-#### Benefits of big data
+#### Benefits of Big Data
 
-Organisations use big data to improve how they work, serve customers better and personalise marketing [1].
+Organisations use Big Data to improve how they work, serve customers better and personalise marketing [1].
 
 | Benefit | What it means | Example (written by our team) |
 |:---|:---|:---|
@@ -262,9 +262,9 @@ The warehouse answered a **known question**. Big data helped the store **discove
 
 Sources were opened and checked in the Stage 1 Content Review Log (Section 3).
 
-1. TechTarget. *5V's of big data.* https://www.techtarget.com/data-technologies/definition/5Vs-of-big-data
+1. TechTarget. *5V's of Big Data.* https://www.techtarget.com/data-technologies/definition/5Vs-of-big-data
 2. Educative. *Structured vs. semi-structured vs. unstructured data.* https://www.educative.io/answers/structured-vs-semi-structured-vs-unstructured-data
-3. World Economic Forum (from Knowledge@Wharton). *Is small data the new big data?* https://www.weforum.org/stories/2016/04/is-small-data-the-new-big-data/
+3. World Economic Forum (from Knowledge@Wharton). *Is small data the new Big Data?* https://www.weforum.org/stories/2016/04/is-small-data-the-new-big-data/
 4. Iberdrola. *What is small data?* https://iberdrola.com/innovation/what-is-small-data
 5. Wikipedia. *Small data.* https://en.wikipedia.org/wiki/Small_data
 6. Coursera. *What Is Semi-structured Data?* https://www.coursera.org/articles/what-is-semi-structured-data
