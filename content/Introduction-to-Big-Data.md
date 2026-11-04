@@ -1112,8 +1112,6 @@ Organizations should follow relevant data protection laws and handle personal in
 
 **References**
 
-- NIST. *NIST Big Data Interoperability Framework: Volume 1, Definitions.* https://www.nist.gov/publications/nist-big-data-interoperability-framework-volume-1-definitions
-- NIST. *NIST Big Data Interoperability Framework: Volume 6, Reference Architecture.* https://www.nist.gov/publications/nist-big-data-interoperability-framework-volume-6-reference-architecture
 
 ---
 
