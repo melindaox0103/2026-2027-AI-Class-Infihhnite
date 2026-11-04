@@ -1,5 +1,9 @@
-# Part 2: Connectionist AI
-## 1.1 Context and History
+# Section 2: Connectionist AI
+## Chapter 1: Introduction to Connectionist AI
+
+---
+
+### 1.1 Context and History
 
 Connectionist AI developed from the idea that computers could imitate certain aspects of how the human brain processes information. Instead of relying only on programmed rules, researchers explored networks of artificial neurons that could learn patterns from data [6].
 
@@ -264,7 +268,7 @@ Today, deep learning is used in many areas, including [8]:
 
 ---
 
-## 1.2 Key Characteristics
+### 1.2 Key Characteristics
 
 Connectionist AI has several important characteristics that explain how it learns and processes information. These characteristics are inspired by the way the human brain works [2][3].
 
@@ -355,7 +359,7 @@ For example, to teach an AI to recognize spam emails, we provide it with many em
 
 ---
 
-## 1.3 Knowledge Stored in Connections
+### 1.3 Knowledge Stored in Connections
 
 In Connectionist AI, knowledge is represented through the connections between artificial neurons [1][4]. These connections have numerical values called **weights**, which determine how strongly one neuron influences another [1][4].
 
@@ -460,7 +464,7 @@ Think of a group project. One student knows about colors, another understands sh
 
 ---
 
-## 1.4 Traditional Machine Learning
+### 1.4 Traditional Machine Learning
 
 Traditional machine learning and Connectionist AI are both approaches to machine learning. However, they can differ in how they process data, use computing resources, and identify important features [1][2].
 
@@ -554,7 +558,7 @@ For example [2]:
 
 ---
 
-## 1.5 Biological vs Artificial Neuron; Connectionist vs Symbolic AI
+### 1.5 Biological vs Artificial Neuron; Connectionist vs Symbolic AI
 
 Connectionist AI was inspired by the way the human brain processes information. However, artificial neurons are simplified mathematical models rather than exact copies of biological neurons [3][5].
 
