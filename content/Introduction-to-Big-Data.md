@@ -1334,9 +1334,16 @@ These technologies help make Big Data systems more flexible, responsive, and eff
 **References**
 
 - NIST. *Cloud Computing.* https://csrc.nist.gov/glossary/term/cloud_computing
+
 - Google Cloud. *What Is Cloud Scalability?* https://cloud.google.com/discover/what-is-cloud-scalability
-- Singh, R. and Gill, S. S. (2023). *Edge AI: A Survey.* Internet of Things and Cyber-Physical Systems. https://doi.org/10.1016/j.iotcps.2023.02.004
-- Google Cloud. *What Is Apache Spark?* https://cloud.google.com/learn/what-is-apache-spark
+
+- Singh, R., & Gill, S. S. (2023). Edge AI: A survey. *Internet of Things and Cyber-Physical Systems*, 3, 71–92. https://doi.org/10.1016/j.iotcps.2023.02.004
+
+- Amazon Web Services. (n.d.). *What Is Real-Time Data Streaming?* https://aws.amazon.com/what-is/real-time-data-streaming/
+
+- IBM. (2026). *What Is Real-Time Data Streaming?* https://www.ibm.com/think/topics/real-time-data-streaming
+
+- Pashikanti, S. (2023). Real-time data streaming and analytics: Architecting solutions on cloud platforms. *Journal of Artificial Intelligence, Machine Learning & Data Science*, 1(1), 1–7.
 
 ---
 
