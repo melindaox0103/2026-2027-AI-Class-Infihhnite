@@ -73,7 +73,7 @@ Leo's family phone has 5,000 photos. Which V is this?
 
 1. **Read the clue.** The clue is "5,000 photos", which is about a *number of items*.
 2. **Match the clue to a question.** Volume asks "how much?", velocity asks "how fast?", variety asks "how many kinds?", veracity asks "is it true?", value asks "is it useful?".
-3. **Choose.** The clue is about *how much*, so it is **Volume** (answer B).
+3. **Choose.** The clue is about *how much*, so it is **Volume**.
 4. **Check the others.** Nothing says the photos arrive quickly (not Velocity), that anything is wrong with them (not Veracity), or that they are used for something (not Value).
 
 Note: one phone is not "Big Data" by itself. The example only shows what the word *volume* means.
