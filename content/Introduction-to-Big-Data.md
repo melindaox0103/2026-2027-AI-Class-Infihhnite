@@ -1112,6 +1112,14 @@ Organizations should follow relevant data protection laws and handle personal in
 
 **References**
 
+- Kazanskaia, A. N. (2025). *Challenges and Solutions in Big Data Analytics: Strategies for Effective Implementation*. NEYA Global Journal of Non-Profit Studies. 
+  https://doi.org/10.64357/neya-gjnps-hr-bg-dt-09
+
+- Kitchin, R. (2014). *The Data Revolution: Big Data, Open Data, Data Infrastructures and Their Consequences*. SAGE Publications. 
+  https://doi.org/10.4135/9781473909472
+
+- Amoria Bond. (2025). *The Challenges of Implementing Big Data*. 
+  https://www.amoriabond.com/insights/articles/the-challenges-of-implementing-big-data
 
 ---
 
