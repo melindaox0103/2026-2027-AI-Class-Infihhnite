@@ -1,18 +1,6 @@
 # Section 1: Big Data
 
 ## Chapter 1: Introduction to Big Data
-
-### Development status (Stage 1 snapshot)
-
-| Section | Status | Notes |
-|:---|:---|:---|
-| 1.1 Definition | Drafted | Needs peer review |
-| 1.2 The 5 Vs | Drafted | Includes worked example, activity and answers |
-| 1.3 Evolution and Benefits | Drafted | Evolution timeline still needs a source |
-| 1.4 Types of Data and Sources | Drafted | Includes activity and answers; examples rewritten |
-| 1.5 Big Data vs Data Warehousing | Outline only | Not yet written |
-| Chapters 2 and 3 | Outline only | See the outline file |
-
 **Terms used in this chapter**
 
 - **Data**: facts such as numbers, words, pictures or sounds that a computer can store.
