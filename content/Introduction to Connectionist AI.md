@@ -722,11 +722,19 @@ Imagine an AI system deciding whether to approve a loan application.
 8. Rudin, C. (2019). *Stop Explaining Black Box Machine Learning Models for High Stakes Decisions and Use Interpretable Models Instead.* Nature Machine Intelligence, 1, 206–215. https://doi.org/10.1038/s42256-019-0048-x
 9. Phillips, P. J. et al. (2021). *Four Principles of Explainable Artificial Intelligence.* NISTIR 8312, National Institute of Standards and Technology. https://doi.org/10.6028/NIST.IR.8312
 
-# 2.1 How Networks Learn
+## Chapter 2: Basics of Neural Networks
 
 ---
 
-## Explanations
+### 2.1 How Networks Learn
+
+> **Part:** Connectionist AI · **Chapter:** Basics of Neural Networks · **Level:** Beginner
+> **Covers:** loss, gradient descent, backpropagation, the training process
+> **Before you start:** this lesson uses *weights* and *predictions* (see 2.2 Inside One Neuron) and the *forward pass* (see 2.4 Layers and the Forward Pass). If you have not read them yet, read them first.
+
+---
+
+#### Explanations
 
 A neural network learns by **adjusting its weights** (the numbers inside it that control its behavior) until its predictions get close to the correct answers. Learning is a loop of three jobs:
 
@@ -736,7 +744,7 @@ A neural network learns by **adjusting its weights** (the numbers inside it that
 | **Find the blame** | How much did each weight contribute to the error? | Backpropagation |
 | **Fix the weights** | Which way, and how far, should each weight move? | Gradient descent |
 
-### Gradient descent and loss
+##### Gradient descent and loss
 The **loss** is a single number saying how wrong the network is. Lower is better. Training means finding weights that make the loss as small as possible.
 
 Picture the loss as a hilly landscape and the weight as a ball. The **gradient** is the slope under the ball. It points uphill, so we step in the **opposite** direction (downhill):
@@ -745,12 +753,12 @@ Picture the loss as a hilly landscape and the weight as a ball. The **gradient**
 new weight = old weight − learning rate × gradient
 ```
 
-### Backpropagation
+##### Backpropagation
 A real network has millions of weights, so we need each weight's gradient quickly. **Backpropagation** does this with the **chain rule** (a calculus rule for combining small effects into one big effect). It starts at the loss, works backward layer by layer, and reuses earlier results.
 
 > ⚠️ **Common mix-up:** backpropagation only *computes* the gradients. Gradient descent *uses* them to update the weights. They are two separate steps.
 
-### The training process
+##### The training process
 Each training step repeats four moves, shown here as a loop:
 
 ```mermaid
@@ -761,18 +769,18 @@ flowchart LR
     D --> A
 ```
 
-The loop runs over the training data many times. Data is usually fed in small groups called **batches**, and one full pass over all the data is an **epoch**.
+The loop runs over the training data many times. Data is usually fed in small groups called **mini-batches**, and one full pass over all the data is an **epoch**. When the update uses a small batch rather than all the data, the method is called **mini-batch** (or *stochastic*) gradient descent.
 
-### Good to know
+##### Good to know
 
 1. **Different tasks use different loss functions.** *Mean squared error* (MSE) is common when predicting numbers, like a house price. *Cross-entropy* is common when choosing a category, like cat or dog.
 2. **Real networks have many weights.** Each weight gets its **own gradient** and is updated by the same rule. The worked example uses one weight only to keep the numbers readable.
 3. **Backpropagation needs the forward pass.** The values calculated on the way forward are stored, then reused on the way back. That is why the forward pass always comes first.
-4. **Watch the loss to diagnose training.** If loss falls steadily, learning is working. If it bounces up and down or grows, the learning rate is usually too high. If it barely moves, it may be too low. Training stops when the loss stops improving. Falling loss on training data alone does not prove the network is good, which is the topic of *Overfitting and Generalisation*.
+4. **Watch the loss to diagnose training.** If loss falls steadily, learning is working. If it bounces up and down or grows, the learning rate is usually too high. If it barely moves, it may be too low. Training usually stops when the loss on **validation** data stops improving (see 2.3). Falling loss on training data alone does not prove the network is good, which is the topic of 2.3 *Overfitting and Generalization*.
 
 ---
 
-## Terminology
+#### Terminology
 
 | Term | Meaning |
 |---|---|
@@ -781,12 +789,12 @@ The loop runs over the training data many times. Data is usually fed in small gr
 | **Gradient** | The slope of the loss for a weight: which way and how steeply the loss rises |
 | **Learning rate** | The step size of each update. Too small is slow. Too large overshoots |
 | **Chain rule** | Calculus rule that multiplies small effects together to get a total effect |
-| **Batch** | A small group of training examples used for one update |
+| **Mini-batch** | A small group of training examples used for one update (often just called a *batch*) |
 | **Epoch** | One full pass through the whole training set |
 
 ---
 
-## Worked example: one weight learning
+#### Worked example: one weight learning
 
 **Setup:** the network is just `prediction = w × x`. The input is `x = 2` and the correct answer is `4`, so the ideal weight is `w = 2`. Loss = `(prediction − 4)²`. Learning rate = `0.05`. Start at `w = 0`.
 
@@ -807,17 +815,21 @@ dLoss/dw = dLoss/dprediction × dprediction/dw
 
 **What to notice:** the loss falls each step (16 → 5.76 → 2.07) and `w` moves toward 2. Steps get smaller because the slope gets flatter near the bottom.
 
+**Check:** the distance from the ideal weight (2) shrinks by the same factor each step: 2 → 1.2 → 0.72 → 0.432. That factor is 0.6, which comes from `1 − 0.05 × 8`. This is why the steps get smaller and smoother.
+
 ---
 
-## Learner activity
+#### Learner activity
 
 **Task 1.** Using the same setup, calculate **Step 3** starting from `w = 1.568`. Fill in the prediction, loss, gradient and new `w`.
 
 **Task 2.** Redo **Step 0** with a larger learning rate of `0.3`. What is the new `w`, the new prediction, and the new loss? Compare the new loss with the starting loss of 16 and explain what happened.
 
+**Task 3.** For this network, the update is `new w = w − learning rate × 8 × (w − 2)`. Show that with a learning rate of **0.25** the weight just bounces between two values, and explain what happens for a learning rate **above 0.25**.
+
 ---
 
-## Answers and expected outcomes
+#### Answers and expected outcomes
 
 <details>
 <summary><b>Click to reveal</b></summary>
@@ -833,6 +845,11 @@ dLoss/dw = dLoss/dprediction × dprediction/dw
 - New prediction = 4.8 × 2 = **9.6**, new loss = (9.6 − 4)² = **31.36**.
 - The loss went **up** from 16 to 31.36. The step was too big, so `w` jumped past the ideal value of 2 and landed on the other side of the valley. This is **overshooting**.
 
+**Task 3**
+- The distance from 2 is multiplied by `1 − 8 × lr` every step. With `lr = 0.25` the factor is `1 − 2 = −1`, so `w` flips from one side of 2 to the other with the **same distance**. It never settles (for example 0 → 4 → 0).
+- Above 0.25 the factor is below −1, so the distance **grows** each step and the loss increases. This is **divergence**. (At 0.3 the factor is −1.4: 0 → 4.8 → −1.92 → …)
+- **Takeaway:** the best learning rate depends on the problem. Too large and training diverges.
+
 **Expected outcome:** the learner can apply the update rule by hand and explain that the learning rate controls step size, with too large a value causing overshooting.
 
 **Teacher check:** ask, "What is the difference between backpropagation and gradient descent?" A good answer: backpropagation computes each weight's gradient, and gradient descent uses the gradients to update the weights.
@@ -841,22 +858,24 @@ dLoss/dw = dLoss/dprediction × dprediction/dw
 
 ---
 
-## References
+#### References
 
 1. Cornell Virtual Workshop. *Gradient Descent.* https://cvw.cac.cornell.edu/SciML/mlp/gradient-descent
 2. Cornell University, CS 4780. *The Backpropagation Algorithm* (lecture notes). https://www.cs.cornell.edu/courses/cs4780/2023fa/lectures/note_backprop.pdf
-3. Wikipedia. *Backpropagation.* https://en.wikipedia.org/wiki/Backpropagation
-4. apxml.com. *Introduction to Deep Learning: Learning Rate.* https://apxml.com/courses/introduction-to-deep-learning/chapter-3-training-loss-optimization/learning-rate
-   
+3. Nielsen, M. A. (2015). *Neural Networks and Deep Learning*, Chapter 2: How the backpropagation algorithm works. Determination Press. http://neuralnetworksanddeeplearning.com/
+4. Rumelhart, D. E., Hinton, G. E., & Williams, R. J. (1986). Learning representations by back-propagating errors. *Nature*, 323, 533–536.
+5. 3Blue1Brown. (2017). *Gradient descent, how neural networks learn | Deep Learning Chapter 2* and *Backpropagation, intuitively | Deep Learning Chapter 3* [Videos]. YouTube.
 
-# 2.2 Inside One Neuron
+---
 
-> **Chapter:** Connectionist AI · **Section:** Basics of Neural Networks · **Level:** Beginner  
+### 2.2 Inside One Neuron
+
+> **Part:** Connectionist AI · **Chapter:** Basics of Neural Networks · **Level:** Beginner
 > **Covers:** inputs, bias and weights · weighted sum · activation function
 
 ---
 
-## Explanations
+#### Explanations
 
 An **artificial neuron** is the basic building block of a neural network. It takes in several numbers, does a small calculation, and produces **one** output number. That output can become an input for other neurons.
 
@@ -870,17 +889,17 @@ Every neuron does the same three things, in order:
 output = f( w₁x₁ + w₂x₂ + … + wₙxₙ + b )
 ```
 
-### Inputs, weights and bias
+##### Inputs, weights and bias
 - **Inputs (x):** the numbers going in. They are either the raw data or the outputs of the previous layer.
 - **Weights (w):** one per input. A weight says how **important** its input is. A large positive weight pushes the neuron up, a negative weight pushes it down, and a weight near zero means the input is mostly ignored.
 - **Bias (b):** one extra number per neuron, added to the sum. It shifts how easily the neuron switches on, even when every input is zero.
 
-Weights and biases are the **learnable parameters**. Training (the previous lesson) adjusts them.
+Weights and biases are the **learnable parameters**. Training (see 2.1) adjusts them.
 
-### Weighted sum
+##### Weighted sum
 Multiply each input by its weight, add the results, then add the bias. The result `z` is called the **pre-activation value**.
 
-### Activation function
+##### Activation function
 The **activation function** `f` turns `z` into the neuron's final output. It matters because without it, stacking layers would collapse into one simple linear calculation, which cannot learn complex patterns. The activation function adds **non-linearity**.
 
 | Function | Rule | Output range | Behavior |
@@ -889,7 +908,7 @@ The **activation function** `f` turns `z` into the neuron's final output. It mat
 | **Sigmoid** | `1 / (1 + e⁻ᶻ)` | between 0 and 1 | Smooth S-curve, squashes any `z` |
 | **ReLU** | `max(0, z)` | 0 and above | Blocks negatives, passes positives |
 
-### Visual: one neuron
+##### Visual: one neuron
 
 ```mermaid
 flowchart LR
@@ -904,7 +923,7 @@ flowchart LR
 
 ---
 
-## Terminology
+#### Terminology
 
 | Term | Meaning |
 |---|---|
@@ -918,7 +937,7 @@ flowchart LR
 
 ---
 
-## Worked example: "Should I go out to play?"
+#### Worked example: "Should I go out to play?"
 
 One neuron decides whether to go outside. Inputs are `1` for yes and `0` for no.
 
@@ -942,7 +961,7 @@ Bias `b = −0.2` (a small built-in reluctance to go out).
 
 ---
 
-## Learner activity
+#### Learner activity
 
 Use the same weights (`0.6`, `0.5`, `−0.8`) and bias (`−0.2`).
 
@@ -952,7 +971,7 @@ Use the same weights (`0.6`, `0.5`, `−0.8`) and bias (`−0.2`).
 
 ---
 
-## Answers and expected outcomes
+#### Answers and expected outcomes
 
 <details>
 <summary><b>Click to reveal</b></summary>
@@ -976,34 +995,38 @@ Use the same weights (`0.6`, `0.5`, `−0.8`) and bias (`−0.2`).
 
 ---
 
-## References
+#### References
 
 1. Runestone Academy, *AI4All*. "Inputs, Weights, and Biases." https://runestone.academy/ns/books/published/ai4all/sec-inputs-weights-and-biases.html
-2. apxml.com. *Introduction to Deep Learning: The Artificial Neuron Model.* https://apxml.com/courses/introduction-to-deep-learning/chapter-1-neural-network-foundations/artificial-neuron-model
-3. Towards AI. "How Does a Neural Network Learn? Neurons, Activation Functions and Loss." https://pub.towardsai.net/how-does-a-neural-network-learn-neurons-activation-functions-and-loss-7c92debbc59e
-4. CASRAI. "Neural Networks and Deep Learning Explained." https://casrai.org/news/neural-networks-and-deep-learning-explained
-
-
-# 2.3 Overfitting and Generalisation
+2. Nielsen, M. A. (2015). *Neural Networks and Deep Learning*, Chapter 1: Using neural nets to recognize handwritten digits (perceptrons and sigmoid neurons). Determination Press. http://neuralnetworksanddeeplearning.com/
+3. Stanford CS231n. *Neural Networks Part 1: Setting up the Architecture* (biological motivation and activation functions). https://cs231n.github.io/neural-networks-1/
+4. Goodfellow, I., Bengio, Y., & Courville, A. (2016). *Deep Learning*, Chapter 6: Deep Feedforward Networks. MIT Press. https://www.deeplearningbook.org/
 
 ---
 
-## Explanations
+### 2.3 Overfitting and Generalization
 
-The goal of training is **not** to do well on the examples the network has already seen. The goal is to do well on **new** examples it has never seen. This ability is called **generalisation**.
+> **Part:** Connectionist AI · **Chapter:** Basics of Neural Networks · **Level:** Beginner
+> **Covers:** overfitting, underfitting, train/validation/test sets, early stopping
 
-### Overfitting
-**Overfitting** happens when a network learns the training data too closely, including its random noise and quirks, instead of the real underlying pattern. It scores very well on training data but badly on new data. It is like a student who memorises last year's exam answers: perfect on those exact questions, lost on new ones.
+---
+
+#### Explanations
+
+The goal of training is **not** to do well on the examples the network has already seen. The goal is to do well on **new** examples it has never seen. This ability is called **generalization**.
+
+##### Overfitting
+**Overfitting** happens when a network learns the training data too closely, including its random noise and quirks, instead of the real underlying pattern. It scores very well on training data but badly on new data. It is like a student who memorizes last year's exam answers: perfect on those exact questions, lost on new ones.
 
 The opposite problem is **underfitting**: the network has not learned enough, so it performs poorly on *both* training and new data.
 
 | | Training performance | New-data performance | Diagnosis |
 |---|---|---|---|
-| ✅ Good fit | Good | Good | Generalises well |
-| ⚠️ Overfitting | Very good | Poor | Memorised the training set |
+| ✅ Good fit | Good | Good | Generalizes well |
+| ⚠️ Overfitting | Very good | Poor | Memorized the training set |
 | ❌ Underfitting | Poor | Poor | Has not learned enough |
 
-### Train, validation and test sets
+##### Train, validation and test sets
 To *detect* overfitting we must test on data the network did not train on. So the data is shuffled and split into three separate sets:
 
 | Set | Role | Used |
@@ -1014,6 +1037,8 @@ To *detect* overfitting we must test on data the network did not train on. So th
 
 Common split ratios are 60/20/20, 70/15/15 and 80/10/10, and there is no single best ratio.
 
+**Note:** shuffling before splitting suits independent examples such as photos. For **time series** data (for example daily sales), keep the time order. Train on the earlier data, and validate and test on the later data.
+
 ```mermaid
 flowchart LR
     D[All data<br/>shuffled] --> T[Training set<br/>learn weights]
@@ -1023,22 +1048,32 @@ flowchart LR
 
 > ⚠️ **Common mix-up:** do not keep checking the test set while building. Once you tune the model to it, it is no longer "unseen" and its score becomes over-optimistic.
 
-### How to spot overfitting
+##### How to spot overfitting
 Watch the **training loss** and **validation loss** together:
 
-- Both falling: the network is learning and generalising.
+- Both falling: the network is learning and generalizing.
 - Training loss falling but **validation loss rising**: **overfitting**.
 
-A simple fix is **early stopping**: stop training when the validation loss stops improving.
+A simple fix is **early stopping**: stop training when the validation loss stops improving. In practice, training often continues a few more epochs after the best result (this wait is called *patience*), then the weights from the best epoch are restored.
+
+##### Other ways to reduce overfitting
+
+| Method | Idea |
+|---|---|
+| **More training data** | A larger, more varied set is harder to memorize. |
+| **Simpler model** | Fewer layers or neurons leave less room to memorize. |
+| **Regularization** | Add a penalty for large weights so the network stays simpler. |
+| **Dropout** | Randomly switch off some neurons during training so no neuron is relied on too much. |
+| **Data augmentation** | Create varied copies of training examples (for images: flips, crops, small rotations). |
 
 ---
 
-## Terminology
+#### Terminology
 
 | Term | Meaning |
 |---|---|
-| **Generalisation** | Performing well on new data the network has never seen |
-| **Overfitting** | Memorising training data (and its noise) so that new-data performance is poor |
+| **Generalization** | Performing well on new data the network has never seen |
+| **Overfitting** | Memorizing training data (and its noise) so that new-data performance is poor |
 | **Underfitting** | Not learning enough, so performance is poor on all data |
 | **Noise** | Random quirks or errors in data that carry no real pattern |
 | **Training / validation / test set** | Three separate portions of the data, used for learning, tuning and final scoring |
@@ -1047,7 +1082,7 @@ A simple fix is **early stopping**: stop training when the validation loss stops
 
 ---
 
-## Worked example: spotting the stop point
+#### Worked example: spotting the stop point
 
 1,000 photos of cats and dogs are split 70/15/15: **700 training**, **150 validation**, **150 test**. A network trains for six epochs, and both losses are recorded.
 
@@ -1061,14 +1096,14 @@ A simple fix is **early stopping**: stop training when the validation loss stops
 | 6 | 0.05 | 0.65 | Overfitting getting worse |
 
 **Reading the table:**
-1. Epochs 1 to 4: both losses fall, so the network is generalising.
+1. Epochs 1 to 4: both losses fall, so the network is generalizing.
 2. Epoch 5: training loss keeps dropping but validation loss turns upward. **Overfitting has started.**
 3. The best moment to stop is **epoch 4**, where the validation loss is lowest.
 4. Only after stopping do we use the 150 test photos, once, to get the final score.
 
 ---
 
-## Learner activity
+#### Learner activity
 
 **Task 1.** A different network gives these results. Which epoch should you stop at, and at which epoch does overfitting start?
 
@@ -1080,13 +1115,13 @@ A simple fix is **early stopping**: stop training when the validation loss stops
 | 4 | 0.18 | 0.47 |
 | 5 | 0.08 | 0.60 |
 
-**Task 2.** You have 200 labelled examples and use a 70/15/15 split. How many go in each set?
+**Task 2.** You have 200 labeled examples and use a 70/15/15 split. How many go in each set?
 
 **Task 3.** A learner tunes the network's settings again and again, each time checking the test-set score, and keeps the best. Why is this a problem, and what should they have used instead?
 
 ---
 
-## Answers and expected outcomes
+#### Answers and expected outcomes
 
 <details>
 <summary><b>Click to reveal</b></summary>
@@ -1105,31 +1140,36 @@ A simple fix is **early stopping**: stop training when the validation loss stops
 - Repeatedly tuning against the test set leaks information from it into the model choice. The test set is no longer "unseen", so the final score is **over-optimistic** (data leakage).
 - They should have used the **validation set** for tuning and kept the test set for a single final evaluation.
 
-**Expected outcome:** the learner can recognise overfitting from diverging training and validation losses, choose a stopping point, and state the separate roles of the three data sets.
+**Expected outcome:** the learner can recognize overfitting from diverging training and validation losses, choose a stopping point, and state the separate roles of the three data sets.
 
-**Teacher check:** ask, "A network scores 99% on its training data but 60% on new data. What is wrong, and how would you have caught it earlier?" A good answer: it is overfitting (memorised the training data), and watching the validation loss rise during training would have shown it earlier.
+**Teacher check:** ask, "A network scores 99% on its training data but 60% on new data. What is wrong, and how would you have caught it earlier?" A good answer: it is overfitting (memorized the training data), and watching the validation loss rise during training would have shown it earlier.
 
 </details>
 
 ---
 
-## References
+#### References
 
-1. Educative. "What is train/test/validation set splitting?" https://www.educative.io/answers/what-is-train-test-validation-set-splitting
-2. KodeKloud Notes. *Machine Learning Fundamentals: Overfitting and the Train/Validation/Test Split.* https://notes.kodekloud.com/docs/Machine-Learning-Fundamentals/Generalisation-and-Types-of-Learning/Overfitting-and-the-TrainValidationTest-Split/page
-3. Rensselaer Polytechnic Institute, Tetherless World Constellation. *Generalization, Overfitting, Model Validation* (lecture slides, citing *An Introduction to Statistical Learning*). https://tw.rpi.edu/sites/default/files/2024-10/Data_Analytics2024Fall_Group2_Generalization_Overfitting_Validation.pdf
-4. Goodfellow, I., Bengio, Y., and Courville, A. (2016). *Deep Learning.* MIT Press, Chapter 5, sections 5.2 (Capacity, Overfitting and Underfitting) and 5.3 (Hyperparameters and Validation Sets). <https://www.deeplearningbook.org/>
-
-
-# 2.4 Layers and the Forward Pass
+1. Goodfellow, I., Bengio, Y., & Courville, A. (2016). *Deep Learning.* MIT Press, Chapter 5, sections 5.2 (Capacity, Overfitting and Underfitting) and 5.3 (Hyperparameters and Validation Sets), and Chapter 7 (Regularization for Deep Learning). https://www.deeplearningbook.org/
+2. Google for Developers. *Machine Learning Crash Course: Overfitting* and *Datasets, generalization, and overfitting.* https://developers.google.com/machine-learning/crash-course
+3. scikit-learn. *User Guide: Cross-validation: evaluating estimator performance.* https://scikit-learn.org/stable/modules/cross_validation.html
+4. Prechelt, L. (1998). Early stopping: but when? In *Neural Networks: Tricks of the Trade.* Springer.
+5. Rensselaer Polytechnic Institute, Tetherless World Constellation. *Generalization, Overfitting, Model Validation* (lecture slides, citing *An Introduction to Statistical Learning*). https://tw.rpi.edu/sites/default/files/2024-10/Data_Analytics2024Fall_Group2_Generalization_Overfitting_Validation.pdf
 
 ---
 
-## Explanations
+### 2.4 Layers and the Forward Pass
+
+> **Part:** Connectionist AI · **Chapter:** Basics of Neural Networks · **Level:** Beginner
+> **Covers:** input, hidden and output layers · feedforward networks · the forward pass
+
+---
+
+#### Explanations
 
 A neural network arranges neurons into **layers**. Data enters at one end, flows through the layers, and a result comes out the other end. This one-way trip is called the **forward pass**.
 
-### The three kinds of layers
+##### The three kinds of layers
 
 | Layer | Job | Does it calculate? |
 |---|---|---|
@@ -1139,8 +1179,8 @@ A neural network arranges neurons into **layers**. Data enters at one end, flows
 
 Hidden layers are "hidden" because we never see their values directly: they sit between the input and the output. A network with many hidden layers is called a **deep** neural network.
 
-### The forward pass, step by step
-In a **feedforward** network, each layer feeds its output to the next layer, one direction only. For every layer, repeat the same two steps from the previous lesson:
+##### The forward pass, step by step
+In a **feedforward** network, each layer feeds its output to the next layer, one direction only. For every layer, repeat the same two steps from 2.2 Inside One Neuron:
 
 1. **Linear step:** `z = W·x + b` (multiply by weights, add the bias)
 2. **Activation step:** `a = f(z)` (apply the activation function)
@@ -1172,7 +1212,7 @@ flowchart LR
 
 ---
 
-## Terminology
+#### Terminology
 
 | Term | Meaning |
 |---|---|
@@ -1186,9 +1226,9 @@ flowchart LR
 
 ---
 
-## Worked example: a 2 → 2 → 1 network
+#### Worked example: a 2 → 2 → 1 network
 
-The weights below are pretend values that have already been trained. The hidden layer uses **ReLU**, and the output layer uses **sigmoid** to give a value between 0 and 1.
+The weights below are example values chosen to keep the arithmetic simple. They are not from a trained network. The hidden layer uses **ReLU**, and the output layer uses **sigmoid** to give a value between 0 and 1.
 
 | | Weights | Bias |
 |---|---|---|
@@ -1215,7 +1255,7 @@ The weights below are pretend values that have already been trained. The hidden 
 
 ---
 
-## Learner activity
+#### Learner activity
 
 Use the same network and the same weights.
 
@@ -1225,7 +1265,7 @@ Use the same network and the same weights.
 
 ---
 
-## Answers and expected outcomes
+#### Answers and expected outcomes
 
 <details>
 <summary><b>Click to reveal</b></summary>
@@ -1251,138 +1291,297 @@ Use the same network and the same weights.
 
 ---
 
-## References
+#### References
 
-1. apxml.com. *Introduction to Neural Networks: Forward Propagation, Practical Implementation.* https://apxml.com/courses/introduction-to-neural-networks/chapter-3-forward-propagation/forward-propagation-practical
-2. Telnyx. "Forward Propagation in AI" (learning article). https://telnyx.com/learn-ai/forward-propogation-ai.md
-3. University of Tennessee at Chattanooga. *Neural Networks by an Example* (lecture slides). https://www.utc.edu/document/71441
-4. Cornell University, CS 4780. *The Backpropagation Algorithm* (lecture notes). https://www.cs.cornell.edu/courses/cs4780/2023fa/lectures/note_backprop.pdf
-
-# Architecture of Neural Networks
+1. Nielsen, M. A. (2015). *Neural Networks and Deep Learning*, Chapters 1 and 2. Determination Press. http://neuralnetworksanddeeplearning.com/
+2. Goodfellow, I., Bengio, Y., & Courville, A. (2016). *Deep Learning*, Chapter 6: Deep Feedforward Networks. MIT Press. https://www.deeplearningbook.org/
+3. Cornell University, CS 4780. *The Backpropagation Algorithm* (lecture notes). https://www.cs.cornell.edu/courses/cs4780/2023fa/lectures/note_backprop.pdf
 
 ---
 
-# 3.1 Basic structure
+## Chapter 3: Architecture of Neural Networks
 
-**Terms addressed:** Feedforward Networks, One-way flow, Multilayer perceptron, Typical uses, Layers, Connections, Parameters.
+> **Part:** Connectionist AI · **Chapter:** Architecture of Neural Networks · **Level:** Beginner
+> **Before you start:** this chapter builds on 2.2 Inside One Neuron and 2.4 Layers and the Forward Pass.
 
-The generated visualizer provides an excellent visual of a basic network. While it only shows a single neuron being calculated in detail, it hints at the overall architecture.
+---
 
-A **Feedforward Network**, often called a **Multilayer Perceptron (MLP)**, is the foundational design where information strictly moves in a **one-way flow** from inputs to outputs (as the visualizer arrows show). They are typically used for simple prediction and classification tasks on structured data, such as forecasting a numerical value or sorting data into categories.
+### 3.1 Basic structure
 
+**Terms addressed:** Layers, Connections, Parameters (also Depth and Width).
+
+#### Explanations
+
+A neural network is built from **neurons** arranged in **layers**, joined by **connections**. Each connection carries a number (a **weight**), and each neuron has one extra number (a **bias**). These weights and biases are the network's **parameters**, and training adjusts them.
+
+- **Layers:** the **input layer** holds the data, **hidden layers** transform it, and the **output layer** gives the answer.
+- **Connections:** each arrow from one neuron to the next. Every connection has its own weight.
+- **Parameters:** all the weights and biases. The bias belongs to the **neuron**, not to a connection.
+
+The simplest possible network is **one neuron**: an input layer feeding a single output neuron. The diagram below shows one neuron working on a real example, and the **loss** that measures how wrong the output is.
 
 ```mermaid
 flowchart LR
-    B["Bias (b)"]
-    X1("X1")
-    X2("X2")
-    R1["Output-Y<br/>0.618"]
-    R2["Error E<br/>0.0731"]
-    S["Weighted Sum<br/>(sigma Z)"]
-    A["Activation<br/>Sigmoid"]
-    E(("Total<br/>Error<br/>(E)"))
-
-    X2 -->|weight 2| S
-    X1 -->|weight 1| S
-    B --> S
-    S --> A
-    A -->|"Final output (y)"| E
-    S ~~~ R1
-    A ~~~ R2
-
-    classDef box fill:#cfe2f3,stroke:#333,color:#000
-    classDef plain fill:none,stroke:none
-    class X1,X2,S,A box
-    class R1,R2,B plain
-    style E fill:#fff,stroke:#333,color:#000
+    x1["x₁ = 1.00"] -->|"w₁ = 0.50"| S["Weighted sum<br/>z = 0.48"]
+    x2["x₂ = 0.40"] -->|"w₂ = −0.30"| S
+    b["bias b = +0.10"] --> S
+    S --> A["Sigmoid activation<br/>σ(z)"]
+    A -->|"output y = 0.618"| L["Loss (error)<br/>E = 0.0731"]
+    T["target t = 1"] --> L
 ```
 
-x<sub>1</sub> 1.00 x<sub>2</sub> 0.40 w1: 0.50 w2: -0.30 b: +0.10 Σ z: 0.48 σ(z) y
+**Reading the diagram**
 
-1. **Layers:** A full network stacks these units. The visualizer shows:
-   - **An Input Layer** (on the far left, featuring inputs X<sub>1</sub> and X<sub>2</sub>).
-   - **A Hidden Layer / Processing Unit** (the blue rectangles in the middle, labeled "Weighted Sum (Z)" and "Activation Sigmoid"). This is where the core calculation happens.
-   - **An Output / Evaluation Unit** (the circle on the far right labeled "Total Error (E)" alongside the final output value of 0.618). Note: The visualizer illustrates just one single neuron within a layer.
+- The **weighted sum** and the **activation** are the two steps *inside one neuron*. They are not separate layers.
+- The **loss** is *not* part of the network. It is calculated afterwards by comparing the output with the correct answer (the **target**).
 
-2. **Connections & Parameters:**
-   The arrows connecting inputs to calculations represent the **Connections**.
+#### Terminology
 
-   Each connection is assigned specific **Parameters** that the network learns during training. The visualizer labels these clearly:
-   - **Weights (w1, w2):** These determine the input's importance. In the example, w1 (0.50) is weighted positively, and w2 (-0.30) is weighted negatively.
-   - **Bias (b):** The extra offset (labeled "Bias (b)" pointing into the Weighted Sum with a value of +0.10), which shifts the neuron's response.
+| Term | Meaning |
+|---|---|
+| **Layer** | A group of neurons that work side by side |
+| **Connection** | A link that carries one neuron's output to another neuron, scaled by a weight |
+| **Parameter** | A weight or bias that is learned during training |
+| **Depth** | The number of **hidden layers** (some books count all layers, so always state which) |
+| **Width** | The number of neurons in one layer |
+| **Loss (error)** | A number that says how far the output is from the target |
 
-The math shown at the bottom of the visualizer (`z=(x1w1)+(x2w2)+b`) perfectly details how these connections and parameters form the "Weighted Sum" (yielding 0.48), which then passes through the Sigmoid activation to produce an output y=0.618 and an error E=0.0731.
+**Depth and width.** *Depth* is how many hidden layers are stacked. A **deep** network has many. *Width* is how many neurons a layer has. A wider layer can learn more patterns at one level. A deeper network can combine simple patterns into more complex ones.
 
-**References:**
-- 3Blue1Brown. (2017). *But what is a neural network? | Chapter 1, Deep learning* [Video]. YouTube. https://www.youtube.com/watch?v=I9v8efdO6vs
-- Nielsen, M. A. (2015). *Neural Networks and Deep Learning* (Chapter 1: Using neural nets to recognize handwritten digits). Determination Press. http://neuralnetworksanddeeplearning.com/
-- freeCodeCamp. (2020). *Neural Networks Explained Simply in Python.* freeCodeCamp.org. https://www.freecodecamp.org/news/neural-networks-explained-simply-in-python/
+#### Worked example: the single neuron
 
-### Advanced Concept Definitions
+| Step | Calculation | Result |
+|---|---|---|
+| 1. Weigh | 1.00 × 0.50 and 0.40 × (−0.30) | 0.50 and −0.12 |
+| 2. Sum plus bias | 0.50 − 0.12 + 0.10 | **z = 0.48** |
+| 3. Sigmoid | 1 / (1 + e⁻⁰·⁴⁸) | **y ≈ 0.618** |
+| 4. Loss | With target t = 1 and E = ½ (t − y)²: ½ × (1 − 0.618)² | **E ≈ 0.0731** |
 
-While the visualizer is great for the math of a single neuron, we need standard definitions for the other foundational terms listed:
+**Parameters in this neuron:** 2 weights + 1 bias = **3**.
 
-#### Depth vs. Width
+#### Learner activity
 
-This describes the "shape" of the network, beyond the single unit shown.
+**Task 1.** A network has 2 inputs, one hidden layer of 3 neurons, and 1 output neuron. State its depth and the width of the hidden layer, then count its parameters.
 
-- **Depth:** The number of hidden layers stacked between input and output. Deep Learning is characterized by high depth (many layers), allowing it to solve complex, layered problems.
-- **Width:** The number of neurons within a single layer.
+**Task 2.** In the worked example, is the **loss** part of the network? Explain.
 
-**References:**
-- Nielsen, M. A. (2015). *Neural Networks and Deep Learning* (Chapter 5: Why are deep neural networks hard to train?). Determination Press. http://neuralnetworksanddeeplearning.com/
-- Goodfellow, I., Bengio, Y., & Courville, A. (2016). *Deep Learning* (Chapter 6: Deep Feedforward Networks). MIT Press.
+#### Answers and expected outcomes
+
+<details>
+<summary><b>Click to reveal</b></summary>
+
+**Task 1**
+- Depth = **1** hidden layer. Width of the hidden layer = **3**.
+- Hidden layer: 3 neurons × 2 weights = 6 weights + 3 biases = 9.
+- Output layer: 1 neuron × 3 weights = 3 weights + 1 bias = 4.
+- Total = **13 parameters**.
+
+**Task 2**
+- No. The loss is calculated *outside* the network by comparing the output (0.618) with the target (1). The network ends at the output.
+
+**Expected outcome:** the learner can name layers, connections and parameters, count parameters, and separate the network from the loss.
+
+**Teacher check:** ask, "Where does the bias belong: on a connection or on a neuron?" A good answer: on the neuron.
+
+</details>
+
+#### References
+
+1. 3Blue1Brown. (2017). *But what is a neural network? | Chapter 1, Deep learning* [Video]. YouTube. https://www.youtube.com/watch?v=aircAruvnKk
+2. Nielsen, M. A. (2015). *Neural Networks and Deep Learning*, Chapter 1. Determination Press. http://neuralnetworksanddeeplearning.com/
+3. Goodfellow, I., Bengio, Y., & Courville, A. (2016). *Deep Learning*, Chapter 6. MIT Press. https://www.deeplearningbook.org/
+4. Stanford CS231n. *Neural Networks Part 1: Setting up the Architecture.* https://cs231n.github.io/neural-networks-1/
 
 ---
 
-# 3.2 Transformers
+### 3.2 Transformers
 
 **Terms addressed:** Attention, Language Models, Parallel Processing.
 
-This is the state-of-the-art architecture for many complex AI tasks today, especially the large Language Models that power modern chatbots. Transformers replace the recurrent memory of RNNs with a concept called the **Attention mechanism**. This technique lets the network "pay attention" to multiple parts of an entire sentence or sequence simultaneously, understanding full context all at once. Crucially, this allows for **Parallel Processing**, which makes Transformers vastly faster to train than RNNs and CNNs when handling large amounts of data.
+#### Explanations
 
-**References:**
-- Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł., & Polosukhin, I. (2017). *Attention Is All You Need.* Advances in Neural Information Processing Systems (NeurIPS). https://arxiv.org/abs/1706.03762
-- Alammar, J. (2018). *The Illustrated Transformer.* Jay Alammar's Blog. https://jalammar.github.io/illustrated-transformer/
+A **Transformer** is a network design built around **attention**. It was introduced in 2017 [1] and is the design behind most modern large language models.
+
+- **Attention:** for each item in a sequence (for example each word), the network works out **how relevant every other item is**, and uses those relevance scores to mix information. This lets a word be understood in the context of the whole sentence, however far apart the related words are.
+- **Language model:** a model that predicts the next word (or piece of a word, called a *token*) from the words before it. A **large language model** is a very large language model, and most are built from Transformers.
+- **Parallel processing:** a Transformer can process all positions in a sequence **at the same time** during training. An RNN (see 3.3) must go one step at a time. This makes Transformers much better suited to modern parallel hardware, and in the original paper they trained in significantly less time than earlier designs while giving better translation quality [1].
+
+**Trade-off:** attention compares every position with every other, so the cost grows quickly as the sequence gets longer.
+
+#### Terminology
+
+| Term | Meaning |
+|---|---|
+| **Attention** | A way of scoring how relevant each part of a sequence is to another part |
+| **Token** | A word or piece of a word treated as one unit |
+| **Language model** | A model that predicts the next token from the tokens before it |
+| **Parallel processing** | Doing many calculations at the same time |
+
+#### Check yourself
+
+1. In one sentence, what does attention do?
+2. Why can a Transformer train faster than an RNN on the same hardware?
+
+<details>
+<summary><b>Click to reveal</b></summary>
+
+1. It lets each token weigh how relevant every other token is, so each token is understood in context.
+2. It processes all positions at once, while an RNN must process them one after another.
+
+</details>
+
+#### References
+
+1. Vaswani, A., et al. (2017). *Attention Is All You Need.* NeurIPS. https://arxiv.org/abs/1706.03762
+2. Alammar, J. (2018). *The Illustrated Transformer.* https://jalammar.github.io/illustrated-transformer/
+3. 3Blue1Brown. (2024). *Transformers, the tech behind LLMs | Deep Learning Chapter 5* and *Attention in transformers, step-by-step | Deep Learning Chapter 6* [Videos]. YouTube.
+4. Jurafsky, D., & Martin, J. H. *Speech and Language Processing* (3rd ed. draft), chapters on language models and Transformers. https://web.stanford.edu/~jurafsky/slp3/
 
 ---
 
-# 3.3 RNNs
+### 3.3 RNNs
 
 **RNNs (Recurrent Neural Networks)**
+**Terms addressed:** Sequences, Hidden-state memory, Text and time series.
 
-**Terms addressed:** Sequences, Hidden-State Memory, Text and Time Series.
+#### Explanations
 
-Unlike the one-way flow of the visualizer, RNNs are specialized for **Sequences**. They "recalculate" outputs multiple times for a sequence of data, feeding information from one step into the next. This creates a built-in **Hidden-State Memory**. This recursive calculation makes RNNs excellent at processing ordered data like **Text** (interpreting sentences) and **Time Series** (forecasting stock trends based on history).
+An **RNN** is designed for **sequences**, where order matters, such as the words in a sentence or daily temperature readings.
 
-**References:**
-- Olah, C. (2015). *Understanding LSTM Networks.* Colah's Blog. https://colah.github.io/posts/2015-08-Understanding-LSTMs/
-- DeepLearning.AI & Coursera. (n.d.). *Sequence Models* (Course 5 of Deep Learning Specialization by Andrew Ng). Coursera. https://www.coursera.org/specializations/deep-learning
+An RNN reads a sequence **one step at a time**. At each step it applies the **same weights** to two things: the current input and the **hidden state** carried over from the previous step. This gives the network a form of **memory**.
+
+```text
+h(t) = f( Wx · x(t) + Wh · h(t−1) + b )
+```
+
+- `x(t)` is the input at step t.
+- `h(t−1)` is the memory from the previous step.
+- `h(t)` is the new memory, passed on to the next step.
+
+This **recurrent** loop is what separates an RNN from a feedforward network, where data never flows back.
+
+**Typical uses:** text (reading a sentence), speech, and time series such as weather or energy demand.
+
+**Limits:** basic RNNs struggle to remember things from far back, because the learning signal fades over many steps (the *vanishing gradient* problem). **LSTM** and **GRU** designs were created to reduce this. For language tasks, Transformers (3.2) have largely replaced RNNs, but RNNs remain a useful way to learn the idea of memory in a network.
+
+#### Terminology
+
+| Term | Meaning |
+|---|---|
+| **Sequence** | Data where order matters |
+| **Hidden state** | The memory an RNN carries from one step to the next |
+| **Recurrent** | Feeding an output back in as part of the next input |
+| **Time series** | Measurements recorded over time |
+
+#### Check yourself
+
+1. What two things does an RNN combine at each step?
+2. Why is an RNN slower to train than a Transformer?
+
+<details>
+<summary><b>Click to reveal</b></summary>
+
+1. The current input and the hidden state from the previous step.
+2. It must process the sequence one step at a time, so the steps cannot run in parallel.
+
+</details>
+
+#### References
+
+1. Olah, C. (2015). *Understanding LSTM Networks.* https://colah.github.io/posts/2015-08-Understanding-LSTMs/
+2. Goodfellow, I., Bengio, Y., & Courville, A. (2016). *Deep Learning*, Chapter 10: Sequence Modeling: Recurrent and Recursive Nets. MIT Press. https://www.deeplearningbook.org/
+3. DeepLearning.AI & Coursera. (n.d.). *Sequence Models* (Course 5 of Deep Learning Specialization by Andrew Ng). https://www.coursera.org/specializations/deep-learning
 
 ---
 
-# 3.4 CNNs
+### 3.4 CNNs
 
 **CNNs (Convolutional Neural Networks)**
-
 **Terms addressed:** Filters, Images, Pooling.
 
-CNNs are structurally distinct, specialized for **Images** and spatial data. Instead of connections from every input to every neuron (as implied by the visualizer), they use specialized mathematical structures called **Filters**. These filters scan small windows of an image to detect specific features, like edges or corners. This process is usually paired with a step called **Pooling**, which simplifies the input data to focus on key features and reduce computational load.
+#### Explanations
 
-**References:**
-- Starmer, J. (2022). *Convolutional Neural Networks (CNNs) Explained* [Video]. YouTube. https://www.youtube.com/@statquest
-- DeepLearning.AI & Coursera. (n.d.). *Convolutional Neural Networks* (Course 4 of Deep Learning Specialization by Andrew Ng). Coursera. https://www.coursera.org/specializations/deep-learning
+A **Convolutional Neural Network (CNN)** is designed for **images** and other grid-like data.
+
+- **Filters (kernels):** a filter is a small grid of **learnable weights** (for example 3 × 3). It slides across the image, and at each position it computes a weighted sum of the small patch beneath it. Early filters tend to learn simple features such as edges. Later layers combine them into shapes and objects.
+- **Weight sharing:** the **same filter** is reused across the whole image, and each output depends only on a small local patch. A CNN therefore needs far fewer parameters than a network where every input connects to every neuron.
+- **Pooling:** a step that shrinks the output, for example by keeping only the largest value in each small block (**max pooling**). It reduces computation and makes the result less sensitive to small shifts in the image.
+
+#### Terminology
+
+| Term | Meaning |
+|---|---|
+| **Filter (kernel)** | A small grid of learnable weights that detects one kind of feature |
+| **Feature map** | The output produced when one filter slides over the image |
+| **Pooling** | Shrinking a feature map by summarizing small blocks |
+
+#### Check yourself
+
+1. Are the numbers inside a filter fixed by the designer or learned in training?
+2. Name two benefits of pooling.
+
+<details>
+<summary><b>Click to reveal</b></summary>
+
+1. Learned in training.
+2. Less computation, and less sensitivity to small shifts in the image.
+
+</details>
+
+#### References
+
+1. Stanford CS231n. *Convolutional Neural Networks for Visual Recognition.* https://cs231n.github.io/convolutional-networks/
+2. Goodfellow, I., Bengio, Y., & Courville, A. (2016). *Deep Learning*, Chapter 9: Convolutional Networks. MIT Press. https://www.deeplearningbook.org/
+3. DeepLearning.AI & Coursera. (n.d.). *Convolutional Neural Networks* (Course 4 of Deep Learning Specialization by Andrew Ng). https://www.coursera.org/specializations/deep-learning
 
 ---
 
-# 3.5 Feedforward Networks
+### 3.5 Feedforward Networks
 
-**Terms addressed:** Feedforward Networks, One-way flow, Multilayer perceptron, Typical uses.
+**Terms addressed:** Feedforward networks, One-way flow, Multilayer perceptron, Typical uses.
 
-A **Feedforward Network**, often called a **Multilayer Perceptron (MLP)**, is the foundational design where information strictly moves in a **one-way flow** from inputs to outputs (as the visualizer arrows show). They are typically used for simple prediction and classification tasks on structured data, such as forecasting a numerical value or sorting data into categories.
+#### Explanations
 
-**References:**
-- 3Blue1Brown. (2017). *But what is a neural network? | Chapter 1, Deep learning* [Video]. YouTube. https://www.youtube.com/watch?v=I9v8efdO6vs
-- Nielsen, M. A. (2015). *Neural Networks and Deep Learning* (Chapter 1: Using neural nets to recognize handwritten digits). Determination Press. http://neuralnetworksanddeeplearning.com/
-- freeCodeCamp. (2020). *Neural Networks Explained Simply in Python.* freeCodeCamp.org. https://www.freecodecamp.org/news/neural-networks-explained-simply-in-python/
+In a **feedforward network**, information moves in **one direction only**: from the input layer, through any hidden layers, to the output layer. Nothing loops back.
 
+A **Multilayer Perceptron (MLP)** is the basic kind of feedforward network. Every neuron in one layer connects to **every** neuron in the next (a *fully connected* network). The network in 3.1 and the one in 2.4 are both MLPs.
+
+Not every feedforward network is an MLP. A **CNN** (3.4) is also feedforward, but its connections are local and shared rather than fully connected. An **RNN** (3.3) is *not* feedforward because it has a loop.
+
+**Typical uses:** prediction and classification on **tabular (structured) data**, for example forecasting a house price from its features, or sorting customers into groups.
+
+#### Architecture at a glance
+
+| Architecture | Data flow | Best for | Key idea |
+|---|---|---|---|
+| **Feedforward / MLP** | One way, fully connected | Tabular data | Layers of weighted sums |
+| **CNN** | One way, local connections | Images | Shared filters and pooling |
+| **RNN** | Loops through a hidden state | Sequences | Memory from step to step |
+| **Transformer** | All positions at once | Language and long sequences | Attention |
+
+#### Terminology
+
+| Term | Meaning |
+|---|---|
+| **Feedforward network** | A network where data flows only from input to output |
+| **MLP** | A fully connected feedforward network |
+| **Fully connected layer** | A layer where every neuron connects to every neuron in the previous layer |
+
+#### Check yourself
+
+1. Is a CNN a feedforward network? Is an MLP a CNN?
+2. Which of the four architectures in the table would you try first for a spreadsheet of house prices?
+
+<details>
+<summary><b>Click to reveal</b></summary>
+
+1. A CNN is feedforward. An MLP is not a CNN, because its layers are fully connected.
+2. A feedforward network (MLP), because the data is tabular.
+
+</details>
+
+#### References
+
+1. 3Blue1Brown. (2017). *But what is a neural network? | Chapter 1, Deep learning* [Video]. YouTube. https://www.youtube.com/watch?v=aircAruvnKk
+2. Nielsen, M. A. (2015). *Neural Networks and Deep Learning*, Chapter 1. Determination Press. http://neuralnetworksanddeeplearning.com/
+3. Goodfellow, I., Bengio, Y., & Courville, A. (2016). *Deep Learning*, Chapter 6: Deep Feedforward Networks. MIT Press. https://www.deeplearningbook.org/
