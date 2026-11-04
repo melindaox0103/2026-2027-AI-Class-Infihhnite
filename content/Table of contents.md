@@ -3,7 +3,7 @@
 | Chapter | Title | Page |
 |:---|:---|:---:|
 |***Section 1***| **[Big Data](#section-1-big-data)** ||
-| **Chapter 1** | **[Introduction to BIg Data](#chapter-1-introduction-to-big-data)** |  |
+| **Chapter 1** | **[Introduction to Big Data](#chapter-1-introduction-to-big-data)** |  |
 |1.1| [Definition](#11-definition)||
 |1.2| [The 5 V's](#12-the-5-v's)||
 |1.3| [Evolution and Benefits](#13-evolution-and-benefits)||
