@@ -43,7 +43,7 @@
 |3.3| [RNNs](#33-RNNs)||
 |3.4| [CNNs](#34-CNNs)||
 |3.5| [Feedforward Networks](#35-Feedforward Networks)||
-## Table 3 : Connection of Big Data and Connectionist AI
+## Table 3 : Where Big Data Meets Connectionist AI
 |  | Title | Page |
 |:---|:---|:---:|
 |***Section 3***| **[Where Big Data Meets Connectionist AI](#section-3-where-big-data-meets-connectionist-ai)** ||
