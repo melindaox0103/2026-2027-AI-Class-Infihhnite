@@ -1262,10 +1262,6 @@ Use the same network and the same weights.
 
 ---
 
-# Architecture of Neural Networks
-
----
-
 # 3.1 Basic structure
 
 **Terms addressed:** Feedforward Networks, One-way flow, Multilayer perceptron, Typical uses, Layers, Connections, Parameters.
