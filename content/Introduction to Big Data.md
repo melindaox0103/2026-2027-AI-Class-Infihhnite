@@ -1,4 +1,4 @@
-# Part 1: Big Data
+# Section 1: Big Data
 
 ## Chapter 1: Introduction to Big Data
 
