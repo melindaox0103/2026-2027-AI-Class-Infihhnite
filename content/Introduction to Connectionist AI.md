@@ -1,4 +1,5 @@
-# 1.1 Context and History
+# Part 2 Connectionist AI
+## 1.1 Context and History
 
 Connectionist AI developed from the idea that computers could imitate certain aspects of how the human brain processes information. Instead of relying only on programmed rules, researchers explored networks of artificial neurons that could learn patterns from data [6].
 
