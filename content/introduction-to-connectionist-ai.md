@@ -1070,7 +1070,7 @@ A simple fix is **early stopping**: stop training when the validation loss stops
 1. Educative. "What is train/test/validation set splitting?" https://www.educative.io/answers/what-is-train-test-validation-set-splitting
 2. KodeKloud Notes. *Machine Learning Fundamentals: Overfitting and the Train/Validation/Test Split.* https://notes.kodekloud.com/docs/Machine-Learning-Fundamentals/Generalisation-and-Types-of-Learning/Overfitting-and-the-TrainValidationTest-Split/page
 3. Rensselaer Polytechnic Institute, Tetherless World Constellation. *Generalization, Overfitting, Model Validation* (lecture slides, citing *An Introduction to Statistical Learning*). https://tw.rpi.edu/sites/default/files/2024-10/Data_Analytics2024Fall_Group2_Generalization_Overfitting_Validation.pdf
-4. arXiv:1905.05241. *Deep Neural Networks for Marine Debris Detection in Sonar Images.* https://arxiv.org/pdf/1905.05241
+4. Goodfellow, I., Bengio, Y., and Courville, A. (2016). *Deep Learning.* MIT Press, Chapter 5, sections 5.2 (Capacity, Overfitting and Underfitting) and 5.3 (Hyperparameters and Validation Sets). <https://www.deeplearningbook.org/>
 
 
 # 2.4 Layers and the Forward Pass
