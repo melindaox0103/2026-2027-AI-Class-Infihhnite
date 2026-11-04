@@ -614,6 +614,15 @@ better decisions.
 
 -   AWS. *Choosing an AWS Analytics Service.*
     https://docs.aws.amazon.com/decision-guides/latest/decision-guides/analytics-on-aws-how-to-choose.html
+    **References**
+
+-   Harvard Business School Online. (2021). *4 Types of Data Analytics to Improve Decision-Making.* 
+    https://online.hbs.edu/blog/post/types-of-data-analysis
+
+-   Gartner. (n.d.). *Gartner Analytics Maturity Model.* 
+    https://www.gartner.com/en/information-technology/glossary/business-analytics
+
+-   Sharda, R., Delen, D., & Turban, E. (2018). *Business Intelligence, Analytics, and Data Science: A Managerial Perspective* (4th ed.). Pearson.
 
 ------------------------------------------------------------------------
 
