@@ -1,37 +1,38 @@
-# Section 1: Big Data
+# Part 1: Big Data
 
 ## Chapter 1: Introduction to Big Data
+
 **Terms used in this chapter**
 
 - **Data**: facts such as numbers, words, pictures or sounds that a computer can store.
-- **Analyse**: to look carefully at data to find patterns or answers.
-- **Schema**: a plan for how data is organised, such as the column headings of a table.
+- **Analyze**: to look carefully at data to find patterns or answers.
+- **Schema**: a plan for how data is organized, such as the column headings of a table.
 
 ---
 
 ### 1.1 Definition
 
-Big Data is an important part of today's digital world. It helps businesses understand customers, schools improve learning, scientists study animals, sports teams analyse performance, and social media platforms recommend content.
+Big Data is an important part of today's digital world. It helps businesses understand customers, schools improve learning, scientists study animals, sports teams analyze performance, and social media platforms recommend content.
 
-To understand how Big Data works, we start with the 5 Vs (section 1.2), which describe its main characteristics. After that we look at how data has changed over time (1.3), the types of data and where they come from (1.4), and how Big Data differs from a data warehouse (1.5). Later chapters cover how data is processed and analyzed, and the technologies behind it.
+To understand how Big Data works, we start with the 5 Vs (section 1.2), which describe its main characteristics. After that we look at how data has changed over time (1.3), the types of data and where they come from (1.4), and how Big Data storage differs from a data warehouse (1.5). Later chapters cover how data is processed and analyzed, and the technologies behind it.
 
 #### What makes data "big"?
 
-Big Data is a mix of organized, partly organized and unorganized data that organisations collect and then study to find useful insights [1]. Early descriptions of Big Data used three Vs: **volume** (how much), **velocity** (how fast) and **variety** (how many kinds) [1][4].
+Big Data is a mix of organized, partly organized and unorganized data that organizations collect and then study to find useful insights [1]. Early descriptions of Big Data used three Vs: **volume** (how much), **velocity** (how fast) and **variety** (how many kinds) [1][4].
 
 What counts as "big" is not a fixed number. It depends on the computing power available at the time [1].
 
-#### Big data examples
+#### Big Data examples
 
-- A chain of shops with hundreds of stores records millions of purchases every day [1].
-- Hospital machines and wearable devices send health readings all the time, and the readings must be analysed quickly [1].
+- A retail chain with hundreds of stores records millions of purchases every day [1].
+- Hospital machines and wearable devices send health readings all the time, and the readings must be analyzed quickly [1].
 - A video app receives likes, comments and uploads from millions of people.
 
 #### Small data
 
-Small data is data that is small enough for a person to understand. It is organised in a way that makes it easy to access and use [5]. Even five related pieces of data, or one eyewitness observation, can count as small data [5].
+Small data is data that is small enough for a person to read and understand. It is organized in a way that makes it easy to access and use [4][5].
 
-A common way to explain the difference is: Big Data is about machines, small data is about people [5].
+A common way to explain the difference is: Big Data is about machines, small data is about people [3][5].
 
 | Aspect | Small data | Big data |
 |---|---|---|
@@ -41,15 +42,13 @@ A common way to explain the difference is: Big Data is about machines, small dat
 | **Type of insight** | Qualitative: observations, habits, feelings [4] | Predictive patterns found at a large scale [4] |
 | **Example** | Watching how a family uses its kitchen | Studying millions of online searches |
 
-The "why versus what" contrast is the view of Martin Lindstrom, who popularised the term "small data" [3][5]. It is one expert's argument, not a rule everyone agrees on.
+The "why versus what" contrast is the view of Martin Lindstrom, who popularized the term "small data" [3][5]. It is one expert's argument, not a rule everyone agrees on.
 
 **Why small data matters**
 
 - It can show feelings and context that numbers alone often miss [3].
 - It started in marketing and is now used in many fields and by companies of any size [4].
 - It works best together with Big Data: Big Data shows what is happening, and small data helps explain why [3][4].
-
-<!-- REVIEW 27/10: removed "faster and cheaper to collect" and "useful for teams without big-data infrastructure". Not found in WEF, Iberdrola or Wikipedia. Re-add only with a source. -->
 
 ---
 
@@ -86,7 +85,7 @@ Match each situation to a V.
 2. A live sports app updates scores and comments every second.
 3. A survey has the same student's answers entered twice by mistake.
 4. A library collects book titles, photos of covers and recordings of story time.
-5. A canteen uses survey results to decide which snacks to sell.
+5. A cafeteria uses survey results to decide which snacks to sell.
 
 **Answers**
 
@@ -102,35 +101,35 @@ Match each situation to a V.
 
 #### Evolution of Big Data
 
-- **Traditional databases:** people stored organised information, such as customer names and sales records.
+- **Traditional databases:** people stored organized information, such as customer names and sales records.
 - **Web and social media:** websites and social media created more data, such as comments, photos, videos and searches.
 - **Cloud computing:** people could store data and use computer power over the internet.
 - **Internet of Things (IoT):** devices such as smartwatches and sensors began collecting data automatically.
-- **Today:** Big Data tools and AI help people analyse very large amounts of information.
+- **Today:** Big Data tools and AI help people analyze very large amounts of information.
 
-<!-- REVIEW 27/10: timeline has no source yet. Add a reference before marking this section "checked". -->
+Some milestones in this story: the idea of describing data by volume, velocity and variety was set out by Doug Laney in 2001 [13]. MapReduce, introduced in 2004, made it practical to process huge data sets across many ordinary computers [14]. The term "Internet of Things" was coined by Kevin Ashton in 1999 [15].
 
 #### Benefits of Big Data
 
-Organisations use Big Data to improve how they work, serve customers better and personalise marketing [1].
+Organizations use Big Data to improve how they work, serve customers better and personalize marketing [1].
 
-| Benefit | What it means | Example (written by our team) |
+| Benefit | What it means | Example |
 |:---|:---|:---|
 | **Better decisions** | People choose better by looking at information and spotting patterns | A delivery company uses traffic data to find faster routes |
 | **Efficiency** | People save time, money and resources | A factory uses sensor data to predict repairs before a machine breaks |
-| **Personalisation** | Apps and websites suggest things that match a person's interests | A video app recommends videos based on what you watch |
+| **Personalization** | Apps and websites suggest things that match a person's interests | A video app recommends videos based on what you watch |
 
 ---
 
 ### 1.4 Types of Data and Sources
 
-Data of any size, big or small, can be organised in three ways. The difference is how much *schema* (planned organisation) the data has [2].
+Data of any size, big or small, can be organized in three ways. The difference is how much *schema* (planned organization) the data has [1][2].
 
 #### Structured data
 
-Data organised in a fixed format, usually rows and columns, with a well-defined schema [2].
+Data organized in a fixed format, usually rows and columns, with a well-defined schema [2].
 
-- Easiest of the three to search and analyse.
+- Easiest of the three to search and analyze.
 - Examples: sales figures, names, dates, prices, phone numbers.
 
 | student_id | name | grade | books_borrowed |
@@ -140,7 +139,7 @@ Data organised in a fixed format, usually rows and columns, with a well-defined 
 
 #### Semi-structured data
 
-Data that has some organisation, such as tags or labels, but not a rigid format [2]. It sits between structured and unstructured data.
+Data that has some organization, such as tags or labels, but not a rigid format [2]. It sits between structured and unstructured data.
 
 ```json
 { "student": "Mei", "grade": 5, "club": "Chess" }
@@ -154,22 +153,20 @@ Data with no set format or model [2]. Examples: text documents, emails, photos, 
 
 | | Structured | Semi-structured | Unstructured |
 |---|---|---|---|
-| **Format** | Tables (rows and columns) | Labelled data such as JSON or XML | No fixed format |
+| **Format** | Tables (rows and columns) | Labeled data such as JSON or XML | No fixed format |
 | **Schema** | Well defined | Flexible | None |
 | **Ease of analysis** | Easiest | In between | Hardest |
 
-<!-- REVIEW 27/10: "Storage" row removed (not confirmed in sources). "Ease of analysis" row: check against Educative and Datamation. -->
-
-**A note on CSV files.** A CSV file stores values in rows and columns, so it is usually treated as structured data. Some sources call it semi-structured, because the file format does not enforce a schema [6][7][8]. In this guide we treat a well-organised CSV file as structured.
+**A note on CSV files.** A CSV file stores values in rows and columns, so it is usually treated as structured data. The CSV format (RFC 4180 [8]) describes how values are separated, but it does not enforce a schema, which is why some sources call it semi-structured [6][7]. In this guide we treat a well-organized CSV file as structured.
 
 #### Where data comes from
 
-> The mapping below is our team's own classification, based on the definitions above.
+> **Note:** this mapping is a teaching guide based on the definitions above. Real data sources can fit more than one type.
 
 | Source | Typical structure | What it looks like |
 |---|---|---|
 | **Transactions** | Structured | One customer's purchase history |
-| **IoT sensors** | Structured / semi-structured | Temperature, wind speed, vibration, status readings [5] |
+| **IoT sensors** | Structured / semi-structured | Temperature, wind speed, vibration, status readings |
 | **Logs** | Semi-structured | App or server records with labels |
 | **Surveys and forms** | Structured | Answers on a feedback form |
 | **Emails and messages** | Semi-structured / unstructured | Customer complaints |
@@ -181,7 +178,7 @@ Classify each item as structured, semi-structured or unstructured.
 
 1. A spreadsheet of class attendance with one row per student per day.
 2. A photo of a child's drawing.
-3. A labelled record such as `{ "pet": "Mochi", "age": 3 }`.
+3. A labeled record such as `{ "pet": "Mochi", "age": 3 }`.
 4. A voice recording of a story.
 5. A list of quiz scores saved as a CSV file.
 
@@ -197,84 +194,92 @@ Classify each item as structured, semi-structured or unstructured.
 
 ### 1.5 Big Data vs Data Warehousing
 
----
+**Terms used in this section**
 
-## 1. Data structure
+- **Data warehouse**: a central store of cleaned, organized data kept in planned tables, built mainly for reports [9][10].
+- **Data lake**: a central store that keeps data in its original, raw form, whatever its type [9][10].
+- **Schema-on-write**: the plan for the data (the schema) is decided *before* the data is stored.
+- **Schema-on-read**: the plan for the data is decided *when* the data is read.
 
-- **Warehouse:** neat, planned tables (rows and columns), such as `Date | Toy | Number sold`.
-- **Big data:** any kind of data: tables, photos, videos, messages, sensor readings, even messy ones.
+#### Comparing like with like
 
-## 2. How data is stored
+Big Data describes *the data itself*: its volume, velocity, variety, veracity and value (section 1.2). A data warehouse is *a place to keep data*. To compare fairly, we compare a data warehouse with the kind of storage that Big Data is usually kept in, called a **data lake** [9][10][11].
+
+| | Data warehouse | Data lake (Big Data storage) |
+|---|---|---|
+| **Data structure** | Neat, planned tables (rows and columns) | Any kind: tables, photos, videos, messages, sensor readings, even messy data |
+| **How it is stored** | Organized *before* storing (schema-on-write) | Stored raw first, organized *later* (schema-on-read) |
+| **Typical use** | Clear reports for questions we already know | Exploring large, varied data to find new patterns |
+| **Example question** | "How many toys did we sell in May?" | "What do children like that we have not noticed?" |
+
+**Two ways to picture it**
 
 - **Warehouse: organize first, store second.** Like a library, every book gets a labeled shelf *before* it goes in.
-- **Big data: store first, organize later.** Like a giant storage room, boxes go in as they are and get sorted when needed.
+- **Data lake: store first, organize later.** Like a large storage room, boxes go in as they are and are sorted when someone needs them.
 
-## 3. Typical use
+**In practice,** many organizations use **both**, and some modern platforms combine the two ideas (often called a *data lakehouse*) [12]. The two terms describe common designs, not strict rules.
 
-- **Warehouse:** clear reports for known questions. *"How many toys did we sell in May?"*
-- **Big data:** exploring huge, varied data to find new patterns. *"What do kids like that we haven't noticed?"*
+**Link to Chapter 2.4:** data usually reaches a warehouse through **ETL** (transform, then load). Data usually reaches a lake through **ELT** (load raw, transform later).
 
----
+#### Worked example: Happy Toys
 
-## Visual: at a glance
-
-| | Data Warehouse | Big Data Storage |
-|---|---|---|
-| **Data structure** | Neat, planned tables | Any kind, even messy |
-| **How stored** | Organized *before* storing | Raw first, organized *later* |
-| **Typical use** | Reports and decisions | Finding new patterns |
-
-## Worked example: Happy Toys
-
-| Step | Warehouse path | Big data path |
+| Step | Warehouse path | Data lake path |
 |---|---|---|
 | 1 | Take only the neat sales receipts | Save everything: receipts, comments, photos, videos |
-| 2 | Clean and fit them into a planned table | Leave them as they are |
+| 2 | Clean the receipts and fit them into a planned table | Leave them as they are |
 | 3 | Make a report | A data scientist later reads the comments |
-| **Result** | "Teddy bears sold 120 in May." | "Kids keep mentioning dinosaurs, so order more dinosaur toys." |
+| **Result** | "Teddy bears sold 120 in May." | "Children keep mentioning dinosaurs, so order more dinosaur toys." |
 
-The warehouse answered a **known question**. Big data helped the store **discover something new**.
+The warehouse answered a **known question**. The data lake helped the store **discover something new**.
+
+#### Try it: warehouse or data lake?
+
+1. A school needs a weekly attendance report with the same columns every week.
+2. A school keeps student drawings, voice recordings and survey comments to study later.
+3. Which one is "schema-on-read"?
+
+**Answers**
+
+1. **Data warehouse.** The question is known and the data fits a fixed table.
+2. **Data lake.** The data is of many types and the questions are not yet decided.
+3. **Data lake.** The structure is decided when the data is read.
 
 ---
 
 ## References
-
-1. Splunk. *Data Lake vs. Data Warehouse.* https://splunk.com/en_us/blog/learn/data-warehouse-vs-data-lake.html
-2. TechTarget. *Data lake vs. data warehouse: Key differences explained.* https://www.techtarget.com/data-technologies/feature/Data-lake-vs-data-warehouse-Key-differences-explained
-3. BMC Software. *Data Lake vs. Data Warehouse vs. Database.* https://www.bmc.com/blogs/data-lake-vs-data-warehouse-vs-database-whats-the-difference/
-
-
----
-
-## References
-
-Sources were opened and checked in the Stage 1 Content Review Log (Section 3).
 
 1. TechTarget. *5V's of Big Data.* https://www.techtarget.com/data-technologies/definition/5Vs-of-big-data
 2. Educative. *Structured vs. semi-structured vs. unstructured data.* https://www.educative.io/answers/structured-vs-semi-structured-vs-unstructured-data
 3. World Economic Forum (from Knowledge@Wharton). *Is small data the new Big Data?* https://www.weforum.org/stories/2016/04/is-small-data-the-new-big-data/
 4. Iberdrola. *What is small data?* https://iberdrola.com/innovation/what-is-small-data
-5. Wikipedia. *Small data.* https://en.wikipedia.org/wiki/Small_data
+5. Lindstrom, M. (2016). *Small Data: The Tiny Clues That Uncover Huge Trends.* St. Martin's Press.
 6. Coursera. *What Is Semi-structured Data?* https://www.coursera.org/articles/what-is-semi-structured-data
-7. The Data School. *Structured, Semi-structured, and Unstructured Data.* https://thedataschool.co.uk/anne-porciaaffi-asamani/structured-semi-structured-and-unstructured-data
-8. Surface. *Is CSV structured data?* https://withsurface.com/glossary/is-csv-structured-data
+7. Surface. *Is CSV structured data?* https://withsurface.com/glossary/is-csv-structured-data
+8. Shafranovich, Y. (2005). *Common Format and MIME Type for Comma-Separated Values (CSV) Files.* RFC 4180. https://www.rfc-editor.org/rfc/rfc4180
+9. Splunk. *Data Lake vs. Data Warehouse.* https://splunk.com/en_us/blog/learn/data-warehouse-vs-data-lake.html
+10. TechTarget. *Data lake vs. data warehouse: Key differences explained.* https://www.techtarget.com/data-technologies/feature/Data-lake-vs-data-warehouse-Key-differences-explained
+11. BMC Software. *Data Lake vs. Data Warehouse vs. Database.* https://www.bmc.com/blogs/data-lake-vs-data-warehouse-vs-database-whats-the-difference/
+12. Armbrust, M., Ghodsi, A., Xin, R., & Zaharia, M. (2021). *Lakehouse: A New Generation of Open Platforms that Unify Data Warehousing and Advanced Analytics.* Conference on Innovative Data Systems Research (CIDR 2021).
+13. Laney, D. (2001). *3D Data Management: Controlling Data Volume, Velocity, and Variety.* META Group research note.
+14. Dean, J., & Ghemawat, S. (2004). *MapReduce: Simplified Data Processing on Large Clusters.* OSDI '04.
+15. Ashton, K. (2009). *That "Internet of Things" Thing.* RFID Journal.
 
-# 2. Big Data Processing and Analytics
 
-Big Data refers to extremely large and complex sets of data that
-traditional data-processing methods may struggle to handle.
+## Chapter 2: Big Data Processing and Analytics
 
-Big Data Processing involves collecting, organizing, cleaning, and
-transforming data so it can be used effectively.
+Big Data refers to extremely large and complex sets of data that traditional data-processing methods may struggle to handle.
 
-Big Data Analytics involves examining this data to discover patterns,
-understand information, and support decision-making.
+Big Data Processing involves collecting, organizing, cleaning, and transforming data so it can be used effectively.
 
-# 2.1 Data Quality
+Big Data Analytics involves examining this data to discover patterns, understand information, and support decision-making.
+
+---
+
+### 2.1 Data Quality
 
 Data quality refers to how accurate, complete, consistent, and reliable data is. High-quality data is important because incorrect or incomplete information can lead to misleading results.
 
-Two common data quality problems are **missing values** and **duplicate data**.
+Two common data quality problems are **missing values** and **duplicate data**. They link to common data quality dimensions: **missing values** break *completeness*, and **duplicate data** breaks *uniqueness*. Other common dimensions include accuracy, consistency, timeliness, and validity.
 
 **Missing Values**
 
@@ -301,6 +306,8 @@ Missing values can cause problems because:
 1. **Remove the Data:** Delete records with missing information if they are not important.
 2. **Fill in the Missing Values:** Replace missing information with a suitable value, such as the average or median.
 3. **Use a Placeholder:** Mark the information as "Unknown" or "Not Available" when the actual value cannot be determined.
+
+**Caution:** deleting records is only safe when the missing data is rare and the pattern is random. If a particular group is more likely to leave a field empty, deleting those records can bias the results. When the data has extreme values, the median is often safer than the average for filling gaps.
 
 **Duplicate Data**
 
@@ -361,7 +368,7 @@ Data cleaning helps ensure that information is more reliable before it is used f
 
 ---
 
-# 2.2 Analytics Basics
+### 2.2 Analytics Basics
 
 Big Data Analytics is the process of examining large amounts of data to discover useful information and support decision-making.
 
@@ -500,12 +507,12 @@ Together, these four types of analytics help businesses understand their perform
 **References**
 
 - Harvard Business School Online. (2021). *4 Types of Data Analytics to Improve Decision-Making.* https://online.hbs.edu/blog/post/types-of-data-analysis
-- Gartner. (n.d.). *Gartner Analytics Maturity Model.* https://www.gartner.com/en/information-technology/glossary/business-analytics
+- Gartner. (n.d.). *Business Analytics* [Glossary entry]. Gartner Information Technology Glossary. https://www.gartner.com/en/information-technology/glossary/business-analytics
 - Sharda, R., Delen, D., & Turban, E. (2018). *Business Intelligence, Analytics, and Data Science: A Managerial Perspective* (4th ed.). Pearson.
 
 ---
 
-# 2.3 Data Visualization and Challenges
+### 2.3 Data Visualization and Challenges
 
 Data visualization is the process of presenting data using visual elements such as charts, graphs, and diagrams.
 
@@ -606,6 +613,8 @@ Imagine two companies have the following sales:
 
 If the vertical axis starts at 80 instead of 0, the difference between the companies may appear much larger than it really is.
 
+With an axis that starts at 0, the bars are 90 and 100 tall, so B is about 11% taller than A. With an axis that starts at 80, the bars are 10 and 20 tall, so B looks **twice** as tall as A. The data is the same. Only the axis changed.
+
 **Too Much Data**
 
 Too much data in a chart can make it difficult for people to understand the main message.
@@ -657,7 +666,7 @@ The main goal of data visualization is to communicate information clearly and ac
 
 ---
 
-# 2.4 ETL
+### 2.4 ETL
 
 ETL stands for **Extract, Transform, Load**. It is a process used to collect data from different sources, prepare it, and store it in a destination where it can be analyzed.
 
@@ -738,6 +747,10 @@ The company can then use the data to analyze customer behavior and sales perform
 
 ETL helps ensure that data is organized and ready for further analysis.
 
+**ETL and ELT**
+
+In some modern systems, especially those built on cloud storage or data lakes, data is **loaded first and transformed afterwards**. This order is called **ELT** (Extract, Load, Transform). ETL transforms the data *before* storing it. ELT stores the raw data first and transforms it when needed. Both are in common use.
+
 **References**
 
 - AWS. *What Is ETL?* https://aws.amazon.com/what-is/etl/
@@ -745,7 +758,7 @@ ETL helps ensure that data is organized and ready for further analysis.
 
 ---
 
-# 2.5 The Data Pipeline
+### 2.5 The Data Pipeline
 
 A data pipeline is a series of steps that moves data from its original source to its final destination, where it can be analyzed or used.
 
@@ -826,6 +839,8 @@ This allows people to understand the information and make decisions.
     DECISIONS
 ```
 
+**Note on order.** In the pipeline above, data is stored *before* it is cleaned. This matches **ELT** (see 2.4), where raw data is stored first. If the data is cleaned *before* it is stored, that step is **ETL**. Both can be part of a data pipeline.
+
 **Example: Supermarket Data Pipeline**
 
 Imagine a supermarket wants to understand customer purchasing behavior.
@@ -857,13 +872,15 @@ A data pipeline may use ETL as part of its process.
 
 ---
 
-# 3. Big Data Technologies
+## Chapter 3: Big Data Technologies
 
 Big Data technologies are tools and systems used to store, process, analyze, and visualize large amounts of data.
 
 These technologies help organizations handle data that may be too large or complex for traditional systems.
 
-# 3.1 Categories of Technology
+---
+
+### 3.1 Categories of Technology
 
 Big Data technologies can be divided into four main categories: **Storage, Processing, Analytics, and Visualization**.
 
@@ -880,6 +897,8 @@ Examples include:
 - Hadoop Distributed File System (HDFS).
 - Cloud storage.
 - Distributed databases.
+- Data warehouses (for example Amazon Redshift, Google BigQuery, Snowflake).
+- Data lakes on cloud object storage (for example Amazon S3).
 
 **Processing Technologies**
 
@@ -891,6 +910,8 @@ Examples include:
 
 - Apache Hadoop.
 - Apache Spark.
+
+Note: **Hadoop** is a software framework. It includes HDFS (storage), YARN (resource management), and MapReduce (processing), so it appears under both storage and processing.
 
 **Analytics Technologies**
 
@@ -920,10 +941,10 @@ Examples include:
 
 | Category | Purpose | Examples |
 | --- | --- | --- |
-| Storage | Stores large amounts of data. | HDFS, Cloud Storage |
+| Storage | Stores large amounts of data. | HDFS, Cloud Storage, Data Warehouses, Data Lakes |
 | Processing | Processes and transforms data. | Hadoop, Spark |
 | Analytics | Examines data to find patterns. | Python, R, Spark |
-| Visualization | Presents data using charts and dashboards. | Tableau, Power BI |
+| Visualization | Presents data using charts and dashboards. | Tableau, Power BI, Looker |
 
 **Visual Representation:**
 
@@ -933,27 +954,26 @@ Examples include:
         |   TECHNOLOGIES   |
         +------------------+
                   |
-     +------------+-------------+
-     |            |             |
-     v            v             v
-  STORAGE     PROCESSING     ANALYTICS
-                                  |
-                                  v
-                            VISUALIZATION
+   +--------------+--------------+--------------+
+   |              |              |              |
+   v              v              v              v
+STORAGE       PROCESSING     ANALYTICS    VISUALIZATION
+Save data     Transform      Find          Show
+              and compute    patterns      results
 ```
 
 Together, these technologies help turn raw data into useful information.
 
 **References**
 
-- Apache Hadoop. *HDFS Architecture Guide.* https://hadoop.apache.org/docs/stable1/hdfs_design.html
+- Apache Hadoop. *HDFS Architecture.* https://hadoop.apache.org/docs/r3.3.0/hadoop-project-dist/hadoop-hdfs/HdfsDesign
 - Google Cloud. *What Is Apache Spark?* https://cloud.google.com/learn/what-is-apache-spark
 - Apache Spark. *Unified Engine for Large-Scale Data Analytics.* https://spark.apache.org/
 - AWS. *Choosing an AWS Analytics Service.* https://docs.aws.amazon.com/decision-guides/latest/decision-guides/analytics-on-aws-how-to-choose.html
 
 ---
 
-# 3.2 Scale Up (Vertical) vs Scale Out (Horizontal)
+### 3.2 Scale Up (Vertical) vs Scale Out (Horizontal)
 
 Scaling refers to increasing a system's capacity so that it can handle more data, users, or processing tasks.
 
@@ -1038,11 +1058,11 @@ Both approaches increase capacity, but they work in different ways.
 **References**
 
 - Google Cloud. *What Is Cloud Scalability?* https://cloud.google.com/discover/what-is-cloud-scalability
-- NIST. *NIST Big Data Interoperability Framework: Volume 6, Reference Architecture.* https://www.nist.gov/publications/nist-big-data-interoperability-framework-volume-6-reference-architecture
+- NIST. (2019). *NIST Big Data Interoperability Framework: Volume 1, Definitions* (NIST SP 1500-1r2). https://doi.org/10.6028/NIST.SP.1500-1r2
 
 ---
 
-# 3.3 Challenges
+### 3.3 Challenges
 
 Although Big Data technologies provide many benefits, organizations may face several challenges when implementing and managing them.
 
@@ -1098,7 +1118,7 @@ For example, companies may collect customer names, addresses, purchasing histori
 
 If this information is misused or shared without proper permission, it can violate people's privacy.
 
-Organizations should follow relevant data protection laws and handle personal information responsibly.
+Organizations should follow relevant data protection laws (for example the EU's GDPR, or Thailand's Personal Data Protection Act B.E. 2562) and handle personal information responsibly.
 
 **Comparison Table:**
 
@@ -1112,24 +1132,18 @@ Organizations should follow relevant data protection laws and handle personal in
 
 **References**
 
-- Kazanskaia, A. N. (2025). *Challenges and Solutions in Big Data Analytics: Strategies for Effective Implementation*. NEYA Global Journal of Non-Profit Studies. 
-  https://doi.org/10.64357/neya-gjnps-hr-bg-dt-09
-
-- Kitchin, R. (2014). *The Data Revolution: Big Data, Open Data, Data Infrastructures and Their Consequences*. SAGE Publications. 
-  https://doi.org/10.4135/9781473909472
-
-- Amoria Bond. (2025). *The Challenges of Implementing Big Data*. 
-  https://www.amoriabond.com/insights/articles/the-challenges-of-implementing-big-data
+- Gandomi, A., & Haider, M. (2015). Beyond the hype: Big data concepts, methods, and analytics. *International Journal of Information Management*, 35(2), 137–144. https://doi.org/10.1016/j.ijinfomgt.2014.10.007
+- Sivarajah, U., Kamal, M. M., Irani, Z., & Weerakkody, V. (2017). Critical analysis of Big Data challenges and analytical methods. *Journal of Business Research*, 70, 263–286. https://doi.org/10.1016/j.jbusres.2016.08.001
+- Kitchin, R. (2014). *The Data Revolution: Big Data, Open Data, Data Infrastructures and Their Consequences*. SAGE Publications. https://doi.org/10.4135/9781473909472
+- European Union. (2016). *Regulation (EU) 2016/679 (General Data Protection Regulation).*
 
 ---
 
-# 3.4 MapReduce
+### 3.4 MapReduce
 
-MapReduce is a programming model used to process large amounts of data across multiple computers.
+MapReduce is a programming model used to process large amounts of data across multiple computers. It was introduced by Google in 2004 and is best known today through Apache Hadoop.
 
 It divides a large task into smaller tasks, processes them separately, and combines the results.
-
-MapReduce is commonly associated with Apache Hadoop.
 
 There are four main stages: **Split, Map, Shuffle, and Reduce**.
 
@@ -1161,7 +1175,7 @@ MAP OUTPUT:
 
 **Shuffle**
 
-The Shuffle stage groups together intermediate results with the same key.
+The Shuffle stage groups together intermediate results with the same key, and sorts them by key, so that each Reduce task receives all the values for its keys.
 
 For example, all occurrences of the word "Apple" are grouped together, while all occurrences of "Banana" are placed in another group.
 
@@ -1244,13 +1258,16 @@ Imagine a website wants to count how many times each word appears in millions of
 
 MapReduce makes it possible to process large datasets by distributing smaller tasks across multiple computers.
 
+**Today:** many organizations now use Apache Spark for jobs that once used MapReduce, because Spark keeps more data in memory. MapReduce remains the clearest way to learn the idea of splitting work across many machines.
+
 **References**
 
-- Apache Hadoop. *MapReduce Tutorial.* https://hadoop.apache.org/docs/current1/mapred_tutorial.html
+- Dean, J., & Ghemawat, S. (2004). MapReduce: Simplified Data Processing on Large Clusters. *Proceedings of the 6th Symposium on Operating Systems Design and Implementation (OSDI '04).*
+- Apache Hadoop. *MapReduce Tutorial.* https://hadoop.apache.org/docs/stable/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html
 
 ---
 
-# 3.5 Future Trends
+### 3.5 Future Trends
 
 Big Data technologies continue to develop as organizations need faster, more flexible, and more efficient ways to handle information.
 
@@ -1333,21 +1350,15 @@ These technologies help make Big Data systems more flexible, responsive, and eff
 
 **References**
 
-- NIST. *Cloud Computing.* https://csrc.nist.gov/glossary/term/cloud_computing
-
-- Google Cloud. *What Is Cloud Scalability?* https://cloud.google.com/discover/what-is-cloud-scalability
-
+- Mell, P., & Grance, T. (2011). *The NIST Definition of Cloud Computing* (NIST SP 800-145). https://doi.org/10.6028/NIST.SP.800-145
+- Shi, W., Cao, J., Zhang, Q., Li, Y., & Xu, L. (2016). Edge computing: Vision and challenges. *IEEE Internet of Things Journal*, 3(5), 637–646. https://doi.org/10.1109/JIOT.2016.2579198
 - Singh, R., & Gill, S. S. (2023). Edge AI: A survey. *Internet of Things and Cyber-Physical Systems*, 3, 71–92. https://doi.org/10.1016/j.iotcps.2023.02.004
-
 - Amazon Web Services. (n.d.). *What Is Real-Time Data Streaming?* https://aws.amazon.com/what-is/real-time-data-streaming/
-
-- IBM. (2026). *What Is Real-Time Data Streaming?* https://www.ibm.com/think/topics/real-time-data-streaming
-
-- Pashikanti, S. (2023). Real-time data streaming and analytics: Architecting solutions on cloud platforms. *Journal of Artificial Intelligence, Machine Learning & Data Science*, 1(1), 1–7.
+- Kleppmann, M. (2017). *Designing Data-Intensive Applications* (Chapter 11: Stream Processing). O'Reilly Media.
 
 ---
 
-# 3.6 Distributed Storage Idea
+### 3.6 Distributed Storage Idea
 
 Distributed storage is a method of storing data across multiple computers instead of keeping everything on a single machine.
 
@@ -1363,7 +1374,7 @@ Large files can be divided into smaller pieces called blocks.
 
 These blocks are then stored across different computers in a distributed storage system.
 
-For example, a large file can be divided into four blocks and stored on different machines.
+For example, in HDFS a large file is split into blocks of **128 MB** by default, and the blocks are stored on different machines. The diagram below uses four blocks to keep the idea simple.
 
 **Visual Representation:**
 
@@ -1390,26 +1401,26 @@ Dividing files into blocks makes it easier to distribute and manage large amount
 
 **Replication**
 
-Replication means creating multiple copies of data and storing them on different machines.
+Replication means creating multiple copies of each block and storing them on different machines. HDFS keeps **three** copies of each block by default, and spreads them across machines (and, where possible, across racks) so the data survives the loss of a machine or even a whole rack.
 
 This helps ensure that data remains available even if one machine becomes unavailable.
 
-For example, if Block 1 is stored on Machine A, another copy may be stored on Machine B.
+For example, if Block 1 is stored on Machine A, other copies may be stored on Machine B and Machine C.
 
 **Visual Representation:**
 
 ```text
-        ORIGINAL BLOCK
-           Block 1
-              |
-        +-----+-----+
-        |           |
-        v           v
- +-----------+ +-----------+
- | Machine A | | Machine B |
- |  Block 1  | |  Block 1  |
- +-----------+ +-----------+
-      COPY          COPY
+           ORIGINAL BLOCK
+              Block 1
+                 |
+       +---------+---------+
+       |         |         |
+       v         v         v
+ +-----------+ +-----------+ +-----------+
+ | Machine A | | Machine B | | Machine C |
+ |  Block 1  | |  Block 1  | |  Block 1  |
+ +-----------+ +-----------+ +-----------+
+     COPY          COPY          COPY
 ```
 
 If one machine becomes unavailable, another machine may still have a copy of the data.
@@ -1470,5 +1481,6 @@ Distributed storage allows Big Data systems to store large amounts of informatio
 
 **References**
 
-- Apache Hadoop. *HDFS Architecture Guide.* https://hadoop.apache.org/docs/stable1/hdfs_design.html
-- NIST. *NIST Big Data Interoperability Framework: Volume 6, Reference Architecture.* https://www.nist.gov/publications/nist-big-data-interoperability-framework-volume-6-reference-architecture
+- Apache Hadoop. *HDFS Architecture.* https://hadoop.apache.org/docs/r3.3.0/hadoop-project-dist/hadoop-hdfs/HdfsDesign
+- Ghemawat, S., Gobioff, H., & Leung, S.-T. (2003). The Google File System. *Proceedings of the 19th ACM Symposium on Operating Systems Principles (SOSP '03).*
+- NIST. (2019). *NIST Big Data Interoperability Framework: Volume 1, Definitions* (NIST SP 1500-1r2). https://doi.org/10.6028/NIST.SP.1500-1r2
