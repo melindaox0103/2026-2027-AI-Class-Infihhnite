@@ -133,16 +133,18 @@ There are six important steps:
 
 ## 1. Features and Labels
 
-**Features** are the information or characteristics that an AI uses to learn.
+**Features** are the pieces of information a model learns from.
 
 **Labels** are the correct answers that the AI is supposed to predict.
 
-For example, if an AI learns to recognize cats and dogs:
+For example, if an AI learns to recognize cats and dogs from pictures:
 
-- Features: The animal's ears, eyes, fur, and body shape.
+- Features: the **pixel values** of each picture (numbers for the color and brightness of each tiny dot). A neural network learns patterns such as ears, whiskers, and fur by itself (see Connectionist AI 1.4).
 - Labels: Cat or Dog.
 
-| Features (Input) | Label (Correct answer) |
+In traditional machine learning, people often choose the features by hand. A neural network learns them from the pixels.
+
+| Patterns a person can see in the picture | Label (Correct answer) |
 |---|---|
 | Pointed ears, whiskers, small body | Cat |
 | Long ears, larger body, different fur | Dog |
@@ -168,13 +170,19 @@ Examples:
 - Filling in missing information.
 - Removing incorrect entries.
 
-**Data Scaling** means adjusting numbers so that they are within a suitable range, making it easier for a neural network to learn.
+**Data Scaling** means adjusting numbers so that they are within a suitable range, making it easier for a neural network to learn. One common method is **min-max scaling**:
 
-| Information | Original value | Scaled value |
-|---|---:|---:|
-| Age | 15 | 0.15 |
-| Height (cm) | 170 | 0.68 |
-| Weight (kg) | 60 | 0.60 |
+```text
+scaled value = (value - smallest value) / (largest value - smallest value)
+```
+
+| Information | Original value | Smallest in the data | Largest in the data | Scaled value |
+|---|---:|---:|---:|---:|
+| Age | 12 | 10 | 20 | 0.20 |
+| Height (cm) | 170 | 140 | 190 | 0.60 |
+| Weight (kg) | 60 | 40 | 90 | 0.40 |
+
+> **Important:** work out the smallest and largest values (or any other scaling numbers) from the **training data only**. Then apply the same numbers to the validation and testing data. If the scaling uses all of the data, information from the testing data leaks into training. This is called data leakage (see Connectionist AI 2.3). Remove duplicate pictures before splitting, so the same picture is not in both the training and testing groups.
 
 *These scaled values are illustrative, not calculated using one shared scaling formula.*
 
@@ -196,11 +204,19 @@ There are three common groups:
 | Validation data | Used to check and improve the model during development. |
 | Testing data | Used to evaluate the final model using data it has not trained on. |
 
-A common example is splitting 1,000 pictures:
+For example, imagine 700 pictures are set aside for training (see Splitting Data).
 
-- 700 pictures for training (70%).
-- 150 pictures for validation (15%).
-- 150 pictures for testing (15%).
+Instead of processing all 700 pictures at once, you divide them into batches of 100.
+
+| Batch | Number of pictures |
+|---|---:|
+| Batch 1 | 100 |
+| Batch 2 | 100 |
+| Batch 3 | 100 |
+| Batch 4 | 100 |
+| Batch 5 | 100 |
+| Batch 6 | 100 |
+| Batch 7 | 100 |
 
 ### How it works
 1. The AI learns from the training data.
@@ -229,6 +245,7 @@ The dataset has many more cat pictures than dog pictures.
 The AI may become better at recognizing cats because it sees them much more frequently. It might struggle to recognize dogs.
 
 ### How can we solve it?
+> **Important:** apply oversampling, undersampling, and class weighting to the **training data only**, after the split. Otherwise, copies of the same picture can end up in both the training and testing groups.
 - **Oversampling:** Adding or repeating examples from the smaller category.
 - **Undersampling:** Reducing examples from the larger category.
 - **Class weighting:** Giving more importance to mistakes involving the less common category.
@@ -277,9 +294,9 @@ Here is how all six steps connect when preparing Big Data for a neural network.
 The overall process:
 
 1. **Features and Labels:** Identify the information the AI needs and the correct answers.
-2. **Cleaning and Scaling:** Fix incorrect data and adjust numerical values.
+2. **Cleaning and Scaling:** Fix incorrect data and adjust numerical values (work out the scaling numbers from the training data only).
 3. **Splitting:** Divide the dataset into training, validation, and testing groups.
-4. **Class Imbalance:** Make sure the AI does not favor categories with more examples.
+4. **Class Imbalance:** Make sure the AI does **not** favor categories with more examples.
 5. **Batching:** Divide the training data into smaller groups for processing.
 6. **Training:** Feed the prepared batches into the neural network so it can learn patterns.
 
@@ -290,7 +307,7 @@ The overall process:
 | Features and Labels | Inputs and correct answers | Help AI learn relationships |
 | Cleaning and Scaling | Fixing and adjusting data | Improve data quality |
 | Splitting | Dividing data into groups | Evaluate AI performance |
-| Class Imbalance | Unequal category examples | Reduce learning bias |
+| Class Imbalance | Unequal category examples | Stop the AI from favoring the larger category |
 | Batching | Processing smaller groups | Manage training efficiently |
 
 ## Understanding the Connection to Big Data and Connectionist AI
