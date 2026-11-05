@@ -618,7 +618,8 @@ Its main components include [4]:
 |---|---|
 | Inputs | Receive numerical information. |
 | Weights | Determine the importance of each input. |
-| Summation | Combines the weighted inputs. |
+| Bias | A learnable number added to the weighted sum. It shifts how easily the neuron activates. |
+| Summation | Combines the weighted inputs and the bias. |
 | Activation Function | Determines the neuron's output. |
 | Output | Passes processed information to other neurons. |
 
@@ -628,7 +629,7 @@ Its main components include [4]:
 
     x₁ ---- w₁ ---\
                    \
-    x₂ ---- w₂ ----+---> Weighted Sum
+    x₂ ---- w₂ ----+---> Weighted Sum + Bias (b)
                    /          |
     x₃ ---- w₃ ---/           v
                          Activation
@@ -637,7 +638,7 @@ Its main components include [4]:
                               v
                             OUTPUT
 
-Each input has a weight that determines how much it contributes to the final result [4].
+Each input has a weight that determines how much it contributes to the final result [4]. The bias is one extra number for the whole neuron, not for each input. Weights and biases together are the network's **parameters**: the numbers that are adjusted during training [4].
 
 For example, imagine an artificial neuron deciding whether an email is spam. It receives information about suspicious words, unknown links, and the sender. It combines these inputs and produces an output that contributes to the spam prediction.
 
@@ -647,6 +648,7 @@ For example, imagine an artificial neuron deciding whether an email is spam. It 
 |---|---|
 | Dendrites receive signals [1]. | Inputs receive numerical information [4]. |
 | Synapses influence signal strength [1][2]. | Weights control connection strength [4]. |
+| The neuron needs to reach an activation threshold [2]. | The bias shifts how easily the neuron activates [4]. |
 | Cell body combines incoming signals [1]. | Summation combines weighted inputs [4]. |
 | Neuron activation produces an electrical impulse [2]. | Activation function calculates an output [4]. |
 | Axon transmits signals [1]. | Output passes information onward [4]. |
@@ -1159,7 +1161,7 @@ A simple fix is **early stopping**: stop training when the validation loss stops
 2. Google for Developers. *Machine Learning Crash Course: Overfitting* and *Datasets, generalization, and overfitting.* https://developers.google.com/machine-learning/crash-course
 3. scikit-learn. *User Guide: Cross-validation: evaluating estimator performance.* https://scikit-learn.org/stable/modules/cross_validation.html
 4. Prechelt, L. (1998). Early stopping: but when? In *Neural Networks: Tricks of the Trade.* Springer.
-5. Rensselaer Polytechnic Institute, Tetherless World Constellation. *Generalization, Overfitting, Model Validation* (lecture slides, citing *An Introduction to Statistical Learning*). https://tw.rpi.edu/sites/default/files/2024-10/Data_Analytics2024Fall_Group2_Generalization_Overfitting_Validation.pdf
+5. James, G., Witten, D., Hastie, T., and Tibshirani, R. (2021). *An Introduction to Statistical Learning* (2nd ed.). Springer. https://www.statlearning.com/
 
 ---
 
