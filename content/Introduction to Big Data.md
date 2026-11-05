@@ -34,7 +34,7 @@ Small data is data that is small enough for a person to read and understand. It 
 
 A common way to explain the difference is: Big Data is about machines, small data is about people [3][5].
 
-| Aspect | Small data | Big data |
+| Aspect | Small data | Big Data |
 |---|---|---|
 | **Focus** | People | Machines |
 | **Typical goal** | Understanding the reason behind what people do (the *why*) | Finding patterns and links in huge amounts of data (the *what*) |
