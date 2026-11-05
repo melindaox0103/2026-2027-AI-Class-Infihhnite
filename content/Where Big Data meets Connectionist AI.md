@@ -35,7 +35,7 @@ Training a network is mostly matrix multiplication: a layer's weighted sums for 
 CPU
 GPU
 Cores
-A few powerful cores (a typical high-end CPU has 8 to 16)
+A few powerful cores (many desktop CPUs have roughly 8 to 16)
 Thousands of simple cores (e.g., 5,760 on a GTX TITAN Z)
 Strength
 Complex tasks, one after another
@@ -113,12 +113,13 @@ Matrix multiplication is a huge number of independent multiply-add steps. A GPU'
 Expected outcome: the learner can count a network's parameters, explain why many parameters need many examples, and name the three ingredients (data, parameters/model size, GPUs) behind the deep learning breakthroughs.
 Teacher check: ask, "What three things came together for AlexNet's 2012 win?" A good answer: big labelled data (ImageNet's 1.2 million images), big compute (two GPUs), and strong ideas (a deep convolutional network with ReLU and dropout).
 </details>
-References
-Krizhevsky, A., Sutskever, I., & Hinton, G. (2012). ImageNet Classification with Deep Convolutional Neural Networks. NeurIPS. Abstract quoted at https://www.longtermwiki.com/resources/5f0d3a6682dddbb6
-Kaplan, J., et al. (2020). Scaling Laws for Neural Language Models. arXiv:2001.08361. https://arxiv.org/abs/2001.08361v1
-Envisioning. "AlexNet." https://www.envisioning.com/vocab/alexnet
-Red Gate Simple Talk. "Deep Learning with GPU Acceleration." https://www.red-gate.com/simple-talk/business-intelligence/data-science/deep-learning-with-gpu-acceleration
-apxml.com. "Comparing CPU and GPU Architectures." https://apxml.com/courses/planning-optimizing-ai-infrastructure/chapter-1-foundations-ai-compute-infrastructure/comparing-cpu-gpu-architectures
+
+## References
+
+1. Krizhevsky, A., Sutskever, I., & Hinton, G. E. (2012). ImageNet Classification with Deep Convolutional Neural Networks. *Advances in Neural Information Processing Systems 25*. https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf
+2. Kaplan, J., et al. (2020). Scaling Laws for Neural Language Models. arXiv:2001.08361. https://arxiv.org/abs/2001.08361v1
+3. Red Gate Simple Talk. "Deep Learning with GPU Acceleration." https://www.red-gate.com/simple-talk/business-intelligence/data-science/deep-learning-with-gpu-acceleration
+4. apxml.com. "Comparing CPU and GPU Architectures." https://apxml.com/courses/planning-optimizing-ai-infrastructure/chapter-1-foundations-ai-compute-infrastructure/comparing-cpu-gpu-architectures
 
 
 # 2. Preparing Data for a Network
@@ -451,7 +452,7 @@ This case follows one AI from idea to real use. It is based on the first AI devi
 7. Gulshan, V. et al. (2016). *Development and Validation of a Deep Learning Algorithm for Detection of Diabetic Retinopathy in Retinal Fundus Photographs.* JAMA, 316(22), 2402–2410. https://doi.org/10.1001/jama.2016.17216
 8. Voets, M., Møllersen, K., Bongo, L. A. (2019). *Reproduction study using public data of: Development and validation of a deep learning algorithm for detection of diabetic retinopathy in retinal fundus photographs.* https://pmc.ncbi.nlm.nih.gov/articles/PMC6553744
 9. Covington, P., Adams, J., Sargin, E. (2016). *Deep Neural Networks for YouTube Recommendations.* RecSys '16. https://doi.org/10.1145/2959100.2959190
-10. US Food and Drug Administration (11 April 2018). *FDA permits marketing of artificial intelligence-based devices to detect certain diabetes-related eye problems.* https://www.fda.gov/NewsEvents/Newsroom/PressAnnouncements/ucm604357.htm
+10. US Food and Drug Administration (11 April 2018). *FDA permits marketing of artificial intelligence-based device to detect certain diabetes-related eye problems.* https://www.fda.gov/NewsEvents/Newsroom/PressAnnouncements/ucm604357.htm
 11. Healio (11 April 2018). *FDA allows marketing of IDx-DR artificial intelligence device for diabetic retinopathy detection.* (Secondary news report of [10].)
 
 
