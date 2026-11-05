@@ -5,20 +5,20 @@ Neural networks became powerful when three things arrived together: lots of data
 flowchart LR
     D["📦 Big data<br/>many examples"] --> B["🚀 Deep learning<br/>breakthroughs"]
     P["🧠 Many parameters<br/>big networks"] --> B
-    G["⚡ GPUs<br/>fast parallel maths"] --> B
+    G["⚡ GPUs<br/>fast parallel math"] --> B
     B -->|"success attracts<br/>more data and investment"| D
     
 1. More data gives better learning
-A network learns patterns from examples. More (and more varied) examples help it find the real pattern instead of memorising quirks, which means less overfitting and better generalisation (see Overfitting and Generalisation). Research on language models found that test loss falls predictably as dataset size, model size and training compute increase, a result called scaling laws.
+A network learns patterns from examples. More (and more varied) examples help it find the real pattern instead of memorizing quirks, which means less overfitting and better generalization (see Overfitting and Generalization). Research on language models found that test loss falls predictably as dataset size, model size and training compute increase, a result called scaling laws.
 ⚠️ Caution: more data only helps if it is good data. Wrong or irrelevant examples (a Veracity problem) teach wrong patterns, and extra data cannot rescue a poor model design.
 2. Many parameters need many examples
-Every weight and bias is a parameter the network must tune. More parameters give a network more freedom, including the freedom to memorise the training set. To pin all those parameters down to real patterns, the network needs many examples. Research also shows that the amount of overfitting follows simple equations of model size and dataset size.
+Every weight and bias is a parameter the network must tune. More parameters give a network more freedom, including the freedom to memorize the training set. To pin all those parameters down to real patterns, the network needs many examples. Research also shows that the amount of overfitting follows simple equations of model size and dataset size.
 Ways to reduce overfitting when data is limited include data augmentation (flipping or cropping images to make new variations), dropout (randomly switching neurons off during training) and early stopping.
 3. Deep learning breakthroughs
 Year
 Event
 2009
-ImageNet, a huge labelled image collection, is introduced
+ImageNet, a huge labeled image collection, is introduced
 2010
 The ILSVRC contest begins: classify images into 1,000 categories
 2012
@@ -27,7 +27,7 @@ After 2012
 Deeper networks push the error lower and lower
 
 AlexNet in numbers: trained on 1.2 million images in 1,000 classes, with about 60 million parameters, on two GPUs for 5 to 6 days. It reached a top-5 error of 15.3% versus 26.2% for the runner-up. (Top-5 error means the correct label was not among the network's five best guesses.)
-Its win combined the three ingredients: big labelled data (ImageNet), big compute (GPUs), and good ideas (a deep convolutional network, ReLU, dropout).
+Its win combined the three ingredients: big labeled data (ImageNet), big compute (GPUs), and good ideas (a deep convolutional network, ReLU, dropout).
 4. The role of GPUs
 Training a network is mostly matrix multiplication: a layer's weighted sums for many inputs, done as a huge table of multiply-and-add steps. These steps are independent of each other, so they can be done at the same time ("parallel").
 
@@ -44,19 +44,19 @@ Fit for neural networks
 Fine for small networks
 Ideal: training is "embarrassingly parallel"
 
-CPU and GPU usually work together: the CPU directs the program, and the GPU does the heavy parallel maths.
+CPU and GPU usually work together: the CPU directs the program, and the GPU does the heavy parallel math.
 
 Terminology
 Term
 Meaning
 Parameter
 A weight or bias the network learns
-Labelled data
+Labeled data
 Examples that come with the correct answer (a photo tagged "cat")
 Scaling laws
 Predictable improvement in performance as data, model size and compute grow
 ImageNet / ILSVRC
-A large labelled image dataset and the yearly contest built on it
+A large labeled image dataset and the yearly contest built on it
 Top-5 error
 Percentage of images where the right label is not in the network's top five guesses
 Data augmentation
@@ -106,12 +106,12 @@ Hidden layer: 100 × 50 = 5,000 weights + 50 biases = 5,050
 Output layer: 50 × 5 = 250 weights + 5 biases = 255
 Total = 5,305 parameters
 Task 2
-Network B is at greater risk. It has about 0.005 examples per parameter (500 ÷ 101,770), compared with about 0.09 for Network A (500 ÷ 5,305), so it has far more freedom to memorise.
+Network B is at greater risk. It has about 0.005 examples per parameter (500 ÷ 101,770), compared with about 0.09 for Network A (500 ÷ 5,305), so it has far more freedom to memorize.
 Ways to reduce the risk: collect more (good) data, use data augmentation, apply dropout, use early stopping, or use a smaller network.
 Task 3
 Matrix multiplication is a huge number of independent multiply-add steps. A GPU's thousands of simple cores can do many of them at the same time, while a CPU's few cores must work through far more of them one after another.
 Expected outcome: the learner can count a network's parameters, explain why many parameters need many examples, and name the three ingredients (data, parameters/model size, GPUs) behind the deep learning breakthroughs.
-Teacher check: ask, "What three things came together for AlexNet's 2012 win?" A good answer: big labelled data (ImageNet's 1.2 million images), big compute (two GPUs), and strong ideas (a deep convolutional network with ReLU and dropout).
+Teacher check: ask, "What three things came together for AlexNet's 2012 win?" A good answer: big labeled data (ImageNet's 1.2 million images), big compute (two GPUs), and strong ideas (a deep convolutional network with ReLU and dropout).
 </details>
 
 ## References
@@ -339,14 +339,14 @@ Big Data gives neural networks (Connectionist AI) the many examples they need to
 **What it does:** The computer looks at a picture and says what is in it (a cat, a car, a flower).
 
 **How Big Data and neural networks help:**
-- **Big Data:** ImageNet is a collection of over 15 million labelled pictures in about 22,000 categories. A popular contest version uses about 1.2 million training pictures in 1,000 categories [1].
+- **Big Data:** ImageNet is a collection of over 15 million labeled pictures in about 22,000 categories. A popular contest version uses about 1.2 million training pictures in 1,000 categories [1].
 - **Neural network:** A convolutional neural network (CNN) learns shapes and patterns from the pictures.
 
 **Milestone:** In the 2012 ImageNet contest, a CNN called AlexNet won with a top-5 error rate of 15.3%. The second-best entry had 26.2%. "Top-5" means the correct label was not among the model's five best guesses [1]. This result is widely seen as the start of the deep-learning boom in computer vision.
 
 **Limits:** The AI only knows what its pictures taught it, so it can fail on unusual pictures (see *Dependence on Data*). Face-recognition tests have shown different error rates for different groups of people (see *Bias and Fairness*) [2].
 
-**Key idea:** *More labelled pictures plus a powerful network made computers much better at "seeing".*
+**Key idea:** *More labeled pictures plus a powerful network made computers much better at "seeing".*
 
 ## 2. Language
 
@@ -403,7 +403,7 @@ Big Data gives neural networks (Connectionist AI) the many examples they need to
 - **Big Data:** The system uses what each person watched and searched, plus the context [9].
 - **Neural network:** YouTube described a system with two neural networks. The first, *candidate generation*, narrows a huge video collection down to hundreds of possible videos. The second, *ranking*, orders them so the best ones are shown to you [9].
 
-**Limits:** Recommendations depend on collecting data about people, which links to *Privacy* and *Dependence on Data*. Because the AI learns from past behaviour, it may keep showing you more of the same.
+**Limits:** Recommendations depend on collecting data about people, which links to *Privacy* and *Dependence on Data*. Because the AI learns from past behavior, it may keep showing you more of the same.
 
 **Key idea:** *Recommenders turn millions of choices into a short list that fits you.*
 
@@ -433,7 +433,7 @@ This case follows one AI from idea to real use. It is based on the first AI devi
 
 | Application | Data | What the AI does | Main limit |
 |---|---|---|---|
-| Image recognition | Millions of labelled pictures | Names what is in a picture | Unusual pictures, uneven accuracy across groups |
+| Image recognition | Millions of labeled pictures | Names what is in a picture | Unusual pictures, uneven accuracy across groups |
 | Language | Large text collections | Translates and understands text | Fluent but wrong answers; high compute |
 | Fraud detection | Huge numbers of transactions | Flags unusual payments | Few frauds, criminals change tactics |
 | Healthcare imaging | Expert-graded medical photos | Helps find disease | Needs careful clinical testing |
@@ -448,12 +448,11 @@ This case follows one AI from idea to real use. It is based on the first AI devi
 3. Vaswani, A. et al. (2017). *Attention Is All You Need.* https://arxiv.org/abs/1706.03762
 4. Yazici, Y. (2020). *Approaches to Fraud Detection on Credit Card Transactions Using Artificial Intelligence Methods.* https://arxiv.org/abs/2007.14622
 5. Kalid, S. N. et al. (2024). *Detecting Frauds and Payment Defaults on Credit Card Data Inherited With Imbalanced Class Distribution and Overlapping Class Problems: A Systematic Review.* IEEE Access, 12. https://doi.org/10.1109/ACCESS.2024.3362831
-6. Cherif, A. et al. (2023). *Credit card fraud detection in the era of disruptive technologies: A systematic review.* Journal of King Saud University – Computer and Information Sciences. https://doaj.org/article/006ae5b3280849648a8734e77a07b0d0
-7. Gulshan, V. et al. (2016). *Development and Validation of a Deep Learning Algorithm for Detection of Diabetic Retinopathy in Retinal Fundus Photographs.* JAMA, 316(22), 2402–2410. https://doi.org/10.1001/jama.2016.17216
-8. Voets, M., Møllersen, K., Bongo, L. A. (2019). *Reproduction study using public data of: Development and validation of a deep learning algorithm for detection of diabetic retinopathy in retinal fundus photographs.* https://pmc.ncbi.nlm.nih.gov/articles/PMC6553744
-9. Covington, P., Adams, J., Sargin, E. (2016). *Deep Neural Networks for YouTube Recommendations.* RecSys '16. https://doi.org/10.1145/2959100.2959190
-10. US Food and Drug Administration (11 April 2018). *FDA permits marketing of artificial intelligence-based device to detect certain diabetes-related eye problems.* https://www.fda.gov/NewsEvents/Newsroom/PressAnnouncements/ucm604357.htm
-11. Healio (11 April 2018). *FDA allows marketing of IDx-DR artificial intelligence device for diabetic retinopathy detection.* (Secondary news report of [10].)
+6. Gulshan, V. et al. (2016). *Development and Validation of a Deep Learning Algorithm for Detection of Diabetic Retinopathy in Retinal Fundus Photographs.* JAMA, 316(22), 2402–2410. https://doi.org/10.1001/jama.2016.17216
+7. Voets, M., Møllersen, K., Bongo, L. A. (2019). *Reproduction study using public data of: Development and validation of a deep learning algorithm for detection of diabetic retinopathy in retinal fundus photographs.* https://pmc.ncbi.nlm.nih.gov/articles/PMC6553744
+8. Covington, P., Adams, J., Sargin, E. (2016). *Deep Neural Networks for YouTube Recommendations.* RecSys '16. https://doi.org/10.1145/2959100.2959190
+9. US Food and Drug Administration (11 April 2018). *FDA permits marketing of artificial intelligence-based device to detect certain diabetes-related eye problems.* https://www.fda.gov/NewsEvents/Newsroom/PressAnnouncements/ucm604357.htm
+10. Healio (11 April 2018). *FDA allows marketing of IDx-DR artificial intelligence device for diabetic retinopathy detection.* (Secondary news report of [10].)
 
 
 # 4. Ethics, Privacy, and Limits
@@ -471,9 +470,9 @@ Big Data and neural networks (Connectionist AI) can do amazing things, but they 
 **Example (illustrative):** A fitness app records your running route every morning. If a stranger saw it, they could guess where you live and when you leave home.
 
 **How to protect privacy:**
-- **Collect only what is needed.** The EU's GDPR says personal data must be limited to what is necessary for the purpose ("data minimisation") [1].
+- **Collect only what is needed.** The EU's GDPR says personal data must be limited to what is necessary for the purpose ("data minimization") [1].
 - **Use data only for clear, stated purposes, and keep it only as long as necessary** [1].
-- **Keep data secure** against unauthorised access, loss or damage [1].
+- **Keep data secure** against unauthorized access, loss or damage [1].
 - **Follow the law.** China's Personal Information Protection Law (PIPL) took effect on 1 November 2021 [2]. It requires lawful, legitimate and necessary handling of personal information, in good faith [3].
 
 **Key idea:** *Just because data can be collected does not mean it should be.*
@@ -491,21 +490,21 @@ Big Data and neural networks (Connectionist AI) can do amazing things, but they 
 - **Test the AI on different groups** and compare the results.
 - **Keep checking** after release, because bias happens in the wider context where the system is used, not only in the code [4].
 
-**Limit to remember:** NIST states that zero bias is not achievable, and no single method fixes bias completely [4].
+**Limit to remember:** NIST treats bias as something to identify and manage, not a problem that one technique can fix completely [4].
 
 **Key idea:** *AI learns from us, so unfair data can lead to unfair AI.*
 
 ## 3. Dependence on Data
 
-**What it means:** Neural networks learn from examples, so they are only as good as the data they are given. People often say **"Garbage In, Garbage Out"** [C].
+**What it means:** Neural networks learn from examples, so they are only as good as the data they are given. People often say **"Garbage In, Garbage Out"** [8].
 
 **Why it matters:**
-- **Too little data:** the network cannot learn patterns well [C].
-- **Wrong or messy data** (typos, mislabeled examples, missing values): it learns wrong things [C].
-- **Old data:** the world changes, so a model can become out of date [C].
-- **Unusual situations:** an AI may fail on cases that look different from its training examples [C].
+- **Too little data:** the network cannot learn patterns well [8].
+- **Wrong or messy data** (typos, mislabeled examples, missing values): it learns wrong things [8].
+- **Old data:** the world changes, so a model can become out of date [8].
+- **Unusual situations:** an AI may fail on cases that look different from its training examples [8].
 
-**Example (illustrative):** An AI trained to recognise cats only from daytime photos may fail on a photo taken at night.
+**Example (illustrative):** An AI trained to recognize cats only from daytime photos may fail on a photo taken at night.
 
 **How to handle it:** clean the data, check its quality (accuracy, completeness, variety), update and retrain when needed, and let humans double-check important results.
 
@@ -513,7 +512,7 @@ Big Data and neural networks (Connectionist AI) can do amazing things, but they 
 
 ## 4. Explainability
 
-**What it means:** Explainability is being able to understand *why* an AI made a decision. Deep neural networks are often called **"black boxes"** because their millions of connections make their reasoning hard to follow [C].
+**What it means:** Explainability is being able to understand *why* an AI made a decision. Deep neural networks are often called **"black boxes"** because their millions of connections make their reasoning hard to follow [9].
 
 **Four principles from NIST for explainable AI** [6]:
 1. **Explanation:** the system gives evidence or reasons for its output.
@@ -529,23 +528,22 @@ Big Data and neural networks (Connectionist AI) can do amazing things, but they 
 
 ## 5. Energy and Compute Cost
 
-**What it means:** Training and running big AI models and storing Big Data needs powerful computers in data centres, which use a lot of electricity.
+**What it means:** Training and running big AI models and storing Big Data needs powerful computers in data centers, which use a lot of electricity.
 
 **Facts (International Energy Agency, 2025)** [7]:
-- Data centres used about **1.5% of the world's electricity in 2024 (about 415 TWh)**.
-- Global data-centre electricity demand is projected to **more than double to about 945 TWh by 2030**, slightly more than Japan's total electricity use today.
+- Data centers used about **1.5% of the world's electricity in 2024 (about 415 TWh)**.
+- Global data-center electricity demand is projected to **more than double to about 945 TWh by 2030**, slightly more than Japan's total electricity use today.
 - AI is the biggest driver of this increase.
 
 **Why it matters:** more electricity demand can raise emissions if power comes from fossil fuels, and the cost of big models limits who can build them.
 
 **How to reduce the cost:**
 - Build **smaller, more efficient models** where they do the job.
-- **Reuse** existing trained models instead of starting from zero [C].
+- **Reuse** existing trained models instead of starting from zero [10].
 - Use **efficient hardware** and **cleaner electricity**.
 - Ask first: *Do we really need a giant AI for this task?*
 
 **Key idea:** *Smarter AI should also mean greener AI.*
-
 
 ## References
 
@@ -556,14 +554,16 @@ Big Data and neural networks (Connectionist AI) can do amazing things, but they 
 5. Grother, P., Ngan, M., Hanaoka, K. (2019). *Face Recognition Vendor Test (FRVT) Part 3: Demographic Effects*, NISTIR 8280. https://doi.org/10.6028/NIST.IR.8280
 6. Phillips, P. J. et al. (2021). *Four Principles of Explainable Artificial Intelligence*, NISTIR 8312. https://doi.org/10.6028/NIST.IR.8312
 7. International Energy Agency (2025). *Energy and AI.* https://www.iea.org/reports/energy-and-ai
-C. Course materials: Big Data and Connectionist AI (add the exact chapter/slide used).
+8. Google for Developers. *Machine Learning Crash Course.* https://developers.google.com/machine-learning/crash-course
+9. Rudin, C. (2019). *Stop Explaining Black Box Machine Learning Models for High Stakes Decisions and Use Interpretable Models Instead.* Nature Machine Intelligence, 1, 206–215. https://doi.org/10.1038/s42256-019-0048-x
+10. Goodfellow, I., Bengio, Y., & Courville, A. (2016). *Deep Learning*, Chapter 15: Representation Learning. MIT Press. https://www.deeplearningbook.org/
 
 
 # 5. Synergy and Future
 
 Big Data and Connectionist AI are closely connected technologies. Big Data provides large amounts of information, while Connectionist AI uses artificial neural networks to learn patterns from that information.
 
-When combined, they allow systems to process large datasets, discover hidden patterns, make predictions, and support better decision-making.
+When combined, they allow systems to process large datasets, discover hidden patterns, make predictions, and support better decision-making.[1]
 
 **How Big Data and Connectionist AI Work Together**
 
@@ -608,7 +608,7 @@ Two important applications are **Anomaly Detection** and **Automated Insights**.
 
 **Anomaly Detection**
 
-Anomaly detection is the process of identifying data that is significantly different from normal patterns.
+Anomaly detection is the process of identifying data that is significantly different from normal patterns.[2]
 
 Connectionist AI can learn what normal behavior looks like by studying historical data. It can then identify unusual activities that may require further investigation.
 
@@ -665,7 +665,7 @@ Anomaly detection helps organizations identify potential problems earlier, altho
 
 **Automated Insights**
 
-Automated insights refer to information or patterns that an AI system discovers from data without requiring humans to manually examine every record.
+Automated insights refer to information or patterns that an AI system discovers from data without requiring humans to manually examine every record.[3][4]
 
 Connectionist AI can analyze large datasets and identify trends, relationships, and changes that may be useful for decision-making.
 
@@ -756,13 +756,13 @@ However, human supervision will still be important to check the accuracy and rel
 
 As AI becomes more involved in important decisions, understanding how it reaches its conclusions becomes increasingly important.
 
-Explainable AI focuses on making AI decisions easier for humans to understand.
+Explainable AI focuses on making AI decisions easier for humans to understand.[5][6]
 
 For example, instead of simply rejecting a loan application, an AI system could provide information about the main factors that influenced its decision.
 
 **4. Edge AI**
 
-Edge AI combines artificial intelligence with edge computing.
+Edge AI combines artificial intelligence with edge computing.[7]
 
 Instead of sending all information to a central server, AI models can process data directly on devices such as smartphones, cameras, and sensors.
 
@@ -772,7 +772,7 @@ This can reduce delays and the amount of data transferred.
 
 **5. Responsible AI and Data Privacy**
 
-As AI systems collect and analyze more information, protecting personal data and ensuring responsible use become increasingly important.
+As AI systems collect and analyze more information, protecting personal data and ensuring responsible use become increasingly important.[5][6]
 
 Future development will need to focus on:
 - Protecting sensitive information.
@@ -814,7 +814,7 @@ Future development will need to focus on:
 
 Big Data and Connectionist AI complement each other. Big Data provides the information, while Connectionist AI helps transform that information into useful insights. Together, they create opportunities for more advanced analytics and intelligent systems in the future.
 
-## 3. Connection Between Big Data and Connectionist AI
+## References
 
 1. *Big Data Analytics Deep Learning Techniques and Applications: A Survey.* Information Systems. https://doi.org/10.1016/j.is.2023.102318
 
@@ -829,7 +829,3 @@ Big Data and Connectionist AI complement each other. Big Data provides the infor
 6. NIST. *AI Risks and Trustworthiness.* https://airc.nist.gov/airmf-resources/airmf/3-sec-characteristics/
 
 7. Singh, R. and Gill, S. S. (2023). *Edge AI: A Survey.* Internet of Things and Cyber-Physical Systems. https://doi.org/10.1016/j.iotcps.2023.02.004
-
-8. *A Review of Deep Learning Based Anomaly Detection.* Neurocomputing (2026). https://doi.org/10.1016/j.neucom.2025.132383
-
-9. *A Survey on Trustworthy Edge Intelligence: From Security and Reliability to Transparency and Sustainability.* IEEE Communications Surveys & Tutorials (2025). https://doi.org/10.1109/COMST.2024.3446585
