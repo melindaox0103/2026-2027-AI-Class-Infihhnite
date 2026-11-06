@@ -1,4 +1,5 @@
-# 1. Why Big Data Fuels Neural Networks
+# Section 3: Where Big Data Meets Connectionist AI
+## 1. Why Big Data Fuels Neural Networks
 
 Explanations
 Neural networks became powerful when three things arrived together: lots of data, networks with many parameters, and fast hardware (GPUs) to train them.
@@ -114,7 +115,7 @@ Expected outcome: the learner can count a network's parameters, explain why many
 Teacher check: ask, "What three things came together for AlexNet's 2012 win?" A good answer: big labeled data (ImageNet's 1.2 million images), big compute (two GPUs), and strong ideas (a deep convolutional network with ReLU and dropout).
 </details>
 
-## References
+### References
 
 1. Krizhevsky, A., Sutskever, I., & Hinton, G. E. (2012). ImageNet Classification with Deep Convolutional Neural Networks. *Advances in Neural Information Processing Systems 25*. https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf
 2. Kaplan, J., et al. (2020). Scaling Laws for Neural Language Models. arXiv:2001.08361. https://arxiv.org/abs/2001.08361v1
@@ -122,7 +123,7 @@ Teacher check: ask, "What three things came together for AlexNet's 2012 win?" A 
 4. apxml.com. "Comparing CPU and GPU Architectures." https://apxml.com/courses/planning-optimizing-ai-infrastructure/chapter-1-foundations-ai-compute-infrastructure/comparing-cpu-gpu-architectures
 
 
-# 2. Preparing Data for a Network
+## 2. Preparing Data for a Network
 
 When Big Data meets Connectionist AI, large amounts of data are used to train artificial neural networks (ANNs). However, before a neural network can learn, the data must be prepared properly.
 
@@ -132,7 +133,7 @@ For example, imagine you want to train an AI to recognize pictures of cats and d
 
 There are six important steps:
 
-## 1. Features and Labels
+### 1. Features and Labels
 
 **Features** are the pieces of information a model learns from. A picture is made of tiny dots called **pixels**. Each pixel is stored as a number for its color and brightness. These numbers are the features the network receives.
 
@@ -151,7 +152,7 @@ In traditional machine learning, people often choose the features by hand. A neu
 | Long ears, larger body, different fur | Dog |
 | Round face, whiskers, fluffy fur | Cat |
 
-### How it works
+#### How it works
 1. The AI receives information (features).
 2. It examines the characteristics.
 3. It learns how those characteristics relate to the correct answers (labels).
@@ -159,7 +160,7 @@ In traditional machine learning, people often choose the features by hand. A neu
 
 **Simple example:** A student learns to identify fruits by looking at their colors, shapes, and sizes. The fruit's name is the correct answer.
 
-## 2. Cleaning and Scaling
+### 2. Cleaning and Scaling
 
 Before training, data needs to be cleaned and sometimes scaled.
 
@@ -189,13 +190,13 @@ scaled value = (value - smallest value) / (largest value - smallest value)
 
 *These scaled values are illustrative, not calculated using one shared scaling formula.*
 
-### Why is it important?
+#### Why is it important?
 - Cleaning prevents incorrect information from confusing the AI.
 - Scaling helps prevent numbers with very different ranges from dominating the learning process.
 
 **Simple example:** Before doing a school project, you organize your notes, remove repeated information, and arrange your numbers into a consistent format.
 
-## 3. Splitting Data
+### 3. Splitting Data
 
 **Data Splitting** means dividing a dataset into separate groups for different purposes.
 
@@ -221,7 +222,7 @@ Instead of processing all 700 pictures at once, you divide them into batches of 
 | Batch 6 | 100 |
 | Batch 7 | 100 |
 
-### How it works
+#### How it works
 1. The AI learns from the training data.
 2. Developers use validation data to adjust the model.
 3. Testing data checks how well the model performs on unfamiliar pictures.
@@ -230,7 +231,7 @@ Instead of processing all 700 pictures at once, you divide them into batches of 
 
 It helps determine whether the AI has actually learned patterns or simply memorized its training examples.
 
-## 4. Class Imbalance
+### 4. Class Imbalance
 
 **Class Imbalance** happens when a dataset contains significantly more examples of one category than another.
 
@@ -243,11 +244,11 @@ For example, imagine an AI trained to recognize cats and dogs:
 
 The dataset has many more cat pictures than dog pictures.
 
-### Why is this a problem?
+#### Why is this a problem?
 
 The AI may become better at recognizing cats because it sees them much more frequently. It might struggle to recognize dogs.
 
-### How can we solve it?
+#### How can we solve it?
 > **Important:** apply oversampling, undersampling, and class weighting to the **training data only**, after the split. Otherwise, copies of the same picture can end up in both the training and testing groups.
 - **Oversampling:** Adding or repeating examples from the smaller category.
 - **Undersampling:** Reducing examples from the larger category.
@@ -255,7 +256,7 @@ The AI may become better at recognizing cats because it sees them much more freq
 
 **Simple example:** Imagine a class where 90 students study English and only 10 study Mandarin. If a teacher only focuses on the majority, the Mandarin students may receive less attention.
 
-## 5. Batching
+### 5. Batching
 
 **Batching** means dividing a large dataset into smaller groups called *batches* so that a neural network can process the data more efficiently.
 
@@ -276,21 +277,21 @@ Instead of processing all 1,000 pictures at once, you divide them into batches o
 | Batch 9 | 100 |
 | Batch 10 | 100 |
 
-### How it works
+#### How it works
 1. The AI processes the first batch.
 2. It learns from the information.
 3. It updates its internal parameters (the values it adjusts while learning).
 4. It moves to the next batch.
 5. This continues until all batches have been processed.
 
-### Why is it important?
+#### Why is it important?
 - Makes large datasets easier to process.
 - Helps manage computer memory.
 - Allows the AI to update its learning gradually.
 
 **Simple example:** Instead of studying 1,000 pages in one sitting, you study 100 pages at a time.
 
-## 6. Putting Everything Together
+### 6. Putting Everything Together
 
 Here is how all six steps connect when preparing Big Data for a neural network.
 
@@ -303,7 +304,7 @@ The overall process:
 5. **Batching:** Divide the training data into smaller groups for processing.
 6. **Training:** Feed the prepared batches into the neural network so it can learn patterns.
 
-## Summary Table
+### Summary Table
 
 | Topic | Simple meaning | Main purpose |
 |---|---|---|
@@ -313,7 +314,7 @@ The overall process:
 | Class Imbalance | Unequal category examples | Stop the AI from favoring the larger category |
 | Batching | Processing smaller groups | Manage training efficiently |
 
-## Understanding the Connection to Big Data and Connectionist AI
+### Understanding the Connection to Big Data and Connectionist AI
 
 - **Big Data** provides large amounts of information for AI to learn from.
 - **Data preparation** organizes that information into a usable format.
@@ -324,7 +325,7 @@ One important thing to remember: data preparation directly affects how well a ne
 
 **In simple terms:** Big Data gives AI the information, data preparation gets that information ready, and Connectionist AI uses it to learn.
 
-## References for Further Reading
+### References for Further Reading
 
 1. [Google Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course) – Machine learning fundamentals and data preparation.
 2. [Scikit-learn: Preprocessing Data](https://scikit-learn.org/stable/modules/preprocessing.html) – Data cleaning, scaling, and preprocessing.
@@ -332,11 +333,11 @@ One important thing to remember: data preparation directly affects how well a ne
 4. [Imbalanced-learn Documentation](https://imbalanced-learn.org/stable/) – Understanding and handling class imbalance.
 
 
-# 3. Applications and Case Studies
+## 3. Applications and Case Studies
 
 Big Data gives neural networks (Connectionist AI) the many examples they need to learn. This section shows five real uses and then follows one use from start to finish. Each use follows the same pattern: **lots of data in, a neural network learns patterns, and it gives a useful answer.**
 
-## 1. Image Recognition
+### 1. Image Recognition
 
 **What it does:** The computer looks at a picture and says what is in it (a cat, a car, a flower).
 
@@ -350,7 +351,7 @@ Big Data gives neural networks (Connectionist AI) the many examples they need to
 
 **Key idea:** *More labeled pictures plus a powerful network made computers much better at "seeing".*
 
-## 2. Language
+### 2. Language
 
 **What it does:** The computer reads, translates or writes text.
 
@@ -364,7 +365,7 @@ Big Data gives neural networks (Connectionist AI) the many examples they need to
 
 **Key idea:** *Attention lets AI focus on the words that matter.*
 
-## 3. Fraud Detection
+### 3. Fraud Detection
 
 **What it does:** Banks use AI to spot card payments that might be stolen or fake, so they can stop or check them.
 
@@ -381,7 +382,7 @@ Big Data gives neural networks (Connectionist AI) the many examples they need to
 
 **Key idea:** *Fraud AI looks for the rare "odd one out" in a huge pile of normal data.*
 
-## 4. Healthcare Imaging
+### 4. Healthcare Imaging
 
 **What it does:** AI studies medical pictures, such as photos of the back of the eye, to help find disease early.
 
@@ -397,7 +398,7 @@ Big Data gives neural networks (Connectionist AI) the many examples they need to
 
 **Key idea:** *AI can help doctors look at more images, but doctors and careful testing are still needed.*
 
-## 5. Recommendations
+### 5. Recommendations
 
 **What it does:** AI suggests videos, music, shopping items or games you might like.
 
@@ -409,7 +410,7 @@ Big Data gives neural networks (Connectionist AI) the many examples they need to
 
 **Key idea:** *Recommenders turn millions of choices into a short list that fits you.*
 
-## 6. End-to-End Case: AI Screening for Diabetic Eye Disease
+### 6. End-to-End Case: AI Screening for Diabetic Eye Disease
 
 This case follows one AI from idea to real use. It is based on the first AI device cleared by the US Food and Drug Administration (FDA) to give a screening result without a doctor reading the image [10].
 
@@ -440,7 +441,7 @@ No test is perfect, which is why doctors and careful testing are still needed.
 
 **Key idea:** *A useful AI needs good data, careful testing, clear limits and people who stay responsible.*
 
-## Summary Table
+### Summary Table
 
 | Application | Data | What the AI does | Main limit |
 |---|---|---|---|
@@ -452,7 +453,7 @@ No test is perfect, which is why doctors and careful testing are still needed.
 | End-to-end case | Retinal photos | Screens for diabetic eye disease | Only works for its intended use |
 
 
-## References
+### References
 
 1. Krizhevsky, A., Sutskever, I., Hinton, G. E. (2012). *ImageNet Classification with Deep Convolutional Neural Networks.* NeurIPS 25 / Communications of the ACM. https://doi.org/10.1145/3065386
 2. Grother, P., Ngan, M., Hanaoka, K. (2019). *Face Recognition Vendor Test (FRVT) Part 3: Demographic Effects*, NISTIR 8280. https://doi.org/10.6028/NIST.IR.8280
@@ -466,11 +467,11 @@ No test is perfect, which is why doctors and careful testing are still needed.
 10. Healio (11 April 2018). *FDA allows marketing of IDx-DR artificial intelligence device for diabetic retinopathy detection.* (Secondary news report of [10].)
 
 
-# 4. Ethics, Privacy, and Limits
+## 4. Ethics, Privacy, and Limits
 
 Big Data and neural networks (Connectionist AI) can do amazing things, but they come with responsibilities and limits. A good AI builder asks: *"Can we build it?"* and also *"Should we, and how do we do it safely?"*
 
-## 1. Privacy
+### 1. Privacy
 
 **What it means:** Privacy is your right to control who knows things about you. Big Data systems collect huge amounts of information, such as names, photos, locations and what you watch or search.
 
@@ -488,7 +489,7 @@ Big Data and neural networks (Connectionist AI) can do amazing things, but they 
 
 **Key idea:** *Just because data can be collected does not mean it should be.*
 
-## 2. Bias and Fairness
+### 2. Bias and Fairness
 
 **What it means:** Bias is when an AI treats some people or groups unfairly. Fairness means treating people equally and giving everyone a fair chance.
 
@@ -505,7 +506,7 @@ Big Data and neural networks (Connectionist AI) can do amazing things, but they 
 
 **Key idea:** *AI learns from us, so unfair data can lead to unfair AI.*
 
-## 3. Dependence on Data
+### 3. Dependence on Data
 
 **What it means:** Neural networks learn from examples, so they are only as good as the data they are given. People often say **"Garbage In, Garbage Out"** [8].
 
@@ -521,7 +522,7 @@ Big Data and neural networks (Connectionist AI) can do amazing things, but they 
 
 **Key idea:** *Data quality matters as much as data quantity.*
 
-## 4. Explainability
+### 4. Explainability
 
 **What it means:** Explainability is being able to understand *why* an AI made a decision. Deep neural networks are often called **"black boxes"** because their millions of connections make their reasoning hard to follow [9].
 
@@ -537,7 +538,7 @@ Big Data and neural networks (Connectionist AI) can do amazing things, but they 
 
 **Key idea:** *A good AI should give answers and be able to show reasons.*
 
-## 5. Energy and Compute Cost
+### 5. Energy and Compute Cost
 
 **What it means:** Training and running big AI models and storing Big Data needs powerful computers in data centers, which use a lot of electricity.
 
@@ -556,7 +557,7 @@ Big Data and neural networks (Connectionist AI) can do amazing things, but they 
 
 **Key idea:** *Smarter AI should also mean greener AI.*
 
-## References
+### References
 
 1. European Union. *General Data Protection Regulation (GDPR), Article 5: Principles relating to processing of personal data.* https://gdpr-info.eu/art-5-gdpr/
 2. CMS Law. *PRC Promulgated Personal Information Protection Law* (adopted 20 Aug 2021, effective 1 Nov 2021). https://cms.law/en/chn/legal-updates/PRC-Promulgated-Personal-Information-Protection-Law
@@ -570,7 +571,7 @@ Big Data and neural networks (Connectionist AI) can do amazing things, but they 
 10. Goodfellow, I., Bengio, Y., & Courville, A. (2016). *Deep Learning*, Chapter 15: Representation Learning. MIT Press. https://www.deeplearningbook.org/
 
 
-# 5. Synergy and Future
+## 5. Synergy and Future
 
 Big Data and Connectionist AI are closely connected technologies. Big Data provides large amounts of information, while Connectionist AI uses artificial neural networks to learn patterns from that information.
 
@@ -825,7 +826,7 @@ Future development will need to focus on:
 
 Big Data and Connectionist AI complement each other. Big Data provides the information, while Connectionist AI helps transform that information into useful insights. Together, they create opportunities for more advanced analytics and intelligent systems in the future.
 
-## References
+### References
 
 1. *Big Data Analytics Deep Learning Techniques and Applications: A Survey.* Information Systems. https://doi.org/10.1016/j.is.2023.102318
 
