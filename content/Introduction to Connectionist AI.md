@@ -1,6 +1,7 @@
 # Section 2: Connectionist AI
+
 ## Chapter 1: Introduction to Connectionist AI
----
+
 
 ### 1.1 Context and History
 
