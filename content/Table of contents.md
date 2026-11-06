@@ -42,7 +42,7 @@
 |3.2| [Transformers](#32-transformers)||
 |3.3| [RNNs](#33-RNNs)||
 |3.4| [CNNs](#34-CNNs)||
-|3.5| [Feedforward Networks](#35-Feedforward Networks)||
+|3.5| [Feedforward Networks](#35-Feedforward-Networks)||
 ## Table 3 : Where Big Data Meets Connectionist AI
 |  | Title | Page |
 |:---|:---|:---:|
