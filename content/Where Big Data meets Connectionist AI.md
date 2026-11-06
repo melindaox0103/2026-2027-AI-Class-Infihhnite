@@ -1,5 +1,5 @@
 # Section 3: Where Big Data Meets Connectionist AI
-## 1. Why Big Data Fuels Neural Networks
+## Chapter 1. Why Big Data Fuels Neural Networks
 
 Explanations
 Neural networks became powerful when three things arrived together: lots of data, networks with many parameters, and fast hardware (GPUs) to train them.
@@ -123,7 +123,7 @@ Teacher check: ask, "What three things came together for AlexNet's 2012 win?" A 
 4. apxml.com. "Comparing CPU and GPU Architectures." https://apxml.com/courses/planning-optimizing-ai-infrastructure/chapter-1-foundations-ai-compute-infrastructure/comparing-cpu-gpu-architectures
 
 
-## 2. Preparing Data for a Network
+## Chapter 2. Preparing Data for a Network
 
 When Big Data meets Connectionist AI, large amounts of data are used to train artificial neural networks (ANNs). However, before a neural network can learn, the data must be prepared properly.
 
@@ -333,7 +333,7 @@ One important thing to remember: data preparation directly affects how well a ne
 4. [Imbalanced-learn Documentation](https://imbalanced-learn.org/stable/) – Understanding and handling class imbalance.
 
 
-## 3. Applications and Case Studies
+## Chapter 3. Applications and Case Studies
 
 Big Data gives neural networks (Connectionist AI) the many examples they need to learn. This section shows five real uses and then follows one use from start to finish. Each use follows the same pattern: **lots of data in, a neural network learns patterns, and it gives a useful answer.**
 
@@ -467,7 +467,7 @@ No test is perfect, which is why doctors and careful testing are still needed.
 10. Healio (11 April 2018). *FDA allows marketing of IDx-DR artificial intelligence device for diabetic retinopathy detection.* (Secondary news report of [10].)
 
 
-## 4. Ethics, Privacy, and Limits
+## Chapter 4. Ethics, Privacy, and Limits
 
 Big Data and neural networks (Connectionist AI) can do amazing things, but they come with responsibilities and limits. A good AI builder asks: *"Can we build it?"* and also *"Should we, and how do we do it safely?"*
 
@@ -571,7 +571,7 @@ Big Data and neural networks (Connectionist AI) can do amazing things, but they 
 10. Goodfellow, I., Bengio, Y., & Courville, A. (2016). *Deep Learning*, Chapter 15: Representation Learning. MIT Press. https://www.deeplearningbook.org/
 
 
-## 5. Synergy and Future
+## Chapter 5. Synergy and Future
 
 Big Data and Connectionist AI are closely connected technologies. Big Data provides large amounts of information, while Connectionist AI uses artificial neural networks to learn patterns from that information.
 
