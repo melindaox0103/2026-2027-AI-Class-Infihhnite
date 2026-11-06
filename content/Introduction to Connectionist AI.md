@@ -558,7 +558,7 @@ For example [2]:
 
 ---
 
-### 1.5 Biological vs Artificial Neuron; Connectionist vs Symbolic AI
+### 1.5 Biological vs Artificial Neuron, Connectionist vs Symbolic AI
 
 Connectionist AI was inspired by the way the human brain processes information. However, artificial neurons are simplified mathematical models rather than exact copies of biological neurons [3][5].
 
