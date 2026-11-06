@@ -972,7 +972,7 @@ Bias `b = −0.2` (a small built-in reluctance to go out).
 
 Use the same weights (`0.6`, `0.5`, `−0.8`) and bias (`−0.2`).
 
-**Task 1.** It is **rainy** (x₁ = 0), **friends are going** (x₂ = 1), and **homework is done** (x₃ = 0). Find `z`, the ReLU output, and the sigmoid output.
+**Task 1.** It is **rainy** (x₁ = 0), **friends are going** (x₂ = 1), and **homework is done** (x₃ = 0). Find `z`, the ReLU output, and the sigmoid output. Use a calculator for difficult calculations.
 
 **Task 2.** Now **every input is 0**. What is `z`, and what does this show about the role of the bias?
 
