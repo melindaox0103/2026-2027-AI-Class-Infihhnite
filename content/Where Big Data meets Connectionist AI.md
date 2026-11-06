@@ -134,7 +134,7 @@ There are six important steps:
 
 ## 1. Features and Labels
 
-**Features** are the pieces of information a model learns from.
+**Features** are the pieces of information a model learns from. A picture is made of tiny dots called **pixels**. Each pixel is stored as a number for its color and brightness. These numbers are the features the network receives.
 
 **Labels** are the correct answers that the AI is supposed to predict.
 
@@ -183,7 +183,9 @@ scaled value = (value - smallest value) / (largest value - smallest value)
 | Height (cm) | 170 | 140 | 190 | 0.60 |
 | Weight (kg) | 60 | 40 | 90 | 0.40 |
 
-> **Important:** work out the smallest and largest values (or any other scaling numbers) from the **training data only**. Then apply the same numbers to the validation and testing data. If the scaling uses all of the data, information from the testing data leaks into training. This is called data leakage (see Connectionist AI 2.3). Remove duplicate pictures before splitting, so the same picture is not in both the training and testing groups.
+**Worked line:** an age of 12, in data where the youngest is 10 and the oldest is 20, gives (12 - 10) / (20 - 10) = 2 / 10 = **0.20**.
+
+> **Important:** work out the smallest and largest values from the **training data only**, then use the same numbers on the validation and testing data. Think of a student who sees the exam questions before the exam. Their score would look great but would not show what they really learned. If the scaling uses the testing data, the test is spoiled in the same way. This is called **data leakage** (see Connectionist AI 2.3). Remove duplicate pictures before splitting, so the same picture is not in both the training and testing groups.
 
 *These scaled values are illustrative, not calculated using one shared scaling formula.*
 
