@@ -413,14 +413,23 @@ Big Data gives neural networks (Connectionist AI) the many examples they need to
 
 This case follows one AI from idea to real use. It is based on the first AI device cleared by the US Food and Drug Administration (FDA) to give a screening result without a doctor reading the image [10].
 
+**In short:** a health worker takes a photo of the back of the eye, the software looks at it, and it gives one of two answers: "see an eye specialist" or "screen again in 12 months."
+
 | Step | What happens |
 |---|---|
 | **1. Problem** | Diabetes can damage blood vessels in the eye (diabetic retinopathy). Early detection matters, but many patients are not adequately screened [10]. |
 | **2. Data** | Many retinal photos, each graded by expert eye doctors. In the research study, 128,175 photos were used [7]. |
 | **3. Model** | A CNN learns to tell photos that show signs of the disease from photos that do not [7]. |
-| **4. Testing** | The FDA reviewed a study of 900 patients with diabetes at 10 primary-care sites. The AI correctly found more than mild disease in 87.4% of cases and correctly cleared 89.5% of patients without it [10][11]. |
+| **4. Testing** | The FDA reviewed a study of 900 patients with diabetes at 10 primary-care sites. The AI correctly found disease that was moderate or worse in 87.4% of cases (its *sensitivity*) and correctly cleared 89.5% of patients without it (its *specificity*) [10][11]. |
 | **5. Use in the real world** | A health worker takes photos with a retinal camera, the photos are uploaded, and the software gives one of two results: refer the patient to an eye specialist, or screen again in 12 months [10][11]. |
 | **6. Limits** | It is designed only for diabetic retinopathy, only for adults with diabetes, and it should not be used for pregnant patients or for other eye conditions [10]. |
+
+**Two terms, with the study's numbers:**
+
+- **Sensitivity** asks: of the patients who really have the disease, how many does the AI find? At 87.4%, about 87 of every 100 patients with the disease are found. About 13 are missed.
+- **Specificity** asks: of the patients who do not have the disease, how many does the AI correctly clear? At 89.5%, about 90 of every 100 healthy patients are cleared. About 10 are sent to a specialist when they did not need to be.
+
+No test is perfect, which is why doctors and careful testing are still needed.
 
 **Connections to the Ethics section:**
 - **Privacy:** Medical photos are sensitive and must be protected.
