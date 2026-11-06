@@ -1214,7 +1214,15 @@ flowchart LR
     h1 --> o
     h2 --> o
 ```
-
+```mermaid
+flowchart LR
+    x1["x₁ = 0"] -->|"0.5"| h1["h₁<br/>bias 0.5"]
+    x2["x₂ = 2"] -->|"0.25"| h1
+    x1 -->|"-0.6"| h2["h₂<br/>bias 0.2"]
+    x2 -->|"0.1"| h2
+    h1 -->|"0.8"| o["output ŷ<br/>bias -0.4"]
+    h2 -->|"0.5"| o
+```
 > **Good to know:** the forward pass **does not change any weights**. It only uses them to make a prediction. It runs both when training (the first step of each learning loop) and when the finished network is used. Backpropagation needs the forward pass's results first.
 
 ---
