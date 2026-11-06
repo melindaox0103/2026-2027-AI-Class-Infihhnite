@@ -156,26 +156,25 @@ These rows were re-checked against the current Markdown only; the plan outline, 
 - Fixes for rows 5, 10, 11 to 21 were drafted on 05/11/2026 and are In progress until they are pasted into GitHub and re-read. (The issues have been resolved)
 
 **Evidence reference:**
+<img width="1363" height="307" alt="Says Answer B but no answer options are listed" src="https://github.com/user-attachments/assets/a6e2996c-ecd7-4156-b88c-4dcc2a664f2d" />
+<img width="1461" height="520" alt="Add a source that defines descriptive, diagnostic, predictive and prescriptive analytics" src="https://github.com/user-attachments/assets/7f13be16-e878-4e55-83b2-5b9071d7195f" />
+<img width="1460" height="506" alt="The status table says Chapters 2 and 3 are outlines (outdated)  REVIEW comments remain in the file  1 5 is outline only  The 1 3 timeline has no source" src="https://github.com/user-attachments/assets/9daeb2e3-627d-4fce-ab05-4839d882ba8c" />
+<img width="1481" height="502" alt="3 5 Add a reliable source to real-time streaming" src="https://github.com/user-attachments/assets/18480642-eee1-4fbf-b291-573ad1a69ae0" />
+<img width="1471" height="202" alt="3 3 Remove uncorrelated sources" src="https://github.com/user-attachments/assets/048999dd-a4a5-45b6-ab96-19f6e1f94790" />
+<img width="1478" height="327" alt="3 3 Add more appropriate sources" src="https://github.com/user-attachments/assets/14d321b9-0cb4-4b71-9c86-36e52767d53d" />
+<img width="1480" height="726" alt="Screenshot 2026-11-04 172524" src="https://github.com/user-attachments/assets/897365aa-9787-4235-8505-2ed77087d800" />
+<img width="1456" height="472" alt="Screenshot 2026-11-04 172536" src="https://github.com/user-attachments/assets/e77d671c-1e8e-4b0f-94e3-349322a6ec70" />
+<img width="1467" height="725" alt="Screenshot 2026-11-04 172546" src="https://github.com/user-attachments/assets/4415b0c3-e735-4a86-9adc-b335d2faab27" />
+<img width="1462" height="878" alt="Screenshot 2026-11-04 172558" src="https://github.com/user-attachments/assets/d8f0b768-e376-4a42-9c7a-fe30c7046574" />
+<img width="1468" height="727" alt="Screenshot 2026-11-04 172617" src="https://github.com/user-attachments/assets/ebcf7435-0509-4f3c-8ae3-3c4f415548e5" />
+<img width="1470" height="682" alt="Screenshot 2026-11-04 172642" src="https://github.com/user-attachments/assets/9bf05f06-199b-4ae2-8a54-167fd1bb5b5d" />
+<img width="1467" height="748" alt="Screenshot 2026-11-04 172704" src="https://github.com/user-attachments/assets/3bb4e16f-a622-47a2-916a-fc3e55dc9e91" />
+<img width="1467" height="867" alt="Screenshot 2026-11-04 172717" src="https://github.com/user-attachments/assets/129a4ed1-606f-4ad3-88b2-8ff361aac5e6" />
+<img width="1472" height="415" alt="Screenshot 2026-11-04 172811" src="https://github.com/user-attachments/assets/a808880d-ac81-4154-82be-8ab59db4235b" />
+<img width="1465" height="752" alt="Screenshot 2026-11-04 172839" src="https://github.com/user-attachments/assets/b82c8341-b3af-4fcf-880d-9dcf71bc5718" />
+<img width="1457" height="891" alt="Screenshot 2026-11-06 191151" src="https://github.com/user-attachments/assets/652b9e06-54fc-4c1e-96da-d302dcb127d8" />
 
-*[Screenshot 1: GitHub diff of the Big Data references (Kazanskaia 2025, Kitchin 2014, Amoria Bond 2025 added; NIST Volumes 1 and 6 removed)]*
 
-*[Screenshot 2: GitHub diff of the Section 3 references (Singh and Gill 2023 reformatted; Google Cloud Spark page removed; AWS, IBM and Pashikanti real-time streaming sources added)]*
-
-*[Screenshot 3: GitHub diff of the analytics references (Harvard Business School Online, Gartner, Sharda et al. added) and of the Leo's phone example with "(answer B)" removed]*
-
-*[Screenshots 4 to 8: GitHub diffs for Big Data 2.1 Data Quality (wrapped lines joined, escaped table pipes fixed, list formatting fixed for the missing values and duplicate data examples)]*
-
-*[Screenshot 9: GitHub diff of 2.2 Analytics Basics (wrapped lines joined)]*
-
-*[Screenshots 10 and 11: GitHub diffs of the ASCII sales and advertising charts, now in ```text code blocks]*
-
-*[Screenshot 12: GitHub diff of the scale-up diagram (SERVER 8 GB RAM to SERVER 32 GB RAM) now in a code block]*
-
-*[Screenshot 13: GitHub diff of the challenges table (Cost, Skills, Integration, Security, Privacy) with the escaped pipes fixed]*
-
-*[Screenshot 14: GitHub diff removing the "Development status (Stage 1 snapshot)" table from Chapter 1]*
-
-*[Screenshot 15: GitHub diff of the Mermaid neuron diagram with bias values added (h₁ bias 0.5, h₂ bias 0.2, ŷ bias -0.4)]*
 
 ---
 
@@ -187,7 +186,8 @@ Claude (Anthropic) was used on 03/11/2026 to draft this log and to pre-check the
 - What the AI did not do: open every link, test the images or run the learner tests. Several links required human intervention, which is mostly done by David, the Quality Lead.
 - What David must do before submitting: re-read each source, confirm or change each Result, assign owners, and mark rows Verified only after re-reading the corrected text.
 - Evidence to attach:
+<img width="808" height="462" alt="Screenshot 2026-11-05 230803" src="https://github.com/user-attachments/assets/bf0dff24-7306-491e-afa0-a41d61c37ec4" />
+<img width="742" height="272" alt="Screenshot 2026-11-05 232206" src="https://github.com/user-attachments/assets/cd0b2db7-c22b-49df-a556-7f60e4033b71" />
 
-*[Screenshot 16: Chat screenshot showing the pasted Markdown files and the prompt asking the AI to verify the content, suggest fixes, and draft Part 6, with the Learner Test skipped for now]*
 
-*[Screenshot 17: Chat screenshot of the prompt: "For Connectionist AI 1.1 all the way to 1.5 please add reliable sources for each subtopic and keep it a markdown that I can copy directly from here"]*
+
