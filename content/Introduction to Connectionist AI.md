@@ -1197,32 +1197,25 @@ The activations `a` of one layer become the inputs `x` of the next. After the la
 ```mermaid
 flowchart LR
     subgraph Input
-        x1((x₁))
-        x2((x₂))
+        x1["x₁ = 1"]
+        x2["x₂ = 2"]
     end
     subgraph Hidden
-        h1((h₁))
-        h2((h₂))
+        h1["h₁ (bias 0.5)"]
+        h2["h₂ (bias 0.2)"]
     end
     subgraph Output
-        o((ŷ))
+        o["ŷ (bias -0.4)"]
     end
-    x1 --> h1
-    x1 --> h2
-    x2 --> h1
-    x2 --> h2
-    h1 --> o
-    h2 --> o
-```
-```mermaid
-flowchart LR
-    x1["x₁ = 0"] -->|"0.5"| h1["h₁<br/>bias 0.5"]
-    x2["x₂ = 2"] -->|"0.25"| h1
-    x1 -->|"-0.6"| h2["h₂<br/>bias 0.2"]
+    x1 -->|"0.5"| h1
+    x2 -->|"0.25"| h1
+    x1 -->|"-0.6"| h2
     x2 -->|"0.1"| h2
-    h1 -->|"0.8"| o["output ŷ<br/>bias -0.4"]
+    h1 -->|"0.8"| o
     h2 -->|"0.5"| o
 ```
+
+Each number on an arrow is a **weight**. Multiply the value on the left by the weight on the arrow, add the results and the neuron's bias, then apply the activation function. The values and weights match the worked example below.
 > **Good to know:** the forward pass **does not change any weights**. It only uses them to make a prediction. It runs both when training (the first step of each learning loop) and when the finished network is used. Backpropagation needs the forward pass's results first.
 
 ---
