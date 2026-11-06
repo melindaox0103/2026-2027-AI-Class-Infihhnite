@@ -31,7 +31,7 @@
 |1.2| [Key Characteristics](#12-key-characteristics)||
 |1.3| [Knowledge Stored in Connections](#13-knowledge-stored-in-connections)||
 |1.4| [Traditional Machine Learning](#14-traditional-machine-learning)||
-|1.5| [Biological vs Artificial neuron : Connectionist vs Symbolic AI](#15-biological-vs-artificial-neuron-:-connectionist-vs-symbolic-ai)||
+|1.5| [Biological vs Artificial neuron, Connectionist vs Symbolic AI](#15-biological-vs-artificial-neuron-connectionist-vs-symbolic-ai)||
 | **Chapter 2** | **[Basics of Neural Networks](#chapter-2-basics-of-neural-networks)** |  |
 |2.1| [How Networks Learn](#21-how-networks-learn)||
 |2.2| [Inside One Neuron](#22-inside-one-neuron)||
