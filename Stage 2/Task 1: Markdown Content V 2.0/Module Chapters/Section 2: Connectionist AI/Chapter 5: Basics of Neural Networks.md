@@ -4,7 +4,7 @@
 
 > **Part:** Connectionist AI · **Chapter:** Basics of Neural Networks · **Level:** Beginner
 > **Covers:** loss, gradient descent, backpropagation, the training process
-> **Before you start:** this lesson uses *weights* and *predictions* (see 2.2 Inside One Neuron) and the *forward pass* (see 5.4 Layers and the Forward Pass). If you have not read them yet, read them first.
+> **Before you start:** this lesson uses *weights* and *predictions* (see 5.2 Inside One Neuron) and the *forward pass* (see 5.4 Layers and the Forward Pass). If you have not read them yet, read them first.
 
 ---
 
