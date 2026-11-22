@@ -602,11 +602,3 @@ A data pipeline may use ETL as part of its process.
 
 - AWS. *What Is a Data Pipeline?* https://aws.amazon.com/what-is/data-pipeline/
 - AWS. *What Is an ETL Pipeline?* https://aws.amazon.com/what-is/etl-pipeline/
-
----
-
-## Chapter 3: Big Data Technologies
-
-Big Data technologies are tools and systems used to store, process, analyze, and visualize large amounts of data.
-
-These technologies help organizations handle data that may be too large or complex for traditional systems.
