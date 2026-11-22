@@ -1,7 +1,5 @@
 ## Chapter 5: Basics of Neural Networks
 
----
-
 ### 5.1 How Networks Learn
 
 > **Part:** Connectionist AI · **Chapter:** Basics of Neural Networks · **Level:** Beginner
