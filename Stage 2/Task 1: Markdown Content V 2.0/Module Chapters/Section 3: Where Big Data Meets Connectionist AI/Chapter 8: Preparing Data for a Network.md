@@ -1,4 +1,4 @@
-## Chapter 8. Preparing Data for a Network
+## Chapter 8: Preparing Data for a Network
 
 When Big Data meets Connectionist AI, large amounts of data are used to train artificial neural networks (ANNs). However, before a neural network can learn, the data must be prepared properly.
 
