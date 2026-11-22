@@ -1,4 +1,4 @@
-## Chapter 7. Why Big Data Fuels Neural Networks
+## Chapter 7: Why Big Data Fuels Neural Networks
 
 Explanations
 Neural networks became powerful when three things arrived together: lots of data, networks with many parameters, and fast hardware (GPUs) to train them.
