@@ -1,4 +1,4 @@
-## Chapter 9. Applications and Case Studies
+## Chapter 9: Applications and Case Studies
 
 Big Data gives neural networks (Connectionist AI) the many examples they need to learn. This section shows five real uses and then follows one use from start to finish. Each use follows the same pattern: **lots of data in, a neural network learns patterns, and it gives a useful answer.**
 
