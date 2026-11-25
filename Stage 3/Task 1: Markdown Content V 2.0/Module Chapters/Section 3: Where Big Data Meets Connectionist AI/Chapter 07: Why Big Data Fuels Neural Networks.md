@@ -91,7 +91,7 @@ Result
 100,352,000 multiplications
 
 What to notice:
-With only 100 examples, the network has about 1,000 parameters for every example, so it can simply memorise them. With 60,000 examples the data is far better matched to the network's size.
+With only 100 examples, the network has about 1,000 parameters for every example, so it can simply memorize them. With 60,000 examples the data is far better matched to the network's size.
 Step 5 shows why GPUs matter: the 100 million multiplications for one batch's first layer are independent, so thousands of cores can share them.
 
 Learner activity
