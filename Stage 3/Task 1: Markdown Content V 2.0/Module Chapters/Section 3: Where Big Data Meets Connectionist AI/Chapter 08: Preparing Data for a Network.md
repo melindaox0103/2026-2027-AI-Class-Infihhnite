@@ -1,5 +1,5 @@
 ## Chapter 8: Preparing Data for a Network
-
+> **Before you start:** This chapter builds on data quality and data pipeline basics from Chapter 2 (such as missing values, duplicates, and transforming data for analysis) and introductory Connectionist AI concepts from Chapters 4–5 (such as features, learned patterns, weights, and overfitting/generalization).
 When Big Data meets Connectionist AI, large amounts of data are used to train artificial neural networks (ANNs). However, before a neural network can learn, the data must be prepared properly.
 
 **Preparing data for a network** means organizing, cleaning, and arranging information so that an AI model can understand patterns and make predictions.
@@ -206,3 +206,16 @@ One important thing to remember: data preparation directly affects how well a ne
 2. [Scikit-learn: Preprocessing Data](https://scikit-learn.org/stable/modules/preprocessing.html) – Data cleaning, scaling, and preprocessing.
 3. [TensorFlow: tf.data Guide](https://www.tensorflow.org/guide/data) – Preparing datasets and batching for neural networks.
 4. [Imbalanced-learn Documentation](https://imbalanced-learn.org/stable/) – Understanding and handling class imbalance.
+---
+## Terminology
+
+| Term | Meaning |
+| --- | --- |
+| **Features** | Input variables or measurements (such as pixel values) a model learns from |
+| **Labels** | Target outputs or correct answers (such as categories or values) a model is trained to predict |
+| **Data cleaning** | Fixing or removing incorrect, incomplete, or duplicate records before training |
+| **Data scaling** | Adjusting numerical values onto a consistent range (such as min-max scaling) to aid learning |
+| **Data leakage** | Information from outside the training set (such as validation or test data) influencing training or preprocessing |
+| **Data splitting** | Dividing a dataset into separate training, validation, and testing sets |
+| **Class imbalance** | An uneven distribution of examples across categories, which can bias learning toward majority classes |
+| **Batching** | Grouping training data into smaller batches so models can process data and update parameters efficiently |
