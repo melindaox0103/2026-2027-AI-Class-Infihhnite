@@ -16,7 +16,7 @@ There are six important steps:
 
 For example, if an AI learns to recognize cats and dogs from pictures:
 
-- Features: the **pixel values** of each picture (numbers for the color and brightness of each tiny dot). A neural network learns patterns such as ears, whiskers, and fur by itself (see Connectionist AI 1.4).
+- Features: the **pixel values** of each picture (numbers for the color and brightness of each tiny dot). A neural network learns patterns such as ears, whiskers, and fur by itself (see Chapter 4, Section 4.4).
 - Labels: Cat or Dog.
 
 In traditional machine learning, people often choose the features by hand. A neural network learns them from the pixels.
@@ -61,7 +61,7 @@ scaled value = (value - smallest value) / (largest value - smallest value)
 
 **Worked line:** an age of 12, in data where the youngest is 10 and the oldest is 20, gives (12 - 10) / (20 - 10) = 2 / 10 = **0.20**.
 
-> **Important:** work out the smallest and largest values from the **training data only**, then use the same numbers on the validation and testing data. Think of a student who sees the exam questions before the exam. Their score would look great but would not show what they really learned. If the scaling uses the testing data, the test is spoiled in the same way. This is called **data leakage** (see Connectionist AI 2.3). Remove duplicate pictures before splitting, so the same picture is not in both the training and testing groups.
+> **Important:** work out the smallest and largest values from the **training data only**, then use the same numbers on the validation and testing data. Think of a student who sees the exam questions before the exam. Their score would look great but would not show what they really learned. If the scaling uses the testing data, the test is spoiled in the same way. This is called **data leakage** (see Chapter 5, Section 5.3). Remove duplicate pictures before splitting, so the same picture is not in both the training and testing groups.
 
 *These scaled values are illustrative, not calculated using one shared scaling formula.*
 
@@ -83,7 +83,7 @@ There are three common groups:
 | Validation data | Used to check and improve the model during development. |
 | Testing data | Used to evaluate the final model using data it has not trained on. |
 
-For example, imagine 700 pictures are set aside for training (see Splitting Data).
+For example, imagine 700 pictures are set aside for training.
 
 Instead of processing all 700 pictures at once, you divide them into batches of 100.
 
