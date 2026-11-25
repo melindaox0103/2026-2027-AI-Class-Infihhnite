@@ -1,5 +1,5 @@
 ## Chapter 3: Big Data Technologies
-
+> **Before you start:** This chapter builds on Big Data concepts from Chapter 1 and data processing/pipeline basics from Chapter 2 (such as data pipelines and storage/analysis workflows). No prior systems administration or cluster-computing experience is required.
 Big Data technologies are tools and systems used to store, process, analyze, and visualize large amounts of data.
 
 These technologies help organizations handle data that may be too large or complex for traditional systems.
@@ -610,3 +610,21 @@ Distributed storage allows Big Data systems to store large amounts of informatio
 - Apache Hadoop. *HDFS Architecture.* https://hadoop.apache.org/docs/r3.3.0/hadoop-project-dist/hadoop-hdfs/HdfsDesign
 - Ghemawat, S., Gobioff, H., & Leung, S.-T. (2003). The Google File System. *Proceedings of the 19th ACM Symposium on Operating Systems Principles (SOSP '03).*
 - NIST. (2019). *NIST Big Data Interoperability Framework: Volume 1, Definitions* (NIST SP 1500-1r2). https://doi.org/10.6028/NIST.SP.1500-1r2
+---
+
+### Terminology
+
+| Term | Meaning |
+| --- | --- |
+| **Storage technologies** | Systems that save and organize large datasets (such as HDFS, cloud storage, data lakes, and data warehouses) |
+| **Processing technologies** | Frameworks/engines that compute and transform data across machines (such as Hadoop and Spark) |
+| **Vertical scaling (Scale Up)** | Increasing a single machine's capacity by adding resources such as RAM, CPU, or storage |
+| **Horizontal scaling (Scale Out)** | Increasing capacity by adding more machines/servers to work together |
+| **MapReduce** | A distributed processing model with four stages: Split, Map, Shuffle, and Reduce |
+| **Cloud computing** | Providing on-demand storage and computing resources over the internet |
+| **Edge computing** | Processing data close to where it is generated rather than only on distant central servers |
+| **Real-time streaming** | Continuously collecting and processing data as it arrives |
+| **Distributed storage** | Storing data across multiple connected machines rather than a single computer |
+| **Blocks** | Smaller chunks into which a large file is split for distributed storage |
+| **Replication** | Saving multiple copies of data blocks across different machines/racks |
+| **Fault tolerance** | A system's ability to keep operating and serving data despite component or machine failures |
