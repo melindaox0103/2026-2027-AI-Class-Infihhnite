@@ -1,5 +1,5 @@
 ## Chapter 2: Big Data Processing and Analytics
-
+> **Before you start:** This chapter builds on the basic ideas of Big Data (volume, variety, velocity, and common data types/sources from Chapter 1). No prior programming or database background is required.
 Big Data refers to extremely large and complex sets of data that traditional data-processing methods may struggle to handle.
 
 Big Data Processing involves collecting, organizing, cleaning, and transforming data so it can be used effectively.
