@@ -1,5 +1,5 @@
 ## Chapter 9: Applications and Case Studies
-
+> **Before you start:** This chapter builds on neural network architectures from Chapter 6 (such as CNNs and Transformers) as well as why Big Data powers deep learning and how data is prepared in Chapters 7–8 (such as labeled datasets and class imbalance).
 Big Data gives neural networks (Connectionist AI) the many examples they need to learn. This section shows five real uses and then follows one use from start to finish. Each use follows the same pattern: **lots of data in, a neural network learns patterns, and it gives a useful answer.**
 
 ### 1. Image Recognition
@@ -130,3 +130,17 @@ No test is perfect, which is why doctors and careful testing are still needed.
 8. Covington, P., Adams, J., Sargin, E. (2016). *Deep Neural Networks for YouTube Recommendations.* RecSys '16. https://doi.org/10.1145/2959100.2959190
 9. US Food and Drug Administration (11 April 2018). *FDA permits marketing of artificial intelligence-based device to detect certain diabetes-related eye problems.* https://www.fda.gov/NewsEvents/Newsroom/PressAnnouncements/ucm604357.htm
 10. Healio (11 April 2018). *FDA allows marketing of IDx-DR artificial intelligence device for diabetic retinopathy detection.* (Secondary news report of.)
+---
+### Terminology
+
+| Term | Meaning |
+| --- | --- |
+| **Top-5 error** | Percentage of images where the correct label is not among the model's five best guesses |
+| **Transformer** | A neural network architecture introduced in 2017 that uses attention to process sequences such as text |
+| **Attention** | A mechanism that lets a model weigh which words in a sequence matter most when interpreting another word |
+| **BLEU score** | A metric used to evaluate machine-translated text against human reference translations |
+| **Concept drift** | Changes in underlying real-world patterns over time (such as evolving fraud tactics) that reduce model accuracy |
+| **Candidate generation** | The first stage in large-scale recommenders that narrows millions of items down to a few hundred candidates |
+| **Ranking** | The second stage in recommenders that orders candidate items by relevance for the user |
+| **Sensitivity** | The proportion of positive/sick cases that a test or model correctly identifies |
+| **Specificity** | The proportion of negative/healthy cases that a test or model correctly clears |
