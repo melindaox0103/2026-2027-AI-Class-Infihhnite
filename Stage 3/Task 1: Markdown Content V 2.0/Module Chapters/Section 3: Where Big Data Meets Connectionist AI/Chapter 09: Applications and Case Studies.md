@@ -12,7 +12,7 @@ Big Data gives neural networks (Connectionist AI) the many examples they need to
 
 **Milestone:** In the 2012 ImageNet contest, a CNN called AlexNet won with a top-5 error rate of 15.3%. The second-best entry had 26.2%. "Top-5" means the correct label was not among the model's five best guesses [1]. This result is widely seen as the start of the deep-learning boom in computer vision.
 
-**Limits:** The AI only knows what its pictures taught it, so it can fail on unusual pictures (see *Dependence on Data*). Face-recognition tests have shown different error rates for different groups of people (see *Bias and Fairness*) [2].
+**Limits:** The AI only knows what its pictures taught it, so it can fail on unusual pictures (see Chapter 10, Section 3). Face-recognition tests have shown different error rates for different groups of people (see Chapter 10, Section 2) [2].
 
 **Key idea:** *More labeled pictures plus a powerful network made computers much better at "seeing".*
 
@@ -26,7 +26,7 @@ Big Data gives neural networks (Connectionist AI) the many examples they need to
 
 **Milestone:** On a standard English-to-German translation test (WMT 2014), the Transformer scored 28.4 BLEU, more than 2 points better than the best earlier results. BLEU is a score for comparing machine translations. It also trained faster than older approaches [3]. Transformers are the base of many modern language tools.
 
-**Limits:** A translation can sound fluent but still be wrong, so important texts need a human check. Language AI also needs lots of data and energy (see *Energy and Compute Cost*).
+**Limits:** A translation can sound fluent but still be wrong, so important texts need a human check. Language AI also needs lots of data and energy (see Chapter 10, Section 5).
 
 **Key idea:** *Attention lets AI focus on the words that matter.*
 
@@ -39,7 +39,7 @@ Big Data gives neural networks (Connectionist AI) the many examples they need to
 - **Neural network and other machine learning:** The model learns what normal spending looks like and flags payments that look different.
 
 **Why it is hard** (reviews of research name these problems) [4][5][6]:
-- **Very few frauds:** Most transactions are honest, so the AI sees few fraud examples (*class imbalance*).
+- **Very few frauds:** Most transactions are honest, so the AI sees few fraud examples (*class imbalance*, Chapter 8, Section 4).
 - **Speed:** The check must happen in real time, and many research systems still work offline [4].
 - **Criminals change their tricks:** Patterns change over time (*concept drift*) [6].
 
@@ -71,7 +71,7 @@ Big Data gives neural networks (Connectionist AI) the many examples they need to
 - **Big Data:** The system uses what each person watched and searched, plus the context [9].
 - **Neural network:** YouTube described a system with two neural networks. The first, *candidate generation*, narrows a huge video collection down to hundreds of possible videos. The second, *ranking*, orders them so the best ones are shown to you [9].
 
-**Limits:** Recommendations depend on collecting data about people, which links to *Privacy* and *Dependence on Data*. Because the AI learns from past behavior, it may keep showing you more of the same.
+**Limits:** Recommendations depend on collecting data about people, which links to Chapter 10, Section 1 (*Privacy*) and Chapter 10, Section 3 (*Dependence on Data*). Because the AI learns from past behavior, it may keep showing you more of the same.
 
 **Key idea:** *Recommenders turn millions of choices into a short list that fits you.*
 
@@ -97,12 +97,12 @@ This case follows one AI from idea to real use. It is based on the first AI devi
 
 No test is perfect, which is why doctors and careful testing are still needed.
 
-**Connections to the Ethics section:**
-- **Privacy:** Medical photos are sensitive and must be protected.
-- **Bias and Fairness:** The AI should be tested on many kinds of patients.
-- **Dependence on Data:** Good, correctly graded photos are essential [8].
-- **Explainability:** Doctors and patients want to know why a result was given.
-- **Energy and Compute Cost:** Training and running the model needs computing power.
+**Connections to Chapter 10:**
+- **Privacy (Chapter 10, Section 1):** Medical photos are sensitive and must be protected.
+- **Bias and Fairness (Chapter 10, Section 2):** The AI should be tested on many kinds of patients.
+- **Dependence on Data (Chapter 10, Section 3):** Good, correctly graded photos are essential [8].
+- **Explainability (Chapter 10, Section 4):** Doctors and patients want to know why a result was given.
+- **Energy and Compute Cost (Chapter 10, Section 5):** Training and running the model needs computing power.
 
 **Key idea:** *A useful AI needs good data, careful testing, clear limits and people who stay responsible.*
 
