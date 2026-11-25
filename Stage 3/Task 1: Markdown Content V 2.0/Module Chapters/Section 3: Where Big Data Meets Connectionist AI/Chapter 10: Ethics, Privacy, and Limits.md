@@ -1,5 +1,5 @@
 ## Chapter 10: Ethics, Privacy, and Limits
-
+> **Before you start:** This chapter builds on Big Data concepts from Chapters 1–3, neural network/Connectionist AI fundamentals from Chapters 4–8, and real-world AI use cases and limits from Chapter 9. No prior legal, ethics, or hardware background is required.
 Big Data and neural networks (Connectionist AI) can do amazing things, but they come with responsibilities and limits. A good AI builder asks: *"Can we build it?"* and also *"Should we, and how do we do it safely?"*
 
 ### 1. Privacy
@@ -100,3 +100,16 @@ Big Data and neural networks (Connectionist AI) can do amazing things, but they 
 8. Google for Developers. *Machine Learning Crash Course.* https://developers.google.com/machine-learning/crash-course
 9. Rudin, C. (2019). *Stop Explaining Black Box Machine Learning Models for High Stakes Decisions and Use Interpretable Models Instead.* Nature Machine Intelligence, 1, 206–215. https://doi.org/10.1038/s42256-019-0048-x
 10. Goodfellow, I., Bengio, Y., & Courville, A. (2016). *Deep Learning*, Chapter 15: Representation Learning. MIT Press. https://www.deeplearningbook.org/
+---
+### Terminology
+
+| Term | Meaning |
+| --- | --- |
+| **Privacy** | The right to control who accesses or knows personal information |
+| **Data minimization** | Collecting only personal data that is strictly necessary for a stated purpose |
+| **Bias** | Unfair treatment or uneven outcomes for particular people or groups |
+| **Fairness** | Treating people equitably and giving everyone a fair opportunity |
+| **Dependence on data** | How strongly a model's performance relies on the quality, coverage, and recency of its training data |
+| **Explainability** | How clearly humans can understand why and how an AI system produced an output |
+| **Black box** | A system (such as a deep neural network) whose internal reasoning is difficult to interpret directly |
+| **Energy and compute cost** | The electricity and hardware resources required to store data and train or run AI models |
