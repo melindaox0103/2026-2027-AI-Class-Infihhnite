@@ -9,7 +9,7 @@ flowchart LR
     B -->|"success attracts<br/>more data and investment"| D
     
 1. More data gives better learning
-A network learns patterns from examples. More (and more varied) examples help it find the real pattern instead of memorizing quirks, which means less overfitting and better generalization (see Overfitting and Generalization). Research on language models found that test loss falls predictably as dataset size, model size and training compute increase, a result called scaling laws.
+A network learns patterns from examples. More (and more varied) examples help it find the real pattern instead of memorizing quirks, which means less overfitting and better generalization (see Chapter 5, Section 5.3). Research on language models found that test loss falls predictably as dataset size, model size and training compute increase, a result called scaling laws.
 ⚠️ Caution: more data only helps if it is good data. Wrong or irrelevant examples (a Veracity problem) teach wrong patterns, and extra data cannot rescue a poor model design.
 2. Many parameters need many examples
 Every weight and bias is a parameter the network must tune. More parameters give a network more freedom, including the freedom to memorize the training set. To pin all those parameters down to real patterns, the network needs many examples. Research also shows that the amount of overfitting follows simple equations of model size and dataset size.
