@@ -602,3 +602,21 @@ A data pipeline may use ETL as part of its process.
 
 - AWS. *What Is a Data Pipeline?* https://aws.amazon.com/what-is/data-pipeline/
 - AWS. *What Is an ETL Pipeline?* https://aws.amazon.com/what-is/etl-pipeline/
+---
+
+### Terminology
+
+| Term | Meaning |
+| --- | --- |
+| **Data quality** | How accurate, complete, consistent, and reliable data is |
+| **Missing values** | Unrecorded or unavailable entries in a dataset (affects *completeness*) |
+| **Duplicate data** | Repeated records of the same information in a dataset (affects *uniqueness*) |
+| **Descriptive analytics** | Summarizing past data to explain what happened |
+| **Diagnostic analytics** | Examining data to find why something happened |
+| **Predictive analytics** | Using historical patterns and models to estimate what might happen |
+| **Prescriptive analytics** | Recommending actions to achieve a desired outcome |
+| **Data visualization** | Presenting data through charts, graphs, and diagrams to aid understanding |
+| **Truncated axis** | Starting a chart axis above zero, which can exaggerate visual differences |
+| **ETL** | Extract, Transform, Load—collecting, cleaning/formatting, and storing data |
+| **ELT** | Extract, Load, Transform—loading raw data first and transforming it afterward |
+| **Data pipeline** | An end-to-end series of stages moving and processing data from source to presentation |
