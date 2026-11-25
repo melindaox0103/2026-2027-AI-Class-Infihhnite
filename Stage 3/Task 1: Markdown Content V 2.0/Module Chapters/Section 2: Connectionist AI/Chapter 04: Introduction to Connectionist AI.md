@@ -1,6 +1,5 @@
 ## Chapter 4: Introduction to Connectionist AI
-
-
+> **Before you start:** This chapter introduces Connectionist AI from first principles and assumes no prior background in neural networks, machine learning, or neuroscience. Reading Chapters 1–3 on Big Data is helpful context for why large datasets matter later, though not strictly required to follow the core concepts here.
 ### 4.1 Context and History
 
 Connectionist AI developed from the idea that computers could imitate certain aspects of how the human brain processes information. Instead of relying only on programmed rules, researchers explored networks of artificial neurons that could learn patterns from data [6].
@@ -726,3 +725,20 @@ Imagine an AI system deciding whether to approve a loan application.
 7. Russell, S. and Norvig, P. (2021). *Artificial Intelligence: A Modern Approach* (4th ed.). Pearson. Chapter 1.
 8. Rudin, C. (2019). *Stop Explaining Black Box Machine Learning Models for High Stakes Decisions and Use Interpretable Models Instead.* Nature Machine Intelligence, 1, 206–215. https://doi.org/10.1038/s42256-019-0048-x
 9. Phillips, P. J. et al. (2021). *Four Principles of Explainable Artificial Intelligence.* NISTIR 8312, National Institute of Standards and Technology. https://doi.org/10.6028/NIST.IR.8312
+---
+
+### Terminology
+
+| Term | Meaning |
+| --- | --- |
+| **Connectionist AI** | An AI approach using networks of interconnected artificial neurons that learn patterns from data |
+| **Perceptron** | An early artificial neural network model introduced by Frank Rosenblatt in 1958 for classification |
+| **XOR problem** | A classic classification problem that cannot be separated by a single straight line, highlighting limits of single-layer perceptrons |
+| **Backpropagation** | An algorithm that sends error signals backward through a network to help adjust weights across layers |
+| **Noisy input** | Unclear, incomplete, distorted, or imperfect input data |
+| **Weights** | Numerical values on neuron connections that determine how strongly one neuron influences another |
+| **Distributed representation** | Storing patterns and concepts across many neurons rather than in a single neuron |
+| **Feature engineering** | Manually selecting and preparing input features, common in traditional machine learning |
+| **Symbolic AI** | An AI approach that uses explicit human-written rules, symbols, and logical reasoning |
+| **Explainability** | How easily humans can understand how and why an AI model produced a decision |
+| **Black-box model** | A model (such as a deep neural network) whose internal reasoning is difficult to interpret directly |
