@@ -1,5 +1,5 @@
 ## Chapter 11: Synergy and Future
-
+> **Before you start:** This chapter builds on Big Data concepts from Chapters 1–3, neural network/Connectionist AI fundamentals from Chapters 4–8, and real-world AI use cases and limits from Chapter 9. No prior legal, ethics, or hardware background is required.
 Big Data and Connectionist AI are closely connected technologies. Big Data provides large amounts of information, while Connectionist AI uses artificial neural networks to learn patterns from that information.
 
 When combined, they allow systems to process large datasets, discover hidden patterns, make predictions, and support better decision-making.[1]
@@ -268,3 +268,17 @@ Big Data and Connectionist AI complement each other. Big Data provides the infor
 6. NIST. *AI Risks and Trustworthiness.* https://airc.nist.gov/airmf-resources/airmf/3-sec-characteristics/
 
 7. Singh, R. and Gill, S. S. (2023). *Edge AI: A Survey.* Internet of Things and Cyber-Physical Systems. https://doi.org/10.1016/j.iotcps.2023.02.004
+---
+### Terminology
+
+| Term | Definition |
+| :--- | :--- |
+| **Big Data** | Large volumes of information used to train and improve neural networks and feed analytics pipelines. |
+| **Connectionist AI** | Artificial intelligence that uses artificial neural networks to learn patterns from large datasets. |
+| **Anomaly Detection** | The process of identifying data points or activities that deviate significantly from established normal patterns, often flagging potential issues for review. |
+| **Automated Insights** | Trends, relationships, or patterns automatically discovered by AI systems from data without requiring manual inspection of every record. |
+| **Real-Time AI** | AI systems that process and analyze incoming data as it is generated so organizations can respond quickly to changing conditions. |
+| **Advanced Automation** | AI handling more complex data and operational tasks—such as organizing data, generating reports, and suggesting actions—while retaining human oversight. |
+| **Explainable AI** | Approaches that make AI models' decisions and influencing factors clearer and more understandable to humans. |
+| **Edge AI** | Running AI models locally on edge devices (such as smartphones, cameras, or sensors) rather than sending all data to a central cloud server, reducing latency and bandwidth use. |
+| **Responsible AI** | Practices and principles focused on safeguarding personal data, reducing unfair bias, improving transparency, ensuring reliability, and complying with data protection rules. |
