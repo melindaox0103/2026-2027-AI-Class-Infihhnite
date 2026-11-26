@@ -1,5 +1,3 @@
-Melinduy
-
 ## Stage 3 Guide: Prerequisites, Learning Outcomes & Reading Path
 
 ### Module & Team Overview
