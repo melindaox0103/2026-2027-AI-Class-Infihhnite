@@ -1,12 +1,13 @@
 ## Chapter 7: Why Big Data Fuels Neural Networks
 
 Explanations
-Neural networks became powerful when three things arrived together: lots of data, networks with many parameters, and fast hardware (GPUs) to train them.
-flowchart LR
-    D["📦 Big data<br/>many examples"] --> B["🚀 Deep learning<br/>breakthroughs"]
-    P["🧠 Many parameters<br/>big networks"] --> B
-    G["⚡ GPUs<br/>fast parallel math"] --> B
-    B -->|"success attracts<br/>more data and investment"| D
+**Three Inputs Driving Deep Learning Breakthroughs:**
+* **Big data (many examples)** $\rightarrow$ **Deep learning breakthroughs**
+* **Many parameters (big networks)** $\rightarrow$ **Deep learning breakthroughs**
+* **GPUs (fast parallel math)** $\rightarrow$ **Deep learning breakthroughs**
+
+**Feedback Loop:**
+* **Deep learning breakthroughs** $\rightarrow$ *(success attracts more data and investment)* $\rightarrow$ **Big data (many examples)**
     
 1. More data gives better learning
 A network learns patterns from examples. More (and more varied) examples help it find the real pattern instead of memorizing quirks, which means less overfitting and better generalization (see Chapter 5, Section 5.3). Research on language models found that test loss falls predictably as dataset size, model size and training compute increase, a result called scaling laws.
