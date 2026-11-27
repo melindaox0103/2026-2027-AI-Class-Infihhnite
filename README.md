@@ -58,3 +58,13 @@ Follow the chapters sequentially across the three sections:
   - **Video Coverage:** Video tutorials cover selected topics rather than every chapter; check the Stage 2 Submission Report resource mapping (and Stage 3 notes) for excluded topics.
   - **Introductory Depth:** Concepts, worked examples, and technical details are presented at an accessible, beginner-friendly level rather than an exhaustive engineering deep dive.
   - **Pending Stage 3 Confirmations:** *[Update any final Stage 3 file paths, release metadata, or remaining polish items before submission.]*
+## Module & Section Roadmaps
+
+- **Section 1 — Big Data (Chapters 01–03):**
+  ![Big Data Roadmap](assets/Information-Roadmap-2.png)
+
+- **Section 2 — Connectionist AI (Chapters 04–06):**
+  ![Connectionist AI Roadmap](assets/Information-Roadmap-3.png)
+
+- **Section 3 — Where Big Data Meets Connectionist AI (Chapters 07–11):**
+  ![Where Big Data Meets Connectionist AI Roadmap](assets/Information-Roadmap-1.png)
